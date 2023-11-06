@@ -35,6 +35,5 @@ public class serverTCP {
             outToClient.writeBytes(sentence_to_client);
             return;
         }
-//test
     }
 }
