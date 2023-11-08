@@ -4,13 +4,9 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.ArrayList;
 import java.util.List;
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
-import javax.mail.Session;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
-import javax.mail.Store;
+import javax.mail.search.FlagTerm;
 
 //public class ReceiveMail {
 //
@@ -106,23 +102,25 @@ public class ReceiveMail {
             props.setProperty("mail.imap.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             props.setProperty("mail.imap.socketFactory.fallback", "false");
 
-            Session session = Session.getDefaultInstance(props);
+            Session session = Session.getDefaultInstance(props, null);
 
             Store store = session.getStore("imap");
             store.connect(host, username, password);
 
             Folder emailFolder = store.getFolder("INBOX");
-            emailFolder.open(Folder.READ_ONLY);
+            emailFolder.open(Folder.READ_WRITE);
 
             List<CustomPair<String, String>> requirements = new ArrayList<>();
-            Message[] messages = emailFolder.getMessages();
+            Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
 
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
                 String sender = ((InternetAddress) message.getFrom()[0]).getAddress();
                 String subject = message.getSubject();
                 requirements.add(new CustomPair<>(sender, subject));
+                message.setFlag(Flags.Flag.SEEN,true);
             }
+
             emailFolder.close(false);
             store.close();
             return requirements;
