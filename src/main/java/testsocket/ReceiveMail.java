@@ -1,46 +1,23 @@
 package testsocket;
+
 import java.io.IOException;
 import java.util.Properties;
+import java.util.ArrayList;
+import java.util.List;
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
 import javax.mail.Store;
-import com.sun.mail.pop3.POP3Store;
-
-
-//Create Pair class
-class CustomPair<K, V> {
-    private K key;
-    private V value;
-
-    private CustomPair(){}
-
-    private CustomPair(K k, V v) {
-        this.key = k;
-        this.value = v;
-    }
-    public static <K, V> CustomPair of (K key, V value) {
-        return new CustomPair<>(key, value);
-    }
-
-    public K getKey() {
-        return this.key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-}
-
 
 public class ReceiveMail {
 
-    String host = "pop.gmail.com";
-    String stype = "pop3";
-    String username = "pvhoangnamzz@gmail.com";
-    String password = "drzd dpmu evff ejqj";
+    private String host = "pop.gmail.com";
+    private String stype = "pop3";
+    private String username = "pvhoangnamzz@gmail.com";
+    private String password = "drzd dpmu evff ejqj";
 
     public ReceiveMail(String host, String stype, String username, String password) {
         this.host = host;
@@ -49,7 +26,7 @@ public class ReceiveMail {
         this.password = password;
     }
 
-    public void receiveEmail(String host, String stype, String user, String password) {
+    public List<CustomPair<String, String>> getRequirements() {
 
         try {
             Properties props = new Properties();
@@ -60,36 +37,49 @@ public class ReceiveMail {
 
             Session sess = Session.getDefaultInstance(props);
             Store st = sess.getStore("pop3s");
-            st.connect(host, user, password);
+            st.connect(host, username, password);
+
             Folder emailFolder = st.getFolder("INBOX");
             emailFolder.open(Folder.READ_ONLY);
+
+            List<CustomPair<String, String>> requirements = new ArrayList<>();
             Message[] messages = emailFolder.getMessages();
 
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
-                System.out.println("Welcome To Email");
-                System.out.println("Email Number " + (i + 1));
-                System.out.println("Subject: " + message.getSubject());
-                System.out.println("From: " + message.getFrom()[0]);
-                System.out.println("Text: " + message.getContent().toString());
+                //In messages ra console
+//                System.out.println("Welcome To Email");
+//                System.out.println("Email Number " + (i + 1));
+//                System.out.println("Subject: " + message.getSubject());
+//                System.out.println("From: " + message.getFrom()[0]);
+//                System.out.println("Text: " + message.getContent().toString());
+
+                //Lay messages vao arraylist requirements
+                String sender = ((InternetAddress) message.getFrom()[0]).getAddress();
+                String subject = message.getSubject();
+                requirements.add(new CustomPair<String, String>(sender, subject));
             }
             emailFolder.close(false);
             st.close();
+            return requirements;
         } catch (NoSuchProviderException e) {
             e.printStackTrace();
         } catch (MessagingException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }
+//        } catch(IOException e){
+//        e.printStackTrace();
+//    }
+       return null;
+}
+
 
     public static void main(String[] args) {
-        String host = "pop.gmail.com";
-        String stypes = "pop3";
-        String username = "pvhoangnamzz@gmail.com";
-        String password = "drzd dpmu evff ejqj";
-        ReceiveMail getMail = new ReceiveMail(host, stypes, username, password);
+        ReceiveMail getMail = new ReceiveMail("pop.gmail.com", "pop3", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+        List<CustomPair<String, String>> x = getMail.getRequirements();
+        for (CustomPair<String, String> i:x){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
         //file receive mail dang chinh sua
     }
 }
