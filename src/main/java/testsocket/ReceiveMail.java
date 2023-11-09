@@ -111,7 +111,7 @@ public class ReceiveMail {
             emailFolder.open(Folder.READ_WRITE);
 
             List<CustomPair<String, String>> requirements = new ArrayList<>();
-            Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
+            Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), true));
 
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
