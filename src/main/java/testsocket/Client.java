@@ -45,7 +45,7 @@ class CheckMail extends Thread{
 //    }
 }
 
-public class clientTCP {
+public class Client {
     public static void main(String argv[]) throws Exception {
         String sentence_to_server;
         String sentence_from_server;
