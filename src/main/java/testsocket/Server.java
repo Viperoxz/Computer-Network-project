@@ -5,7 +5,19 @@ package testsocket;
 import java.io.*;
 import java.net.*;
 
-public class serverTCP {
+public class Server {
+    public enum Status{
+        STOP,
+        RUNNING,
+    }
+    private Status status;
+    public Server() throws UnknownHostException{
+
+    }
+
+    public void run(){
+        status = Status.RUNNING;
+    }
     public static void main(String argv[]) throws Exception {
         String sentence_from_client;
         String sentence_to_client;
