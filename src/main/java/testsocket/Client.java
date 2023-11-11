@@ -6,43 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-//Create Pair class
-class CustomPair<K, V> {
-    private K key;
-    private V value;
-
-    private CustomPair(){}
-
-    public CustomPair(K k, V v) {
-        this.key = k;
-        this.value = v;
-    }
-    public static <K, V> CustomPair of (K key, V value) {
-        return new CustomPair<>(key, value);
-    }
-
-    public K getKey() {
-        return this.key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-}
-
-class HandleMail {
-    private String host = "imap.gmail.com";
-//    private String storeType = "imap";
-    private String username = "pvhoangnamzz@gmail.com";
-    private String appPassword = "drzd dpmu evff ejqj";
-    public List<CustomPair<String, String>> commands;
-    String sender;
-     public HandleMail() {
-        ReceiveMail mailReceived = new ReceiveMail(host, username, appPassword);
-        this.commands = mailReceived.getRequirements();
-    }
-
-
 
 //    public CheckMail(String sender){
 //        this.sender = sender;
@@ -51,7 +14,7 @@ class HandleMail {
 //    public boolean check(Pair<String, String> newMail, List<Pair<String, String>> oldMail){
 //        return true;
 //    }
-}
+
 
 //public class Client {
 //    public static void main(String argv[]) throws Exception {

@@ -1,6 +1,10 @@
 package testsocket;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -31,12 +35,32 @@ public class BetaServer {
 
             while (true) {
                 String request = reader.readLine();
+                System.out.println(request);
                 if (request.toLowerCase().equals("shutdown")) {
-                    Runtime.getRuntime().exec("shutdown -s -t 0");
+                    Runtime.getRuntime().exec("shutdown -s -t 5");
                     writer.println("May tinh dang tat... ");
-                } else if (request.toLowerCase().equals("restart")) {
-                    Runtime.getRuntime().exec("");
+                }
+                else if (request.toLowerCase().equals("restart")) {
+                    Runtime.getRuntime().exec("shutdown -r -t 5");
                     writer.println("May tinh dang khoi dong lai... ");
+                }
+                else if (request.toLowerCase().equals("cancel")){
+                    Runtime.getRuntime().exec("shutdown -a");
+                    writer.println("");
+                }
+                else if (request.toLowerCase().equals("screenshot")){
+                    BufferedImage screenshot = new Robot().createScreenCapture(
+                            new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ImageIO.write(screenshot, "png", baos);
+
+                    byte[] imgaeBytes = baos.toByteArray();
+                    baos.close();
+
+                    writer.println(imgaeBytes.length);
+                    writer.flush();
+                    socket.getOutputStream().write(imgaeBytes);
                 }
             }
         }

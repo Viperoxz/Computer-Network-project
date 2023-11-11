@@ -111,7 +111,7 @@ public class ReceiveMail {
             emailFolder.open(Folder.READ_WRITE);
 
             List<CustomPair<String, String>> requirements = new ArrayList<>();
-            Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), true));
+            Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
 
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
@@ -130,11 +130,11 @@ public class ReceiveMail {
         return null;
     }
 
-    public static void main(String[] args) {
-        ReceiveMail getMail = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
-        List<CustomPair<String, String>> x = getMail.getRequirements();
-        for (CustomPair<String, String> i : x) {
-            System.out.println(i.getKey() + ": " + i.getValue());
-        }
-    }
+//    public static void main(String[] args) {
+//        ReceiveMail getMail = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+//        List<CustomPair<String, String>> x = getMail.getRequirements();
+//        for (CustomPair<String, String> i : x) {
+//            System.out.println(i.getKey() + ": " + i.getValue() + "h");
+//        }
+//    }
 }
