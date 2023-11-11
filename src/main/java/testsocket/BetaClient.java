@@ -9,19 +9,31 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import services.ScreenShot;
 
-class HandleMail {
-    private String host = "imap.gmail.com";
-    //    private String storeType = "imap";
-    private String username = "pvhoangnamzz@gmail.com";
-    private String appPassword = "drzd dpmu evff ejqj";
-    public List<CustomPair<String, String>> commands;
-    String sender;
-    public HandleMail() {
-        ReceiveMail mailReceived = new ReceiveMail(host, username, appPassword);
-        this.commands = mailReceived.getRequirements();
+class CustomPair<K, V> {
+    private K key;
+    private V value;
+
+    private CustomPair(){}
+
+    public CustomPair(K k, V v) {
+        this.key = k;
+        this.value = v;
+    }
+    public static <K, V> CustomPair of (K key, V value) {
+        return new CustomPair<>(key, value);
+    }
+
+    public K getKey() {
+        return this.key;
+    }
+
+    public V getValue() {
+        return value;
     }
 }
+
 
 public class BetaClient {
     public static void main(String[] args) {
@@ -43,48 +55,73 @@ public class BetaClient {
 //                System.out.println("3. Cancel Shutdown/Restart");
 //                System.out.println("4. Screenshot");
 
-                for (CustomPair<String, String>cmd : commands) {
-                    String choice = cmd.getValue();
-                    System.out.println(choice);
+            for (CustomPair<String, String> cmd : commands) {
+                String choice = cmd.getValue();
+                String from = cmd.getKey();
+                System.out.println(choice);
 //                scanner.nextLine();
-                    switch (choice.toLowerCase()) {
-                        case "shutdown":
-                            writer.println("shutdown"); //Goi len server
-                            writer.flush();
-                            System.out.println(reader.readLine());
-                            break;
-                        case "restart":
-                            writer.println("restart"); //Goi len server
-                            writer.flush();
-                            System.out.println(reader.readLine());
-                            break;
+                switch (choice.toLowerCase()) {
+                    case "shutdown":
+                        SendMail.sendEmail(from, "Reply for request: Shutdown", "<!DOCTYPE html>\n" +
+                                "<html>\n" +
+                                "<head>\n" +
+                                "<title>Page Title</title>\n" +
+                                "</head>\n" +
+                                "<body>\n" +
+                                "\n" +
+                                "<h1>Your request has done successfully</h1>\n" +
+                                "<p>This is a paragraph.</p>\n" +
+                                "\n" +
+                                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
+                                "</body>\n" +
+                                "</html>");
+                        writer.println("shutdown"); //Goi len server
+                        writer.flush();
+                        System.out.println(reader.readLine());
+                        break;
+                    case "restart":
+                        SendMail.sendEmail(from, "Reply for request: Restart", "<!DOCTYPE html>\n" +
+                                "<html>\n" +
+                                "<head>\n" +
+                                "<title>Page Title</title>\n" +
+                                "</head>\n" +
+                                "<body>\n" +
+                                "\n" +
+                                "<h1>Your request has done successfully</h1>\n" +
+                                "<p>This is a paragraph.</p>\n" +
+                                "\n" +
+                                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
+                                "</body>\n" +
+                                "</html>");
+                        writer.println("restart"); //Goi len server
+                        writer.flush();
+                        System.out.println(reader.readLine());
+                        break;
 //                        case "cancel":
 //                            writer.println("cancel"); //Goi len server
 //                            writer.flush();
 //                            System.out.println(reader.readLine());
 //                            break;
-//                        case "screenshot":
-//                            writer.println("screenshot"); //Goi len server
-//                            writer.flush();
-//                            int imgsSize = Integer.parseInt(reader.readLine());
-//                            byte[] imgBytes = new byte[imgsSize];
-//                            int readByte = socket.getInputStream().read(imgBytes);
-//                            if (readByte > 0) {
-//                                System.out.println("Nhap ten anh: ");
-//                                String filename = scanner.nextLine();
-//
-//                                Path imgPath = Paths.get(filename + ".png");
-//                                Files.write(imgPath, imgBytes);
-//                                System.out.println("Done!");
-//                            }
-                        default:
-                            System.out.println("fault");
-                            throw new AssertionError();
-                    }
+                    case "screenshot":
+                        writer.println("screenshot"); //Goi len server
+                        writer.flush();
+                        int imgsSize = Integer.parseInt(reader.readLine());
+                        byte[] imgBytes = new byte[imgsSize];
+                        int readByte = socket.getInputStream().read(imgBytes);
+                        if (readByte > 0) {
+                            System.out.println("Nhap ten anh: ");
+                            String filename = scanner.nextLine();
+
+                            Path imgPath = Paths.get("D:\\"+".png");
+                            Files.write(imgPath, imgBytes);
+                            System.out.println("Done!");
+                        }
+                    default:
+                        System.out.println("fault");
+                        throw new AssertionError();
                 }
-//            }
-        }
-        catch (Exception e){
+            }
+        } catch (Exception e) {
         }
     }
 }
