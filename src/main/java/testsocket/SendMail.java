@@ -4,6 +4,7 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
+import java.io.File;
 
 public class SendMail {
     static final String from = "pvhoangnamzz@gmail.com";
@@ -30,19 +31,38 @@ public class SendMail {
         Session session = Session.getInstance(props, auth);
 
         //Gui mail
-//        final String to = "pvhn191004@gmail.com";
-        MimeMessage msg = new MimeMessage(session);
         try {
+            MimeMessage msg = new MimeMessage(session);
             //Kieu noi dung
-            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
+//            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
             //Nguoi gui
             msg.setFrom(from);
             //Nguoi nhan
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
             //Tieu de email
             msg.setSubject(subject);
+
+
+            //Body
+            Multipart multipart = new MimeMultipart();
+
+            // Create the attachment part
+            String filename = "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx";
+            DataSource source = new FileDataSource(filename);
+            BodyPart attachmentBodyPart = new MimeBodyPart();
+            attachmentBodyPart.setDataHandler(new DataHandler(source));
+            attachmentBodyPart.setFileName(filename);
+            multipart.addBodyPart(attachmentBodyPart);
+
+            //HTML part
+            BodyPart htmlBodyPart = new MimeBodyPart();
+            htmlBodyPart.setContent(content, "text/html; charset=utf-8"); //5
+            multipart.addBodyPart(htmlBodyPart);
+
+            msg.setContent(multipart);
+            Transport.send(msg);
+
             //Noi dung
-            msg.setContent(content, "text/html");
             Transport.send(msg);
             System.out.println("Send email success!");
         } catch (Exception e) {

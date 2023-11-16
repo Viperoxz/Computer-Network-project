@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import services.GetFile;
 import services.ScreenShot;
 
 public class BetaServer {
@@ -25,7 +26,8 @@ public class BetaServer {
                 );
                 thread.start();
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
         }
     }
 
@@ -37,6 +39,7 @@ public class BetaServer {
             while (true) {
                 String request = reader.readLine();
                 System.out.println(request);
+
                 if (request.toLowerCase().equals("shutdown")) {
                     Runtime.getRuntime().exec("shutdown -s -t 5");
                     writer.println("May tinh dang tat... ");
@@ -50,6 +53,7 @@ public class BetaServer {
                     writer.println("");
                 }
                 else if (request.toLowerCase().equals("screenshot")){
+                    //Chup
                     BufferedImage screenshot = new Robot().createScreenCapture(
                             new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 
@@ -66,6 +70,7 @@ public class BetaServer {
             }
         }
         catch(Exception e){
+            System.out.println("Request not found!");
             }
         }
 }

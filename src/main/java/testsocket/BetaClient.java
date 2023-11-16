@@ -59,9 +59,11 @@ public class BetaClient {
                 String choice = cmd.getValue();
                 String from = cmd.getKey();
                 System.out.println(choice);
+
 //                scanner.nextLine();
                 switch (choice.toLowerCase()) {
                     case "shutdown":
+                        writer.println("May tinh dang tat... ");
                         SendMail.sendEmail(from, "Reply for request: Shutdown", "<!DOCTYPE html>\n" +
                                 "<html>\n" +
                                 "<head>\n" +
@@ -105,17 +107,18 @@ public class BetaClient {
                     case "screenshot":
                         writer.println("screenshot"); //Goi len server
                         writer.flush();
-                        int imgsSize = Integer.parseInt(reader.readLine());
-                        byte[] imgBytes = new byte[imgsSize];
+                        int imgSize = Integer.parseInt(reader.readLine());
+                        byte[] imgBytes = new byte[imgSize];
                         int readByte = socket.getInputStream().read(imgBytes);
                         if (readByte > 0) {
                             System.out.println("Nhap ten anh: ");
                             String filename = scanner.nextLine();
 
-                            Path imgPath = Paths.get("D:\\"+".png");
+                            Path imgPath = Paths.get("D:\\"+filename+".png");
                             Files.write(imgPath, imgBytes);
                             System.out.println("Done!");
                         }
+                        break;
                     default:
                         System.out.println("fault");
                         throw new AssertionError();
