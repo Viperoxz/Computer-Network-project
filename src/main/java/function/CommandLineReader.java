@@ -36,7 +36,9 @@ public class CommandLineReader {
                 command = scanner.nextLine();
                 new ProcessManager().stopProcess(command);
                 break;
-            case "APP":
+            case "GET FILE":
+                new getFile();
+                break;
 
             default:
                 System.out.println("Lệnh không hợp lệ.");
