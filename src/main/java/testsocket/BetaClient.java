@@ -1,5 +1,7 @@
 package testsocket;
 
+
+import javax.lang.model.type.NullType;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -9,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
-import services.ScreenShot;
+
 
 class CustomPair<K, V> {
     private K key;
@@ -48,13 +50,6 @@ public class BetaClient {
             Scanner scanner = new Scanner(System.in);
             boolean isRunning = true;
 
-//            while(isRunning) {
-//                System.out.println("\nMENU: ");
-//                System.out.println("1. Shutdown");
-//                System.out.println("2. Restart");
-//                System.out.println("3. Cancel Shutdown/Restart");
-//                System.out.println("4. Screenshot");
-
             for (CustomPair<String, String> cmd : commands) {
                 String choice = cmd.getValue();
                 String from = cmd.getKey();
@@ -64,7 +59,8 @@ public class BetaClient {
                 switch (choice.toLowerCase()) {
                     case "shutdown":
                         writer.println("May tinh dang tat... ");
-                        SendMail.sendEmail(from, "Reply for request: Shutdown", "<!DOCTYPE html>\n" +
+                        SendMail.sendEmail(from, "Reply for request: Shutdown", "",
+                                "<!DOCTYPE html>\n" +
                                 "<html>\n" +
                                 "<head>\n" +
                                 "<title>Page Title</title>\n" +
@@ -82,7 +78,8 @@ public class BetaClient {
                         System.out.println(reader.readLine());
                         break;
                     case "restart":
-                        SendMail.sendEmail(from, "Reply for request: Restart", "<!DOCTYPE html>\n" +
+                        SendMail.sendEmail(from, "Reply for request: Restart", "",
+                                "<!DOCTYPE html>\n" +
                                 "<html>\n" +
                                 "<head>\n" +
                                 "<title>Page Title</title>\n" +
@@ -111,12 +108,24 @@ public class BetaClient {
                         byte[] imgBytes = new byte[imgSize];
                         int readByte = socket.getInputStream().read(imgBytes);
                         if (readByte > 0) {
-                            System.out.println("Nhap ten anh: ");
-                            String filename = scanner.nextLine();
-
-                            Path imgPath = Paths.get("D:\\"+filename+".png");
+                            Path imgPath = Paths.get("D:\\" + "temp_scrs_" +System.currentTimeMillis() + ".png");
                             Files.write(imgPath, imgBytes);
                             System.out.println("Done!");
+
+                            SendMail.sendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
+                                    "<!DOCTYPE html>\n" +
+                                    "<html>\n" +
+                                    "<head>\n" +
+                                    "<title>Page Title</title>\n" +
+                                    "</head>\n" +
+                                    "<body>\n" +
+                                    "\n" +
+                                    "<h1>Your request has done successfully</h1>\n" +
+                                    "<p>This is a paragraph.</p>\n" +
+                                    "\n" +
+                                    "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
+                                    "</body>\n" +
+                                    "</html>");
                         }
                         break;
                     default:

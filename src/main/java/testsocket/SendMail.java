@@ -10,7 +10,7 @@ public class SendMail {
     static final String from = "pvhoangnamzz@gmail.com";
     static final String password = "drzd dpmu evff ejqj";
 
-    public static void sendEmail(String to, String subject, String content) {
+    public static void sendEmail(String to, String subject, String attachment_path, String content) {
 
         //Properties: Khai bao cac thuoc tinh
         Properties props = new Properties();
@@ -47,12 +47,14 @@ public class SendMail {
             Multipart multipart = new MimeMultipart();
 
             // Create the attachment part
-            String filename = "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx";
-            DataSource source = new FileDataSource(filename);
-            BodyPart attachmentBodyPart = new MimeBodyPart();
-            attachmentBodyPart.setDataHandler(new DataHandler(source));
-            attachmentBodyPart.setFileName(filename);
-            multipart.addBodyPart(attachmentBodyPart);
+            if (attachment_path != "") {
+                String filename = attachment_path;
+                DataSource source = new FileDataSource(filename);
+                BodyPart attachmentBodyPart = new MimeBodyPart();
+                attachmentBodyPart.setDataHandler(new DataHandler(source));
+                attachmentBodyPart.setFileName(filename);
+                multipart.addBodyPart(attachmentBodyPart);
+            }
 
             //HTML part
             BodyPart htmlBodyPart = new MimeBodyPart();
@@ -72,7 +74,8 @@ public class SendMail {
     }
 
     public static void main(String[] args) {
-        SendMail.sendEmail("pvhn191004@gmail.com", "Di ngu thoi","<!DOCTYPE html>\n" +
+        SendMail.sendEmail("pvhn191004@gmail.com", "Di ngu thoi", "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx",
+                "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
                 "<title>Page Title</title>\n" +

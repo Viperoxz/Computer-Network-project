@@ -9,8 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import services.GetFile;
-import services.ScreenShot;
+
 
 public class BetaServer {
     public static void main(String[] args) {
