@@ -1,0 +1,45 @@
+package services;
+
+import testsocket.SendMail;
+import java.io.*;
+
+
+public class Shutdown {
+    public static void handleShutdown(BufferedReader reader, PrintWriter writer, String from) throws IOException{
+        writer.println("May tinh dang tat... ");
+        SendMail.sendEmail(from, "Reply for request: Shutdown", "",
+                "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "<title>Page Title</title>\n" +
+                        "</head>\n" +
+                        "<body>\n" +
+                        "\n" +
+                        "<h1>Your request has done successfully</h1>\n" +
+                        "<p>This is a paragraph.</p>\n" +
+                        "\n" +
+                        "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
+                        "</body>\n" +
+                        "</html>");
+        writer.println("shutdown"); //Goi len server
+        writer.flush();
+        System.out.println(reader.readLine());
+    }
+
+
+    public static void controlShutdown(PrintWriter writer) throws IOException{
+        Runtime.getRuntime().exec("shutdown -s -t 5");
+        writer.println("May tinh dang tat... ");
+    }
+
+    public static void handleCancelShutdown(BufferedReader reader, PrintWriter writer) throws IOException{
+        writer.println("cancel"); //Goi len server
+        writer.flush();
+        System.out.println(reader.readLine());
+    }
+
+    public static void controlCancelShtudown(PrintWriter writer) throws IOException{
+        Runtime.getRuntime().exec("shutdown -a");
+        writer.println("Cancel success");
+    }
+}

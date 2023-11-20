@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import services.*;
 
 
 class CustomPair<K, V> {
@@ -58,75 +59,19 @@ public class BetaClient {
 //                scanner.nextLine();
                 switch (choice.toLowerCase()) {
                     case "shutdown":
-                        writer.println("May tinh dang tat... ");
-                        SendMail.sendEmail(from, "Reply for request: Shutdown", "",
-                                "<!DOCTYPE html>\n" +
-                                "<html>\n" +
-                                "<head>\n" +
-                                "<title>Page Title</title>\n" +
-                                "</head>\n" +
-                                "<body>\n" +
-                                "\n" +
-                                "<h1>Your request has done successfully</h1>\n" +
-                                "<p>This is a paragraph.</p>\n" +
-                                "\n" +
-                                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
-                                "</body>\n" +
-                                "</html>");
-                        writer.println("shutdown"); //Goi len server
-                        writer.flush();
-                        System.out.println(reader.readLine());
+                        Shutdown.handleShutdown(reader, writer, from);
                         break;
-                    case "restart":
-                        SendMail.sendEmail(from, "Reply for request: Restart", "",
-                                "<!DOCTYPE html>\n" +
-                                "<html>\n" +
-                                "<head>\n" +
-                                "<title>Page Title</title>\n" +
-                                "</head>\n" +
-                                "<body>\n" +
-                                "\n" +
-                                "<h1>Your request has done successfully</h1>\n" +
-                                "<p>This is a paragraph.</p>\n" +
-                                "\n" +
-                                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
-                                "</body>\n" +
-                                "</html>");
-                        writer.println("restart"); //Goi len server
-                        writer.flush();
-                        System.out.println(reader.readLine());
-                        break;
-//                        case "cancel":
-//                            writer.println("cancel"); //Goi len server
-//                            writer.flush();
-//                            System.out.println(reader.readLine());
-//                            break;
-                    case "screenshot":
-                        writer.println("screenshot"); //Goi len server
-                        writer.flush();
-                        int imgSize = Integer.parseInt(reader.readLine());
-                        byte[] imgBytes = new byte[imgSize];
-                        int readByte = socket.getInputStream().read(imgBytes);
-                        if (readByte > 0) {
-                            Path imgPath = Paths.get("D:\\" + "temp_scrs_" +System.currentTimeMillis() + ".png");
-                            Files.write(imgPath, imgBytes);
-                            System.out.println("Done!");
 
-                            SendMail.sendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
-                                    "<!DOCTYPE html>\n" +
-                                    "<html>\n" +
-                                    "<head>\n" +
-                                    "<title>Page Title</title>\n" +
-                                    "</head>\n" +
-                                    "<body>\n" +
-                                    "\n" +
-                                    "<h1>Your request has done successfully</h1>\n" +
-                                    "<p>This is a paragraph.</p>\n" +
-                                    "\n" +
-                                    "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
-                                    "</body>\n" +
-                                    "</html>");
-                        }
+                    case "restart":
+                        Restart.handelRestart(reader, writer, from);
+                        break;
+
+                    case "cancel":
+                        Shutdown.handleCancelShutdown(reader, writer);
+                        break;
+
+                    case "screenshot":
+                        ScreenShot.handleScreenshot(socket, writer, reader, from);
                         break;
                     default:
                         System.out.println("fault");

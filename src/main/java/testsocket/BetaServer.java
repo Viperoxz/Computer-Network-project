@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import services.*;
 
 
 public class BetaServer {
@@ -40,31 +41,16 @@ public class BetaServer {
                 System.out.println(request);
 
                 if (request.toLowerCase().equals("shutdown")) {
-                    Runtime.getRuntime().exec("shutdown -s -t 5");
-                    writer.println("May tinh dang tat... ");
+                    Shutdown.controlShutdown(writer);
                 }
                 else if (request.toLowerCase().equals("restart")) {
-                    Runtime.getRuntime().exec("shutdown -r -t 5");
-                    writer.println("May tinh dang khoi dong lai... ");
+                    Restart.controlRestart(writer);
                 }
                 else if (request.toLowerCase().equals("cancel")){
-                    Runtime.getRuntime().exec("shutdown -a");
-                    writer.println("");
+                    Shutdown.controlCancelShtudown(writer);
                 }
                 else if (request.toLowerCase().equals("screenshot")){
-                    //Chup
-                    BufferedImage screenshot = new Robot().createScreenCapture(
-                            new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    ImageIO.write(screenshot, "png", baos);
-
-                    byte[] imgaeBytes = baos.toByteArray();
-                    baos.close();
-
-                    writer.println(imgaeBytes.length);
-                    writer.flush();
-                    socket.getOutputStream().write(imgaeBytes);
+                    ScreenShot.takeScreenshot(socket, writer);
                 }
             }
         }

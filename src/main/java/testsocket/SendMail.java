@@ -62,7 +62,6 @@ public class SendMail {
             multipart.addBodyPart(htmlBodyPart);
 
             msg.setContent(multipart);
-            Transport.send(msg);
 
             //Noi dung
             Transport.send(msg);
