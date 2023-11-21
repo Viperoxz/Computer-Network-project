@@ -1,6 +1,6 @@
 package services;
 
-import testsocket.SendMail;
+import socket.SendMail;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,6 @@ public class Restart {
                         "<h1>Your request has done successfully</h1>\n" +
                         "<p>This is a paragraph.</p>\n" +
                         "\n" +
-                        "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
                         "</body>\n" +
                         "</html>");
         writer.println("restart"); //Goi len server

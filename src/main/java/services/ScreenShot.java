@@ -1,6 +1,6 @@
 package services;
 
-import testsocket.SendMail;
+import socket.SendMail;
 
 import java.awt.Rectangle;
 import java.awt.Robot;
@@ -13,7 +13,6 @@ import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 
 public class ScreenShot {
@@ -23,7 +22,7 @@ public class ScreenShot {
                 new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
         // Convert the image to a byte array
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(screenshot, "png", baos);
+        ImageIO.write(screenshot, "jpg", baos);
         byte[] imageBytes = baos.toByteArray();
         baos.close();
         // Send the image size and the image data to the server
@@ -42,7 +41,7 @@ public class ScreenShot {
         byte[] imgBytes = new byte[imgSize];
         int readByte = socket.getInputStream().read(imgBytes);
         if (readByte > 0) {
-            Path imgPath = Paths.get("D:\\" + "temp_scrs_" +System.currentTimeMillis() + ".png");
+            Path imgPath = Paths.get("D:\\" + "temp_scrs_" +System.currentTimeMillis() + ".jpg");
             Files.write(imgPath, imgBytes);
             System.out.println("Done!");
 

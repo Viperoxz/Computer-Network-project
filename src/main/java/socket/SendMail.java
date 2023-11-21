@@ -1,10 +1,9 @@
-package testsocket;
+package socket;
 
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-import java.io.File;
 
 public class SendMail {
     static final String from = "pvhoangnamzz@gmail.com";

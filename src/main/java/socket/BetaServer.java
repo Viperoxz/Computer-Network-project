@@ -1,10 +1,6 @@
-package testsocket;
+package socket;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -51,6 +47,9 @@ public class BetaServer {
                 }
                 else if (request.toLowerCase().equals("screenshot")){
                     ScreenShot.takeScreenshot(socket, writer);
+                }
+                else if (request.toLowerCase().equals("listprocess")){
+                    Processes.controlListProcess(writer);
                 }
             }
         }
