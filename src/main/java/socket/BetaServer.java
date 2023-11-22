@@ -49,7 +49,7 @@ public class BetaServer {
                     ScreenShot.takeScreenshot(socket, writer);
                 }
                 else if (request.toLowerCase().equals("listprocess")){
-                    Processes.controlListProcess(writer);
+                    HandleProcess.controlListProcess(writer);
                 }
             }
         }

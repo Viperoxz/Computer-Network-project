@@ -71,11 +71,11 @@ public class BetaClient {
                         break;
 
                     case "listprocess":
-                        Processes.handleListProcess(socket, writer);
+                        HandleProcess.handleListProcess(socket, writer, from);
                         break;
 
                     default:
-                        System.out.println("fault");
+                        System.out.println("Some thing went wrong!");
                         throw new AssertionError();
                 }
             }
