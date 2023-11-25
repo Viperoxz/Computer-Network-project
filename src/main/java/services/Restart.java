@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Restart {
-    public static void handelRestart(BufferedReader reader, PrintWriter writer, String from) throws IOException{
+    public static void handleRestart(BufferedReader reader, PrintWriter writer, String from) throws IOException{
         SendMail.sendEmail(from, "Reply for request: Restart", "",
                 "<!DOCTYPE html>\n" +
                         "<html>\n" +
