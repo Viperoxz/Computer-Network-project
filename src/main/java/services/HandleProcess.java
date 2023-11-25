@@ -1,13 +1,11 @@
 package services;
 
 import socket.SendMail;
+
 import java.io.*;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 
 public class HandleProcess {
-    private InputStream inputStream;
-    private OutputStream outputStream;
     public static void controlListProcess(PrintWriter writer){
         try {
 
@@ -48,34 +46,5 @@ public class HandleProcess {
 
         String path = file.getAbsolutePath();
         SendMail.sendEmail(from, "Reply for request: List Processes", path,"");
-    }
-
-
-    public void controlStartApp(){
-        try{
-            byte[] buffer = new byte[1024];
-
-            inputStream.read(buffer);
-
-            String apploc = new String(buffer, StandardCharsets.UTF_8);
-            apploc = apploc.trim();
-
-            ProcessBuilder pb = new ProcessBuilder(apploc);
-            pb.start();
-
-            buffer = "1".getBytes(StandardCharsets.UTF_8);
-            outputStream.write(buffer);
-
-//            System.out.println(new String(buffer, StandardCharsets.UTF_8));
-        }
-        catch (IOException ioException){
-            try
-            {
-                outputStream.write("0".getBytes(StandardCharsets.UTF_8));
-            }
-            catch (IOException ioE)
-            {
-            }
-        }
     }
 }
