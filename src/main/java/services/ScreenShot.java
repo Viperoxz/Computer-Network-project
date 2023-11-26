@@ -34,7 +34,7 @@ public class ScreenShot {
 
 
 
-    public static void handleScreenshot(Socket socket, PrintWriter writer, BufferedReader reader, String from) throws Exception{
+    public static void requestScreenshot(Socket socket, PrintWriter writer, BufferedReader reader, String from) throws Exception{
         writer.println("screenshot"); //Goi len server
         writer.flush();
         int imgSize = Integer.parseInt(reader.readLine());

@@ -47,19 +47,19 @@ public class BetaClient {
 
                     switch (choice[0].toLowerCase()) {
                         case "shutdown":
-                            Shutdown.handleShutdown(reader, writer, from);
+                            Shutdown.requestShutdown(reader, writer, from);
                             break;
                         case "restart":
-                            Restart.handleRestart(reader, writer, from);
+                            Restart.requestRestart(reader, writer, from);
                             break;
                         case "cancel":
-                            Shutdown.handleCancelShutdown(reader, writer);
+                            Shutdown.requestCancelShutdown(reader, writer);
                             break;
                         case "screenshot":
-                            ScreenShot.handleScreenshot(socket, writer, reader, from);
+                            ScreenShot.requestScreenshot(socket, writer, reader, from);
                             break;
                         case "listprocess":
-                            HandleProcess.handleListProcess(socket, writer, from);
+                            HandleProcess.requestListProcess(socket, writer, from);
                             break;
                         case "startapp":
 

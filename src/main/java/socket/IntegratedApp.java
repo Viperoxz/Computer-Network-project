@@ -65,6 +65,8 @@ public class IntegratedApp {
                     case "listprocess":
                         HandleProcess.controlListProcess(writer);
                         break;
+                    case "startapp":
+                        HandleProcess.controlStartApp(reader, writer);
                     default:
                         writer.println("Unknown command: " + request);
                         break;
@@ -124,28 +126,28 @@ public class IntegratedApp {
             List<CustomPair<String, String>> commands = mailReceived.getRequirements();
 
             for (CustomPair<String, String> cmd : commands) {
-                String[] choice = cmd.getValue().split(":");
+                String[] choice = cmd.getValue().split("&&");
                 String from = cmd.getKey();
                 System.out.println(choice);
 
                 switch (choice[0].toLowerCase()) {
                     case "shutdown":
-                        Shutdown.handleShutdown(reader, writer, from);
+                        Shutdown.requestShutdown(reader, writer, from);
                         break;
                     case "restart":
-                        Restart.handleRestart(reader, writer, from);
+                        Restart.requestRestart(reader, writer, from);
                         break;
                     case "cancel":
-                        Shutdown.handleCancelShutdown(reader, writer);
+                        Shutdown.requestCancelShutdown(reader, writer);
                         break;
                     case "screenshot":
-                        ScreenShot.handleScreenshot(socket, writer, reader, from);
+                        ScreenShot.requestScreenshot(socket, writer, reader, from);
                         break;
                     case "listprocess":
-                        HandleProcess.handleListProcess(socket, writer, from);
+                        HandleProcess.requestListProcess(socket, writer, from);
                         break;
                     case "startapp":
-                        // Implement startapp functionality
+                        HandleProcess.requestStartApp(socket, writer, choice[1], from);
                         break;
                     default:
                         System.out.println("Something went wrong!");

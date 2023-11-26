@@ -5,7 +5,7 @@ import java.io.*;
 
 
 public class Shutdown {
-    public static void handleShutdown(BufferedReader reader, PrintWriter writer, String from) throws IOException{
+    public static void requestShutdown(BufferedReader reader, PrintWriter writer, String from) throws IOException{
         writer.println("May tinh dang tat... ");
         SendMail.sendEmail(from, "Reply for request: Shutdown", "",
                 "<!DOCTYPE html>\n" +
@@ -31,7 +31,7 @@ public class Shutdown {
         writer.println("May tinh dang tat... ");
     }
 
-    public static void handleCancelShutdown(BufferedReader reader, PrintWriter writer) throws IOException{
+    public static void requestCancelShutdown(BufferedReader reader, PrintWriter writer) throws IOException{
         writer.println("cancel"); //Goi len server
         writer.flush();
         System.out.println(reader.readLine());
