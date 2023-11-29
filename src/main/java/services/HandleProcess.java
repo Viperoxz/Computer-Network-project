@@ -50,26 +50,26 @@ public class HandleProcess {
         SendMail.sendEmail(from, "Reply for request: List Processes", path,"");
     }
 
-    public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
-        try {
-            String appLocation = reader.readLine();
-            System.out.println(appLocation);// Đọc đường dẫn ứng dụng từ BufferedReader
-            ProcessBuilder pb = new ProcessBuilder(appLocation);
-            Process process = pb.start();
-            int exitCode = process.waitFor();
+        public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
+            try {
+                String appLocation = reader.readLine();
+                System.out.println(appLocation);// Đọc đường dẫn ứng dụng từ BufferedReader
+                ProcessBuilder pb = new ProcessBuilder(appLocation);
+                Process process = pb.start();
+                int exitCode = process.waitFor();
 
-            if (exitCode == 0) {
-                writer.println("APP_STARTED");
-            } else {
+                if (exitCode == 0) {
+                    writer.println("APP_STARTED");
+                } else {
+                    writer.println("APP_START_FAILED");
+                }
+                writer.flush();
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
                 writer.println("APP_START_FAILED");
+                writer.flush();
             }
-            writer.flush();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-            writer.println("APP_START_FAILED");
-            writer.flush();
         }
-    }
 
     public static void requestStartApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
         writer.println("startapp"); // Gửi yêu cầu khởi động ứng dụng lên server
@@ -86,4 +86,66 @@ public class HandleProcess {
             SendMail.sendEmail(from, "Reply for request: Start App failed", "", "");
         }
     }
+
+
+    public boolean isRunning(String IDProcess){
+        try {
+            Process process = Runtime.getRuntime().exec("tasklist /FI \"PID eq " + IDProcess.trim() + "\"");
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = bufferedReader.readLine()) != null)
+            {
+                if (line.contains(" " + IDProcess.trim() + " ")){
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+
+    public static void controlStopApp(BufferedReader reader, PrintWriter writer) {
+        try {
+            String appLocation = reader.readLine();
+            System.out.println(appLocation); // Đọc đường dẫn ứng dụng từ BufferedReader
+            ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
+            Process process = pb.start();
+            int exitCode = process.waitFor();
+
+            if (exitCode == 0) {
+                writer.println("APP_STOPPED");
+            } else {
+                writer.println("APP_STOP_FAILED");
+            }
+            writer.flush();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            writer.println("APP_STOP_FAILED");
+            writer.flush();
+        }
+    }
+
+    public static void requestStopApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
+        writer.println("stopapp"); // Gửi yêu cầu dừng ứng dụng lên server
+        writer.flush();
+        writer.println(appLocation); // Gửi đường dẫn của ứng dụng cần dừng lên server
+        writer.flush();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String response = reader.readLine();
+
+        if (response != null && response.equals("APP_STOPPED")) {
+            SendMail.sendEmail(from, "Reply for request: Stop App succeeded", "", "Done");
+        } else {
+            SendMail.sendEmail(from, "Reply for request: Stop App failed", "", "Some thing went wrong");
+        }
+    }
+
 }
