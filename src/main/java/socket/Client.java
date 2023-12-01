@@ -8,10 +8,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import services.HandleProcess;
-import services.Restart;
-import services.ScreenShot;
-import services.Shutdown;
+import services.*;
 
 public class Client {
     private Socket socket;
@@ -24,7 +21,7 @@ public class Client {
             Task task = new Task(socket);
 
             // Schedule the task to run every 10 seconds
-            timer.scheduleAtFixedRate(task, 0, 30 * 1000);
+            timer.scheduleAtFixedRate(task, 0, 20 * 1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,6 +81,9 @@ public class Client {
                         break;
                     case "stopapp":
                         HandleProcess.requestStopApp(socket, writer, choice[1], from);
+                        break;
+                    case "exploredirectory":
+                        ExploreDirectory.requestExploreDir(socket, writer, choice[1], from);
                         break;
                     default:
                         System.out.println("Something went wrong!");

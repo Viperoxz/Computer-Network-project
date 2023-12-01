@@ -1,9 +1,6 @@
 package socket;
 
-import services.HandleProcess;
-import services.Restart;
-import services.ScreenShot;
-import services.Shutdown;
+import services.*;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -59,8 +56,13 @@ public class Server {
                         break;
                     case "startapp":
                         HandleProcess.controlStartApp(reader, writer);
+                        break;
                     case "stopapp":
                         HandleProcess.controlStopApp(reader, writer);
+                        break;
+                    case "exploredirectory":
+                        ExploreDirectory.controlExploreDir(reader, writer);
+                        break;
                     default:
                         writer.println("Unknown command: " + request);
                         break;

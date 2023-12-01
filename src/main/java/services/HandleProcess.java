@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 public class HandleProcess {
     public static void controlListProcess(PrintWriter writer){
         try {
-
             String processes;
             Process process = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
             // Buffered reader to read from the process object
@@ -32,6 +31,7 @@ public class HandleProcess {
     public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException{
         writer.println("listprocess"); //Goi len server
         writer.flush();
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
         String fileName = "list_of_processes" + System.currentTimeMillis() +".txt";
@@ -47,7 +47,19 @@ public class HandleProcess {
         }
 
         String path = file.getAbsolutePath();
-        SendMail.sendEmail(from, "Reply for request: List Processes", path,"");
+        SendMail.sendEmail(from, "Reply for request: List Processes", path,
+                "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "<title>Page Title</title>\n" +
+                        "</head>\n" +
+                        "<body>\n" +
+                        "\n" +
+                        "<h1>Your request has done successfully</h1>\n" +
+                        "<p>This is a paragraph.</p>\n" +
+                        "\n" +
+                        "</body>\n" +
+                        "</html>");
     }
 
         public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
@@ -81,34 +93,24 @@ public class HandleProcess {
         String response = reader.readLine();
 
         if (response != null && response.equals("APP_STARTED")) {
-            SendMail.sendEmail(from, "Reply for request: Start App sucessed", "", "");
+            SendMail.sendEmail(from, "Reply for request: Start App sucessed", "",
+                    "<!DOCTYPE html>\n" +
+                            "<html>\n" +
+                            "<head>\n" +
+                            "<title>Page Title</title>\n" +
+                            "</head>\n" +
+                            "<body>\n" +
+                            "\n" +
+                            "<h1>Your request has done successfully</h1>\n" +
+                            "<p>This is a paragraph.</p>\n" +
+                            "\n" +
+                            "</body>\n" +
+                            "</html>");
         } else {
             SendMail.sendEmail(from, "Reply for request: Start App failed", "", "");
         }
     }
 
-
-    public boolean isRunning(String IDProcess){
-        try {
-            Process process = Runtime.getRuntime().exec("tasklist /FI \"PID eq " + IDProcess.trim() + "\"");
-
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = bufferedReader.readLine()) != null)
-            {
-                if (line.contains(" " + IDProcess.trim() + " ")){
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }
-        return false;
-    }
 
 
     public static void controlStopApp(BufferedReader reader, PrintWriter writer) {
@@ -142,7 +144,19 @@ public class HandleProcess {
         String response = reader.readLine();
 
         if (response != null && response.equals("APP_STOPPED")) {
-            SendMail.sendEmail(from, "Reply for request: Stop App succeeded", "", "Done");
+            SendMail.sendEmail(from, "Reply for request: Stop App succeeded", "",
+                    "\"<!DOCTYPE html>\\n\" +\n" +
+                    "                        \"<html>\\n\" +\n" +
+                    "                        \"<head>\\n\" +\n" +
+                    "                        \"<title>Page Title</title>\\n\" +\n" +
+                    "                        \"</head>\\n\" +\n" +
+                    "                        \"<body>\\n\" +\n" +
+                    "                        \"\\n\" +\n" +
+                    "                        \"<h1>Your request has done successfully</h1>\\n\" +\n" +
+                    "                        \"<p>This is a paragraph.</p>\\n\" +\n" +
+                    "                        \"\\n\" +\n" +
+                    "                        \"</body>\\n\" +\n" +
+                    "                        \"</html>\"");
         } else {
             SendMail.sendEmail(from, "Reply for request: Stop App failed", "", "Some thing went wrong");
         }
