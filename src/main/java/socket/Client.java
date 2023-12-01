@@ -85,6 +85,8 @@ public class Client {
                     case "exploredirectory":
                         ExploreDirectory.requestExploreDir(socket, writer, choice[1], from);
                         break;
+                    case "getfile[1]":
+                        GetFile.searchFileInRoots(choice[1], from);
                     default:
                         System.out.println("Something went wrong!");
                         throw new AssertionError();

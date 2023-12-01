@@ -72,6 +72,7 @@ public class ExploreDirectory {
             String directoryTree = ExploreDirectory.printDirectoryTree(folder);
             writer.println(directoryTree);
             writer.flush();
+            writer.close();
         }
         catch (IOException e){}
     }
@@ -84,22 +85,26 @@ public class ExploreDirectory {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         //Loi o day
-        StringBuilder respone = new StringBuilder();
+        StringBuilder responseBuilder = new StringBuilder();
         String line;
+
         while ((line = reader.readLine()) != null) {
-            respone.append(line);
-            respone.append(System.lineSeparator());
+            responseBuilder.append(line).append(System.lineSeparator());
         }
-        System.out.println(respone.toString());
+
+        String response = responseBuilder.toString();
+
+
+        System.out.println(response);
         try {
             String fileName = "list_directory" + System.currentTimeMillis() + ".txt";
             File file = new File(fileName);
             FileWriter myWriter = new FileWriter(file);
-            myWriter.write(respone.toString());
+            myWriter.write(response);
             myWriter.flush();
 //            myWriter.close();
 
-            if (respone != null) {
+            if (response != null) {
                 String fileTextPath = file.getAbsolutePath();
                 SendMail.sendEmail(from, "Reply for request: Explore directory", fileTextPath,
                         "<!DOCTYPE html>\n" +
