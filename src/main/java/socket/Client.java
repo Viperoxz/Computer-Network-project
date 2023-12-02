@@ -21,7 +21,7 @@ public class Client {
             Task task = new Task(socket);
 
             // Schedule the task to run every 10 seconds
-            timer.scheduleAtFixedRate(task, 0, 20 * 1000);
+            timer.scheduleAtFixedRate(task, 0, 30 * 1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -87,6 +87,10 @@ public class Client {
                         break;
                     case "getfile[1]":
                         GetFile.searchFileInRoots(choice[1], from);
+                        break;
+                    case "getfile[2]":
+                        GetFile.getFileByPath(choice[1], from);
+                        break;
                     default:
                         System.out.println("Something went wrong!");
                         throw new AssertionError();
