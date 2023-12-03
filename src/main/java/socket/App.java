@@ -1,15 +1,11 @@
 package socket;
 
-import java.io.*;
-import java.net.Socket;
-import java.net.ServerSocket;
-
-public class IntegratedApp {
+public class App {
     private Server server;
     private Client client;
 
 
-    public IntegratedApp() {
+    public App() {
         server = new Server();
         client = new Client();
     }
@@ -24,7 +20,7 @@ public class IntegratedApp {
 
     public static void main(String[] args) {
         try {
-            IntegratedApp app = new IntegratedApp();
+            App app = new App();
             app.startServer();
             app.startClient();
         } catch (Exception e) {

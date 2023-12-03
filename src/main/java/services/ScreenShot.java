@@ -16,6 +16,47 @@ import java.nio.file.Paths;
 import javax.imageio.ImageIO;
 
 public class ScreenShot {
+    static String htmlString = """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Form Reply Email</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #ffffff; /* Màu nền trắng */
+                }
+                .container {
+                    width: 50%;
+                    margin: 50px auto;
+                    padding: 20px;
+                    border: 2px solid #8a2be2; /* Viền màu tím */
+                    border-radius: 8px;
+                }
+                h2 {
+                    text-align: center;
+                    background-color: #8a2be2; /* Màu nền tím cho header */
+                    color: #ffffff; /* Màu chữ trắng cho header */
+                    padding: 10px; /* Khoảng cách giữa header và border */
+                    border-radius: 5px; /* Bo tròn góc cho header */
+                }
+                p {
+                    text-align: center;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Reply Email Form</h2>
+                <p>Please provide an update on the request.</p>
+            </div>
+        </body>
+        </html>
+        """;
+    ;
+
+
     public static void takeScreenshot(Socket socket, PrintWriter writer) throws Exception {
         // Capture the screen as a BufferedImage
         BufferedImage screenshot = new Robot().createScreenCapture(
@@ -41,23 +82,12 @@ public class ScreenShot {
         byte[] imgBytes = new byte[imgSize];
         int readByte = socket.getInputStream().read(imgBytes);
         if (readByte > 0) {
-            Path imgPath = Paths.get("D:\\" + "temp_scrs_" +System.currentTimeMillis() + ".jpg");
+            Path imgPath = Paths.get("temp_scrs_" +System.currentTimeMillis() + ".jpg");
             Files.write(imgPath, imgBytes);
             System.out.println("Done!");
 
             SendMail.sendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "\n" +
-                            "<h1>Your request has done successfully</h1>\n" +
-                            "<p>This is a paragraph.</p>\n" +
-                            "\n" +
-                            "</body>\n" +
-                            "</html>");
+                    htmlString);
         }
     }
 }

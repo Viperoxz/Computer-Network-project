@@ -2,6 +2,7 @@ package services;
 
 import socket.SendMail;
 
+import javax.swing.text.html.HTML;
 import java.io.*;
 import java.net.Socket;
 import java.util.stream.Collectors;
@@ -11,8 +12,7 @@ public class ExploreDirectory {
     /**
      * Pretty print the directory tree and its file names.
      *
-     * @param folder
-     *            must be a folder.
+     * @param folder must be a folder.
      * @return
      */
     public static String printDirectoryTree(File folder) {
@@ -60,21 +60,24 @@ public class ExploreDirectory {
         return sb.toString();
     }
 
-    public static void controlExploreDir(BufferedReader reader, PrintWriter writer){
-        try{
+    public static void controlExploreDir(BufferedReader reader, PrintWriter writer) {
+        try {
             String path = reader.readLine();
             System.out.println(path);
             File folder = new File(path);
             if (!folder.exists() || !folder.isDirectory()) {
                 System.out.println("Thư mục không tồn tại hoặc không phải là thư mục hợp lệ.");
-                return;
+                writer.println("The directory doesn't exist.");
+                writer.flush();
+                writer.close();
+            } else {
+                String directoryTree = ExploreDirectory.printDirectoryTree(folder);
+                writer.println(directoryTree);
+                writer.flush();
+                writer.close();
             }
-            String directoryTree = ExploreDirectory.printDirectoryTree(folder);
-            writer.println(directoryTree);
-            writer.flush();
-            writer.close();
+        } catch (IOException e) {
         }
-        catch (IOException e){}
     }
 
     public static void requestExploreDir(Socket socket, PrintWriter writer, String path, String from) throws IOException {
@@ -104,42 +107,26 @@ public class ExploreDirectory {
             myWriter.flush();
 //            myWriter.close();
 
-            if (response != null) {
+            if (response != null && response != "The directory doesn't exist.") {
                 String fileTextPath = file.getAbsolutePath();
                 SendMail.sendEmail(from, "Reply for request: Explore directory", fileTextPath,
-                        "<!DOCTYPE html>\n" +
-                                "<html>\n" +
-                                "<head>\n" +
-                                "<title>Page Title</title>\n" +
-                                "</head>\n" +
-                                "<body>\n" +
-                                "\n" +
-                                "<h1>Your request has done successfully</h1>\n" +
-                                "<p>This is a paragraph.</p>\n" +
-                                "\n" +
-                                "</body>\n" +
-                                "</html>");
-            }
-            else{
+                        HTMLGenerator.generateHTML("Your request has been completed successfully",
+                                """
+                                        Directory exploration successful. 
+                                        The file below contains the directory structure you requested.
+                                        """));
+            } else {
                 SendMail.sendEmail(from, "Reply for request: Explore directory", "",
-                        "<!DOCTYPE html>\n" +
-                                "<html>\n" +
-                                "<head>\n" +
-                                "<title>Page Title</title>\n" +
-                                "</head>\n" +
-                                "<body>\n" +
-                                "\n" +
-                                "<h1>Some thing went wrong</h1>\n" +
-                                "<p>This is a paragraph.</p>\n" +
-                                "\n" +
-                                "</body>\n" +
-                                "</html>");
+                        HTMLGenerator.generateHTML("Your request has failed",
+                                """
+                                        Can't explore this directory. Please ensure that the path is correct.
+                                         """));
             }
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             System.out.println("sai o day");
         }
     }
+}
 
 //    public static void main(String[] args) {
 //        // Thay đổi đường dẫn tới thư mục mà bạn muốn in ra cây thư mục của nó
@@ -165,4 +152,3 @@ public class ExploreDirectory {
 //        }
 //        catch (IOException e){}
 //    }
-}

