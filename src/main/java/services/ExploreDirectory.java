@@ -87,7 +87,6 @@ public class ExploreDirectory {
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        //Loi o day
         StringBuilder responseBuilder = new StringBuilder();
         String line;
 
@@ -97,17 +96,18 @@ public class ExploreDirectory {
 
         String response = responseBuilder.toString();
 
-
         System.out.println(response);
         try {
-            String fileName = "list_directory" + System.currentTimeMillis() + ".txt";
+            String fileName = "./src/main/java/output/directory.txt";
             File file = new File(fileName);
-            FileWriter myWriter = new FileWriter(file);
-            myWriter.write(response);
-            myWriter.flush();
-//            myWriter.close();
 
-            if (response != null && response != "The directory doesn't exist.") {
+            FileWriter fileWriter = new FileWriter(file, false); // Ghi đè nội dung vào file
+
+            fileWriter.write(response);
+            fileWriter.flush();
+            fileWriter.close();
+
+            if (!response.equals("The directory doesn't exist.")) {
                 String fileTextPath = file.getAbsolutePath();
                 SendMail.sendEmail(from, "Reply for request: Explore directory", fileTextPath,
                         HTMLGenerator.generateHTML("Your request has been completed successfully",
@@ -123,7 +123,7 @@ public class ExploreDirectory {
                                          """));
             }
         } catch (IOException e) {
-            System.out.println("sai o day");
+            System.out.println("Error occurred.");
         }
     }
 }

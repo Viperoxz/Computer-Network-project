@@ -48,18 +48,11 @@ public class HandleProcess {
 
         String path = file.getAbsolutePath();
         SendMail.sendEmail(from, "Reply for request: List Processes", path,
-                "<!DOCTYPE html>\n" +
-                        "<html>\n" +
-                        "<head>\n" +
-                        "<title>Page Title</title>\n" +
-                        "</head>\n" +
-                        "<body>\n" +
-                        "\n" +
-                        "<h1>Your request has done successfully</h1>\n" +
-                        "<p>This is a paragraph.</p>\n" +
-                        "\n" +
-                        "</body>\n" +
-                        "</html>");
+                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                        """
+                                Listing processes running successful. 
+                                This file contains all processes currently running on the device.
+                                """));
     }
 
         public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
@@ -94,18 +87,10 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STARTED")) {
             SendMail.sendEmail(from, "Reply for request: Start App sucessed", "",
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "\n" +
-                            "<h1>Your request has done successfully</h1>\n" +
-                            "<p>This is a paragraph.</p>\n" +
-                            "\n" +
-                            "</body>\n" +
-                            "</html>");
+                    HTMLGenerator.generateHTML("Your request has been completed successfully",
+                            """
+                                    The app has started.
+                                    """));
         } else {
             SendMail.sendEmail(from, "Reply for request: Start App failed", "", "");
         }
@@ -145,20 +130,17 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STOPPED")) {
             SendMail.sendEmail(from, "Reply for request: Stop App succeeded", "",
-                    "\"<!DOCTYPE html>\\n\" +\n" +
-                    "                        \"<html>\\n\" +\n" +
-                    "                        \"<head>\\n\" +\n" +
-                    "                        \"<title>Page Title</title>\\n\" +\n" +
-                    "                        \"</head>\\n\" +\n" +
-                    "                        \"<body>\\n\" +\n" +
-                    "                        \"\\n\" +\n" +
-                    "                        \"<h1>Your request has done successfully</h1>\\n\" +\n" +
-                    "                        \"<p>This is a paragraph.</p>\\n\" +\n" +
-                    "                        \"\\n\" +\n" +
-                    "                        \"</body>\\n\" +\n" +
-                    "                        \"</html>\"");
+                    HTMLGenerator.generateHTML("Your request has been completed successfully",
+                            """
+                                    The app has stopped.
+                                    """));
         } else {
-            SendMail.sendEmail(from, "Reply for request: Stop App failed", "", "Some thing went wrong");
+            SendMail.sendEmail(from, "Reply for request: Stop App failed", "",
+                    HTMLGenerator.generateHTML("Your request has failed",
+                            """
+                                    There was a failure when stopping this application.
+                                    Something went wrong.
+                                    """));
         }
     }
 
