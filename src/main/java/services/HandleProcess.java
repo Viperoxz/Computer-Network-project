@@ -34,9 +34,9 @@ public class HandleProcess {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
-        String fileName = "./src/main/java/output/processes.txt"; // Đường dẫn tới tệp cần ghi đè
+        String fileName = "./src/test/java/output/processes.txt"; // Đường dẫn tới tệp cần ghi đè
         File file = new File(fileName);
-        FileWriter myWriter = new FileWriter(file, true); // Sử dụng cờ ghi đè
+        FileWriter myWriter = new FileWriter(file, false); // Sử dụng cờ ghi đè
 
         while ((line = reader.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {
@@ -47,7 +47,7 @@ public class HandleProcess {
             myWriter.write("\n");
         }
 
-        myWriter.close(); // Đóng tệp sau khi ghi
+        myWriter.close();
 
         String path = file.getAbsolutePath();
         SendMail.sendEmail(from, "Reply for request: List Processes", path,
@@ -61,7 +61,7 @@ public class HandleProcess {
         public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
             try {
                 String appLocation = reader.readLine();
-                System.out.println(appLocation);// Đọc đường dẫn ứng dụng từ BufferedReader
+                System.out.println(appLocation);
                 ProcessBuilder pb = new ProcessBuilder(appLocation);
                 Process process = pb.start();
                 int exitCode = process.waitFor();
@@ -80,9 +80,9 @@ public class HandleProcess {
         }
 
     public static void requestStartApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
-        writer.println("startapp"); // Gửi yêu cầu khởi động ứng dụng lên server
+        writer.println("startapp");
         writer.flush();
-        writer.println(appLocation); // Gửi đường dẫn của ứng dụng cần khởi động lên server
+        writer.println(appLocation);
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
