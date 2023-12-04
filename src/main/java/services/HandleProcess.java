@@ -28,16 +28,17 @@ public class HandleProcess {
     }
 
 
-    public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException{
-        writer.println("listprocess"); //Goi len server
+    public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException {
+        writer.println("listprocess"); //Gửi lệnh lên server
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
-        String fileName = "list_of_processes" + System.currentTimeMillis() +".txt";
+        String fileName = "./src/main/java/output/processes.txt"; // Đường dẫn tới tệp cần ghi đè
         File file = new File(fileName);
-        FileWriter myWriter = new FileWriter(file);
-        while((line = reader.readLine()) != null){
+        FileWriter myWriter = new FileWriter(file, true); // Sử dụng cờ ghi đè
+
+        while ((line = reader.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {
                 break;
             }
@@ -45,6 +46,8 @@ public class HandleProcess {
             myWriter.write(line);
             myWriter.write("\n");
         }
+
+        myWriter.close(); // Đóng tệp sau khi ghi
 
         String path = file.getAbsolutePath();
         SendMail.sendEmail(from, "Reply for request: List Processes", path,
