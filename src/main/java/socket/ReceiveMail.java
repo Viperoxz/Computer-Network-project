@@ -7,28 +7,8 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.search.FlagTerm;
 
-class CustomPair<K, V> {
-    private K key;
-    private V value;
 
-    private CustomPair(){}
 
-    public CustomPair(K k, V v) {
-        this.key = k;
-        this.value = v;
-    }
-    public static <K, V> CustomPair of (K key, V value) {
-        return new CustomPair<>(key, value);
-    }
-
-    public K getKey() {
-        return this.key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-}
 
 public class ReceiveMail {
     private String host;
