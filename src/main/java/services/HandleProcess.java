@@ -50,7 +50,7 @@ public class HandleProcess {
         myWriter.close();
 
         String path = file.getAbsolutePath();
-        SendMail.sendEmail(from, "Reply for request: List Processes", path,
+        SendMail.serversendEmail(from, "Reply for request: List Processes", path,
                 HTMLGenerator.generateHTML("Your request has been completed successfully",
                         """
                                 Listing processes running successful. 
@@ -89,13 +89,13 @@ public class HandleProcess {
         String response = reader.readLine();
 
         if (response != null && response.equals("APP_STARTED")) {
-            SendMail.sendEmail(from, "Reply for request: Start App sucessed", "",
+            SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
                     HTMLGenerator.generateHTML("Your request has been completed successfully",
                             """
                                     The app has started.
                                     """));
         } else {
-            SendMail.sendEmail(from, "Reply for request: Start App failed", "", "");
+            SendMail.serversendEmail(from, "Reply for request: Start App failed", "", "");
         }
     }
 
@@ -132,13 +132,13 @@ public class HandleProcess {
         String response = reader.readLine();
 
         if (response != null && response.equals("APP_STOPPED")) {
-            SendMail.sendEmail(from, "Reply for request: Stop App succeeded", "",
+            SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
                     HTMLGenerator.generateHTML("Your request has been completed successfully",
                             """
                                     The app has stopped.
                                     """));
         } else {
-            SendMail.sendEmail(from, "Reply for request: Stop App failed", "",
+            SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
                     HTMLGenerator.generateHTML("Your request has failed",
                             """
                                     There was a failure when stopping this application.

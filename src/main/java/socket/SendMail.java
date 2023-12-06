@@ -6,10 +6,39 @@ import javax.mail.internet.*;
 import javax.activation.*;
 
 public class SendMail {
-    static final String from = "pvhoangnamzz@gmail.com";
-    static final String password = "drzd dpmu evff ejqj";
+    static final String[] from = {"pvhoangnamzz@gmail.com","onghoangcodebug01@gmail.com"};
+    static final String[] password = {"drzd dpmu evff ejqj","reddragonDTT101%"};
+    public static void clientsendEmail(String subject)  {
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
+        props.put("mail.smtp.port", "587"); //TLS 587, SSL 465
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
 
-    public static void sendEmail(String to, String subject, String attachment_path, String content) {
+        Authenticator auth = new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(from[1], password[1]);
+            }
+        };
+        Session session = Session.getInstance(props, auth);
+        try {
+            MimeMessage msg = new MimeMessage(session);
+            //Kieu noi dung
+//            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
+            //Nguoi gui
+            msg.setFrom(new InternetAddress(from[1]));
+            //Nguoi nhan
+            msg.setRecipient(Message.RecipientType.TO, new InternetAddress(from[0]));
+            //Tieu de email
+            msg.setSubject(subject);
+            System.out.println("Send "+subject);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+    public static void serversendEmail(String to, String subject, String attachment_path, String content) {
 
         //Properties: Khai bao cac thuoc tinh
         Properties props = new Properties();
@@ -19,15 +48,12 @@ public class SendMail {
         props.put("mail.smtp.starttls.enable", "true");
 
         //Create Authenticator
-        Authenticator auth = new Authenticator() {
+        Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, password);
+                return new PasswordAuthentication(from[1], password[1]);
             }
-        };
-
-        //Phien
-        Session session = Session.getInstance(props, auth);
+        });
 
         //Gui mail
         try {
@@ -35,7 +61,7 @@ public class SendMail {
             //Kieu noi dung
 //            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
             //Nguoi gui
-            msg.setFrom(from);
+            msg.setFrom(from[0]);
             //Nguoi nhan
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
             //Tieu de email
@@ -72,7 +98,7 @@ public class SendMail {
     }
 
     public static void main(String[] args) {
-        SendMail.sendEmail("pvhn191004@gmail.com", "Di ngu thoi", "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx",
+        SendMail.serversendEmail("pvhn191004@gmail.com", "Di ngu thoi", "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx",
                 "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +

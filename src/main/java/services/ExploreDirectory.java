@@ -109,14 +109,14 @@ public class ExploreDirectory {
 
             if (!response.equals("The directory doesn't exist.")) {
                 String fileTextPath = file.getAbsolutePath();
-                SendMail.sendEmail(from, "Reply for request: Explore directory", fileTextPath,
+                SendMail.serversendEmail(from, "Reply for request: Explore directory", fileTextPath,
                         HTMLGenerator.generateHTML("Your request has been completed successfully",
                                 """
                                         Directory exploration successful. 
                                         The file below contains the directory structure you requested.
                                         """));
             } else {
-                SendMail.sendEmail(from, "Reply for request: Explore directory", "",
+                SendMail.serversendEmail(from, "Reply for request: Explore directory", "",
                         HTMLGenerator.generateHTML("Your request has failed",
                                 """
                                         Can't explore this directory. Please ensure that the path is correct.
