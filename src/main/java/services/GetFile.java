@@ -54,7 +54,7 @@ public class GetFile {
             }
         }
         if (!pathToFile.isEmpty()) {
-            SendMail.sendEmail(from, "Reply for request: Get File", pathToFile,
+            SendMail.serversendEmail(from, "Reply for request: Get File", pathToFile,
                     "<!DOCTYPE html>\n" +
                             "<html>\n" +
                             "<head>\n" +
@@ -68,7 +68,7 @@ public class GetFile {
                             "</body>\n" +
                             "</html>");
         } else {
-            SendMail.sendEmail(from, "Reply for request: Get File", "",
+            SendMail.serversendEmail(from, "Reply for request: Get File", "",
                     "<!DOCTYPE html>\n" +
                             "<html>\n" +
                             "<head>\n" +
@@ -87,7 +87,7 @@ public class GetFile {
     public static void getFileByPath(String path, String from) {
         Path checkPathExists = Paths.get(path);
         if (Files.isRegularFile(checkPathExists)) {
-            SendMail.sendEmail(from, "Reply for request: Get File", path,
+            SendMail.serversendEmail(from, "Reply for request: Get File", path,
                     "<!DOCTYPE html>\n" +
                             "<html>\n" +
                             "<head>\n" +
@@ -100,7 +100,7 @@ public class GetFile {
                             "</html>");
         }
         else {
-            SendMail.sendEmail(from, "Reply for request: Get File", "",
+            SendMail.serversendEmail(from, "Reply for request: Get File", "",
                     "<!DOCTYPE html>\n" +
                             "<html>\n" +
                             "<head>\n" +

@@ -46,7 +46,7 @@ public class ScreenShot {
             Files.write(imgPath, imgBytes);
             System.out.println("Done!");
 
-            SendMail.sendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
+            SendMail.serversendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
                     HTMLGenerator.generateHTML("Your request has been completed successfully",
                             """
                                     Taking screenshot successful. 
