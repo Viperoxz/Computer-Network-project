@@ -6,8 +6,8 @@ import javax.mail.internet.*;
 import javax.activation.*;
 
 public class SendMail {
-    static final String[] from = {"pvhoangnamzz@gmail.com","onghoangcodebug01@gmail.com"};
-    static final String[] password = {"drzd dpmu evff ejqj","reddragonDTT101%"};
+    static final String[] from = {"pvhoangnamzz@gmail.com", "onghoangcodebug01@gmail.com"};
+    static final String[] password = {"drzd dpmu evff ejqj", "reddragonDTT101%"};
     public static void clientsendEmail(String subject)  {
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
@@ -18,7 +18,7 @@ public class SendMail {
         Authenticator auth = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from[1], password[1]);
+                return new PasswordAuthentication(from[0], password[0]);
             }
         };
         Session session = Session.getInstance(props, auth);
@@ -51,7 +51,7 @@ public class SendMail {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from[1], password[1]);
+                return new PasswordAuthentication(from[0], password[0]);
             }
         });
 

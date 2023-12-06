@@ -34,7 +34,7 @@ public class HandleProcess {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
-        String fileName = "./src/test/java/output/processes.txt"; // Đường dẫn tới tệp cần ghi đè
+        String fileName = "./src/test/java/output/processes.txt";
         File file = new File(fileName);
         FileWriter myWriter = new FileWriter(file, false); // Sử dụng cờ ghi đè
 

