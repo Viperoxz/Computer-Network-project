@@ -7,7 +7,7 @@ import javax.activation.*;
 
 public class SendMail {
     static final String[] from = {"pvhoangnamzz@gmail.com", "onghoangcodebug01@gmail.com"};
-    static final String[] password = {"drzd dpmu evff ejqj", "reddragonDTT101%"};
+    static final String[] password = {"drzd dpmu evff ejqj", "reddragonDT"};
     public static void clientsendEmail(String subject)  {
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
