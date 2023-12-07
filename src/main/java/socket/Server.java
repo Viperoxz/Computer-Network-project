@@ -49,7 +49,7 @@ public class Server {
                         Shutdown.controlCancelShtudown(writer);
                         break;
                     case "screenshot":
-                        ScreenShot.takeScreenshot(socket, writer);
+                        ScreenShot.takeScreenshot(writer);
                         break;
                     case "listprocess":
                         HandleProcess.controlListProcess(writer);

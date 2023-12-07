@@ -36,7 +36,7 @@ public class HandleProcess {
         String line;
         String fileName = "./src/test/java/output/processes.txt";
         File file = new File(fileName);
-        FileWriter myWriter = new FileWriter(file, false); // Sử dụng cờ ghi đè
+        FileWriter myWriter = new FileWriter(file, false);
 
         while ((line = reader.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {

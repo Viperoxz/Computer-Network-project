@@ -20,8 +20,8 @@ public class Client {
             Timer timer = new Timer();
             Task task = new Task(socket);
 
-            // Schedule the task to run every 20 seconds
-            timer.scheduleAtFixedRate(task, 0, 20 * 1000);
+            // Schedule the task to run every 10 seconds
+            timer.scheduleAtFixedRate(task, 0, 10 * 1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,7 +71,7 @@ public class Client {
                         Shutdown.requestCancelShutdown(reader, writer);
                         break;
                     case "screenshot":
-                        ScreenShot.requestScreenshot(socket, writer, reader, from);
+                        ScreenShot.requestScreenshot(writer, reader, from);
                         break;
                     case "listprocess":
                         HandleProcess.requestListProcess(socket, writer, from);
