@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class KeyLogger implements NativeKeyListener {
-    private static final Path file = Paths.get("./src/test/java/output/keys.txt");
+    private static final Path file = Paths.get("./src/test/output/keys.txt");
     private static boolean running = false;
 
     static {

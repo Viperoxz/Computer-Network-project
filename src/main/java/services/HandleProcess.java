@@ -34,7 +34,7 @@ public class HandleProcess {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
-        String fileName = "./src/test/java/output/processes.txt";
+        String fileName = "./src/test/output/processes.txt";
         File file = new File(fileName);
         FileWriter myWriter = new FileWriter(file, false);
 

@@ -98,7 +98,7 @@ public class ExploreDirectory {
 
         System.out.println(response);
         try {
-            String fileName = "./src/test/java/output/directory.txt";
+            String fileName = "./src/test/output/directory.txt";
             File file = new File(fileName);
 
             FileWriter fileWriter = new FileWriter(file, false); // Ghi đè nội dung vào file

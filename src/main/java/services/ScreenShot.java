@@ -49,7 +49,7 @@ public class ScreenShot {
         String imageString = reader.readLine();
         byte[] imgBytes = Base64.getDecoder().decode(imageString);
 
-        Path imgPath = Paths.get("./src/test/java/output/screenshot.png");
+        Path imgPath = Paths.get("./src/test/output/screenshot.png");
         Files.write(imgPath, imgBytes);
 
         System.out.println("Done!");
