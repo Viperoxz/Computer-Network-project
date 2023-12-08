@@ -8,7 +8,7 @@ public class Shutdown {
     public static void requestShutdown(BufferedReader reader, PrintWriter writer, String from) throws IOException{
         writer.println("May tinh dang tat... ");
         SendMail.serversendEmail(from, "Reply for request: Shutdown", "",
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         "The device has just shutdown."));
         writer.println("shutdown"); //Goi len server
         writer.flush();

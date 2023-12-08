@@ -55,7 +55,7 @@ public class ScreenShot {
         System.out.println("Done!");
 
         SendMail.serversendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
                         Taking screenshot successful. 
                         This is the screenshot you want.

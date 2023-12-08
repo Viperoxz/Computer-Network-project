@@ -37,7 +37,6 @@ public class Server {
                 String request = reader.readLine();
                 System.out.println("Received request: " + request);
 
-                // Example server response handling
                 switch (request.toLowerCase()) {
                     case "shutdown":
                         Shutdown.controlShutdown(writer);

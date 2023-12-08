@@ -29,7 +29,7 @@ public class HandleProcess {
 
 
     public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException {
-        writer.println("listprocess"); //Gửi lệnh lên server
+        writer.println("listprocess");
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -51,7 +51,7 @@ public class HandleProcess {
 
         String path = file.getAbsolutePath();
         SendMail.serversendEmail(from, "Reply for request: List Processes", path,
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
                                 Listing processes running successful. 
                                 This file contains all processes currently running on the device.
@@ -79,10 +79,10 @@ public class HandleProcess {
             }
         }
 
-    public static void requestStartApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
+    public static void requestStartApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
         writer.println("startapp");
         writer.flush();
-        writer.println(appLocation);
+        writer.println(appName);
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -90,10 +90,10 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STARTED")) {
             SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully",
-                            """
-                                    The app has started.
-                                    """));
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
+                            String.format("""
+                                    The app %s has started.
+                                    """, appName)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Start App failed", "", "");
         }
@@ -104,7 +104,7 @@ public class HandleProcess {
     public static void controlStopApp(BufferedReader reader, PrintWriter writer) {
         try {
             String appLocation = reader.readLine();
-            System.out.println(appLocation); // Đọc đường dẫn ứng dụng từ BufferedReader
+            System.out.println(appLocation);
             ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
             Process process = pb.start();
             int exitCode = process.waitFor();
@@ -122,10 +122,10 @@ public class HandleProcess {
         }
     }
 
-    public static void requestStopApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
-        writer.println("stopapp"); // Gửi yêu cầu dừng ứng dụng lên server
+    public static void requestStopApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
+        writer.println("stopapp");
         writer.flush();
-        writer.println(appLocation); // Gửi đường dẫn của ứng dụng cần dừng lên server
+        writer.println(appName);
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -133,13 +133,13 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STOPPED")) {
             SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully",
-                            """
-                                    The app has stopped.
-                                    """));
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                            String.format("""
+                                    The app %s has stop.
+                                    """, appName)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
-                    HTMLGenerator.generateHTML("Your request has failed",
+                    HTMLGenerator.generateHTML("Your request has failed", "",
                             """
                                     There was a failure when stopping this application.
                                     Something went wrong.
