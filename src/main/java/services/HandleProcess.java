@@ -95,7 +95,11 @@ public class HandleProcess {
                                     The app %s has started.
                                     """, appName)));
         } else {
-            SendMail.serversendEmail(from, "Reply for request: Start App failed", "", "");
+            SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
+                    String.format("""
+                                    There was a failure when starting %s.
+                                    Something went wrong.
+                                    """, appName));
         }
     }
 
@@ -140,10 +144,10 @@ public class HandleProcess {
         } else {
             SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
                     HTMLGenerator.generateHTML("Your request has failed", "",
-                            """
-                                    There was a failure when stopping this application.
+                            String.format("""
+                                    There was a failure when stopping %s.
                                     Something went wrong.
-                                    """));
+                                    """, appName)));
         }
     }
 
