@@ -20,8 +20,8 @@ public class Client {
             Timer timer = new Timer();
             Task task = new Task(socket);
 
-            // Schedule the task to run every 10 seconds
-            timer.scheduleAtFixedRate(task, 0, 10 * 1000);
+            // Schedule the task to run every 5 seconds
+            timer.scheduleAtFixedRate(task, 0, 5 * 1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -99,6 +99,9 @@ public class Client {
                         break;
                     case "help":
                         GuideTable.requestGuide(from);
+                        break;
+                    case "listapp":
+                        HandleProcess.requestListApplications(socket, writer, from);
                         break;
                     default:
                         System.out.println("Something went wrong!");

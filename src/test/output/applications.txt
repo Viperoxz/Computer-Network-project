@@ -1,0 +1,10 @@
+
+   Id Name                 MainWindowTitle                                                                             
+   -- ----                 ---------------                                                                             
+ 9764 ApplicationFrameHost Settings                                                                                    
+ 9104 chrome               Start-Process (Microsoft.PowerShell.Management) - PowerShell | Microsoft Learn - Google C...
+17452 idea64               socket - TestApp.java                                                                       
+ 1040 SystemSettings       Settings                                                                                    
+21964 TextInputHost        Windows Input Experience                                                                    
+
+

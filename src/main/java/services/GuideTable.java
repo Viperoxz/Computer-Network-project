@@ -109,9 +109,16 @@ public class GuideTable {
                 <tr>
                     <td>12</td>
                     <td>DIRECTORY</td>
-                    <td>exploredirectory&&<dir_path></td>
+                    <td>exploredirectory&&amp;&lt;dir_path&gt;</td>
                     <td>Display entire specified directory as a tree</td>
-                    <td>exploredirectory&&D:\\IT</td>
+                    <td>exploredirectory&amp;&amp;D:\\IT</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>APP</td>
+                    <td>listapp</td>
+                    <td>Get the list of applications currently running on the user’s devices</td>
+                    <td>listapp</td>
                 </tr>
             </table>
                                
@@ -120,6 +127,7 @@ public class GuideTable {
 
                     """;
     public static void requestGuide(String from){
+        System.out.println("help");
         SendMail.serversendEmail(from, "Reply for request: Help", "",
                 content);
     }

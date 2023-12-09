@@ -151,4 +151,53 @@ public class HandleProcess {
         }
     }
 
+
+    public static void controlListApplications(PrintWriter writer) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("powershell.exe",
+                    "Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle -AutoSize");
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+
+            // Buffered reader to read from the process object
+            BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                writer.println(line);
+                writer.flush();
+            }
+            writer.println("END_OF_LIST");
+            writer.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void requestListApplications(Socket socket, PrintWriter writer, String from) throws IOException {
+        writer.println("listapp");
+        writer.flush();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String line;
+        String fileName = "./src/test/output/applications.txt";
+        File file = new File(fileName);
+        FileWriter myWriter = new FileWriter(file, false);
+
+        while ((line = reader.readLine()) != null) {
+            if (line.equals("END_OF_LIST")) {
+                break;
+            }
+            System.out.println(line);
+            myWriter.write(line);
+            myWriter.write("\n");
+        }
+
+        myWriter.close();
+
+        String path = file.getAbsolutePath();
+        SendMail.serversendEmail(from, "Reply for request: List Applications", path,
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                        "Listing applications running successful. This file contains all applications currently running on the device."));
+    }
 }

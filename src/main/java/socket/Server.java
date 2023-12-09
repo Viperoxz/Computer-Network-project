@@ -62,6 +62,9 @@ public class Server {
                     case "exploredirectory":
                         ExploreDirectory.controlExploreDir(reader, writer);
                         break;
+                    case "listapp":
+                        HandleProcess.controlListApplications(writer);
+                        break;
                     default:
                         writer.println("Unknown command: " + request);
                         break;
