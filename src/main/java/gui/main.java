@@ -24,28 +24,30 @@ public class main extends JFrame {
     public static Image resize(ImageIcon icon,int desiredWidth,int desiredHeight ){
         Image originalImage = icon.getImage();
 
-        return originalImage.getScaledInstance(desiredWidth, desiredHeight, Image.SCALE_DEFAULT);
+        return originalImage.getScaledInstance(desiredWidth, desiredHeight, Image.SCALE_SMOOTH);
     }
     private  void remakeButton(){
-        dropdownButton.setBackground(new Color(10, 148, 112, 163));
-        ImageIcon icon = new ImageIcon(main.class.getResource("/icon/hamburger.png"));
+//        dropdownButton.setBackground(new Color(10, 148, 112, 163));
+        ImageIcon icon = new ImageIcon(main.class.getResource("/icon/right-chevron.png"));
         Image resizedImage= resize(icon,20,20);
 
         // Create a new ImageIcon with the resized Image
         ImageIcon resizedIcon = new ImageIcon(resizedImage);
         dropdownButton.setIcon(resizedIcon);
         dropdownButton.setEnabled(true);
-        dropdownButton.setPreferredSize(new Dimension(40,40));
+        dropdownButton.setBounds(0,0,30,460);
+//        dropdownButton.setPreferredSize(new Dimension(30,460));
 //        dropdownButton.setBackground(Color.red);
     }
 
     public main(){
+
         JPanel mainPanel = new JPanel();
         ChatInterface chat= new ChatInterface();
         chat.setOpaque(false);
         InfoInterface info = new InfoInterface();
         info.setOpaque(false);
-        getRootPane().putClientProperty("JRootPane.titleBarBackground", new Color(23, 81, 194));
+//        getRootPane().putClientProperty("JRootPane.titleBarBackground", new Color(23, 81, 194));
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.white);
         getRootPane().putClientProperty("JRootPane.arc", 999);
         remakeButton();
@@ -60,7 +62,7 @@ public class main extends JFrame {
                 .addChild(new Controller().build())
                 .addChild(new Info().build())
 
-                .addFooter(new Exit().build())
+                .addFooter(new Exit(this).build())
                 .build();
 
 
@@ -73,7 +75,7 @@ public class main extends JFrame {
         containerPanel.setBackground(new Color(0,0,0,0));
 
         heheeh.setOpaque(false);
-        mainPanel.setLayout(new OverlayLayout(mainPanel));
+        mainPanel.setLayout(new FlowLayout());
         mainPanel.add(heheeh);
         mainPanel.add(containerPanel);
 
@@ -112,18 +114,18 @@ public class main extends JFrame {
 class Header extends JLabel{
     Header(){
         setText("Cute Server");
-        ImageIcon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
+        ImageIcon icon = new ImageIcon(main.class.getResource("/icon/reindeer2.png"));
         icon=new ImageIcon(main.resize(icon,40,40));
         // Create the JLabel for the icon
         setIcon(icon);
 //        JLabel iconLabel = new JLabel(icon);
-        setBackground(new Color(10, 148, 112, 163));
+        setBackground(new Color(6, 154, 142));
         setOpaque(true);
         setHorizontalAlignment(SwingConstants.CENTER);
         setHorizontalTextPosition(SwingConstants.CENTER);
         setVerticalTextPosition(SwingConstants.BOTTOM);
         setFont(new Font("MV Boli",Font.BOLD,20));
-        setForeground(new Color(30, 44, 44, 244));
+        setForeground(new Color(23, 23, 24));
         // Create the JLabel for the icon nam
 
         // Create an HTML formatted string to align the text beneath the icon

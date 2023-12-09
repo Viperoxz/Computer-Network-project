@@ -26,6 +26,7 @@ public class ScreenShot {
         ImageIO.write(screenshot, "jpg", baos);
         byte[] imageBytes = baos.toByteArray();
         baos.close();
+
         // Send the image size and the image data to the server
         writer.println(imageBytes.length);
         writer.flush();
@@ -36,14 +37,21 @@ public class ScreenShot {
 
 
     public static void requestScreenshot(Socket socket, PrintWriter writer, BufferedReader reader, String from) throws Exception{
-        writer.println("screenshot"); //Goi len server
-        writer.flush();
-        int imgSize = Integer.parseInt(reader.readLine());
-        byte[] imgBytes = new byte[imgSize];
-        int readByte = socket.getInputStream().read(imgBytes);
+//        writer.println("screenshot"); //Goi len server
+//        writer.flush();
+//
+        BufferedImage screenshot = new Robot().createScreenCapture(
+                new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+        // Convert the image to a byte array
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(screenshot, "jpg", baos);
+        byte[] imageBytes = baos.toByteArray();
+
+//        int imgSize = Integer.parseInt(reader.readLine());
+        int readByte = imageBytes.length;
         if (readByte > 0) {
-            Path imgPath = Paths.get("temp_scrs_" +System.currentTimeMillis() + ".jpg");
-            Files.write(imgPath, imgBytes);
+            Path imgPath = Paths.get("screenshot" + ".jpg");
+            Files.write(imgPath, imageBytes);
             System.out.println("Done!");
 
             SendMail.serversendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
@@ -52,6 +60,7 @@ public class ScreenShot {
                                     Taking screenshot successful. 
                                     This is the screenshot you want.
                                     """));
+            Files.delete(imgPath);
         }
     }
 }

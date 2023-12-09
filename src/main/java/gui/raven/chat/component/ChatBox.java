@@ -7,10 +7,11 @@ import java.awt.geom.RoundRectangle2D;
 import gui.raven.chat.model.ModelMessage;
 import gui.raven.chat.swing.AutoWrapText;
 import gui.raven.chat.swing.ImageAvatar;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
+
+import javax.swing.*;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+
 import net.miginfocom.swing.MigLayout;
 
 public class ChatBox extends JComponent {
@@ -35,7 +36,9 @@ public class ChatBox extends JComponent {
         avatar.setBorderSize(1);
         avatar.setBorderSpace(1);
         avatar.setImage(message.getIcon());
+        avatar.setBackground(new Color(161, 227, 216));
         JTextPane text = new JTextPane();
+
         text.setEditorKit(new AutoWrapText());
         text.setText(message.getMessage());
         text.setBackground(new Color(0, 0, 0, 0));
@@ -61,7 +64,7 @@ public class ChatBox extends JComponent {
         if (boxType == BoxType.LEFT) {
             Area area = new Area(new RoundRectangle2D.Double(25, 25, width - 25, height - 25 - 16 - 10, 5, 5));
             area.subtract(new Area(new Ellipse2D.Double(5, 5, 45, 45)));
-            g2.setPaint(new GradientPaint(0, 0, new Color(255, 94, 98, 240), width, 0, new Color(255, 153, 102, 240)));
+            g2.setPaint(new GradientPaint(0, 0, new Color(0, 85, 85), width, 0, new Color(6, 154, 142)));
             g2.fill(area);
         } else {
             Area area = new Area(new RoundRectangle2D.Double(0, 25, width - 25, height - 25 - 16 - 10, 5, 5));
