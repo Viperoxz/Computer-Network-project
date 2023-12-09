@@ -6,8 +6,10 @@ import javax.mail.internet.*;
 import javax.activation.*;
 //ixzg pazh pwmz bqaf
 public class SendMail {
+
     static final String[] from = {"pvhoangnamzz@gmail.com","neildo0408@gmail.com"};
     static final String[] password = {"drzd dpmu evff ejqj","ixzg pazh pwmz bqaf"};
+
     public static void clientsendEmail(String subject)  {
         new Thread(()->{
             Properties props = new Properties();
@@ -16,26 +18,16 @@ public class SendMail {
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", "true");
 
-            Authenticator auth = new Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(from[1], password[1]);
-                }
-            };
-            Session session = Session.getInstance(props, auth);
-
-            try {
-                Transport transport = session.getTransport("smtp");
-                transport.connect();
-
-//            System.out.println("Connection successful!");
-
-                // Continue with sending the email or other operations
-
-                // Close the transport connection
-                transport.close();
-                MimeMessage msg = new MimeMessage(session);
-                //Kieu noi dung
+        Authenticator auth = new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(from[1], password[1]);
+            }
+        };
+        Session session = Session.getInstance(props, auth);
+        try {
+            MimeMessage msg = new MimeMessage(session);
+            //Kieu noi dung
 //            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
                 //Nguoi gui
                 msg.setFrom(new InternetAddress(from[1]));
@@ -55,7 +47,7 @@ public class SendMail {
 
     }
     public static void serversendEmail(String to, String subject, String attachment_path, String content) {
-
+        System.out.println(subject);
         //Properties: Khai bao cac thuoc tinh
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
@@ -113,20 +105,20 @@ public class SendMail {
         }
     }
 
-    public static void main(String[] args) {
-        SendMail.serversendEmail("pvhn191004@gmail.com", "Di ngu thoi", "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx",
-                "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "<head>\n" +
-                "<title>Page Title</title>\n" +
-                "</head>\n" +
-                "<body>\n" +
-                "\n" +
-                "<h1>This is a Heading</h1>\n" +
-                "<p>This is a paragraph.</p>\n" +
-                "\n" +
-                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
-                "</body>\n" +
-                "</html>");
-    }
+//    public static void main(String[] args) {
+//        SendMail.serversendEmail("pvhn191004@gmail.com", "Di ngu thoi", "D:\\Mạng máy tính\\Slide_En\\Chapter_1_v8.1- Introduction.pptx",
+//                "<!DOCTYPE html>\n" +
+//                "<html>\n" +
+//                "<head>\n" +
+//                "<title>Page Title</title>\n" +
+//                "</head>\n" +
+//                "<body>\n" +
+//                "\n" +
+//                "<h1>This is a Heading</h1>\n" +
+//                "<p>This is a paragraph.</p>\n" +
+//                "\n" +
+//                "<img src=\"https://img.cdn-pictorem.com/uploads/collection/I/IB5PAB9RBI/900_Anime_7_1608090041.5705.jpg\" alt=\"Naruto\">+" +
+//                "</body>\n" +
+//                "</html>");
+//    }
 }

@@ -43,13 +43,7 @@ public class Server {
             while (true) {
                 String request = reader.readLine();
 //                System.out.println("Received request: " + request);
-                Icon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
 
-                String name = "Bot";
-                String date = df.format(new Date());
-                String message = "Received request: " + request ;
-                ChatArea.addChatBox(new ModelMessage(icon, name, date, message), ChatBox.BoxType.LEFT);
-                // Example server response handling
                 switch (request.toLowerCase()) {
                     case "shutdown":
                         Shutdown.controlShutdown(writer);
@@ -61,7 +55,7 @@ public class Server {
                         Shutdown.controlCancelShutdown(writer);
                         break;
                     case "screenshot":
-                        ScreenShot.takeScreenshot(socket, writer);
+                        ScreenShot.takeScreenshot(writer);
                         break;
                     case "listprocess":
                         HandleProcess.controlListProcess(writer);
@@ -74,6 +68,9 @@ public class Server {
                         break;
                     case "exploredirectory":
                         ExploreDirectory.controlExploreDir(reader, writer);
+                        break;
+                    case "listapp":
+                        HandleProcess.controlListApplications(writer);
                         break;
                     default:
                         writer.println("Unknown command: " + request);

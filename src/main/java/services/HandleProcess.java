@@ -29,14 +29,14 @@ public class HandleProcess {
 
 
     public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException {
-        writer.println("listprocess"); //Gửi lệnh lên server
+        writer.println("listprocess");
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
-        String fileName = "./src/test/java/output/processes.txt"; // Đường dẫn tới tệp cần ghi đè
+        String fileName = "./src/test/output/processes.txt";
         File file = new File(fileName);
-        FileWriter myWriter = new FileWriter(file, false); // Sử dụng cờ ghi đè
+        FileWriter myWriter = new FileWriter(file, false);
 
         while ((line = reader.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {
@@ -51,7 +51,7 @@ public class HandleProcess {
 
         String path = file.getAbsolutePath();
         SendMail.serversendEmail(from, "Reply for request: List Processes", path,
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
                                 Listing processes running successful. 
                                 This file contains all processes currently running on the device.
@@ -79,10 +79,10 @@ public class HandleProcess {
             }
         }
 
-    public static void requestStartApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
+    public static void requestStartApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
         writer.println("startapp");
         writer.flush();
-        writer.println(appLocation);
+        writer.println(appName);
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -90,12 +90,16 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STARTED")) {
             SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully",
-                            """
-                                    The app has started.
-                                    """));
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
+                            String.format("""
+                                    The app %s has started.
+                                    """, appName)));
         } else {
-            SendMail.serversendEmail(from, "Reply for request: Start App failed", "", "");
+            SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
+                    String.format("""
+                                    There was a failure when starting %s.
+                                    Something went wrong.
+                                    """, appName));
         }
     }
 
@@ -104,7 +108,7 @@ public class HandleProcess {
     public static void controlStopApp(BufferedReader reader, PrintWriter writer) {
         try {
             String appLocation = reader.readLine();
-            System.out.println(appLocation); // Đọc đường dẫn ứng dụng từ BufferedReader
+            System.out.println(appLocation);
             ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
             Process process = pb.start();
             int exitCode = process.waitFor();
@@ -122,10 +126,10 @@ public class HandleProcess {
         }
     }
 
-    public static void requestStopApp(Socket socket, PrintWriter writer, String appLocation, String from) throws IOException {
-        writer.println("stopapp"); // Gửi yêu cầu dừng ứng dụng lên server
+    public static void requestStopApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
+        writer.println("stopapp");
         writer.flush();
-        writer.println(appLocation); // Gửi đường dẫn của ứng dụng cần dừng lên server
+        writer.println(appName);
         writer.flush();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -133,18 +137,67 @@ public class HandleProcess {
 
         if (response != null && response.equals("APP_STOPPED")) {
             SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully",
-                            """
-                                    The app has stopped.
-                                    """));
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                            String.format("""
+                                    The app %s has stop.
+                                    """, appName)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
-                    HTMLGenerator.generateHTML("Your request has failed",
-                            """
-                                    There was a failure when stopping this application.
+                    HTMLGenerator.generateHTML("Your request has failed", "",
+                            String.format("""
+                                    There was a failure when stopping %s.
                                     Something went wrong.
-                                    """));
+                                    """, appName)));
         }
     }
 
+
+    public static void controlListApplications(PrintWriter writer) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("powershell.exe",
+                    "Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle -AutoSize");
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+
+            // Buffered reader to read from the process object
+            BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                writer.println(line);
+                writer.flush();
+            }
+            writer.println("END_OF_LIST");
+            writer.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void requestListApplications(Socket socket, PrintWriter writer, String from) throws IOException {
+        writer.println("listapp");
+        writer.flush();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String line;
+        String fileName = "./src/test/output/applications.txt";
+        File file = new File(fileName);
+        FileWriter myWriter = new FileWriter(file, false);
+
+        while ((line = reader.readLine()) != null) {
+            if (line.equals("END_OF_LIST")) {
+                break;
+            }
+            System.out.println(line);
+            myWriter.write(line);
+            myWriter.write("\n");
+        }
+
+        myWriter.close();
+
+        String path = file.getAbsolutePath();
+        SendMail.serversendEmail(from, "Reply for request: List Applications", path,
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                        "Listing applications running successful. This file contains all applications currently running on the device."));
+    }
 }

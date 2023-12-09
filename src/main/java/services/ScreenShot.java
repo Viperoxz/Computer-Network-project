@@ -14,53 +14,53 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.imageio.ImageIO;
+import java.awt.Dimension;
+import java.util.Base64;
 
 public class ScreenShot {
 
-    public static void takeScreenshot(Socket socket, PrintWriter writer) throws Exception {
-        // Capture the screen as a BufferedImage
-        BufferedImage screenshot = new Robot().createScreenCapture(
-                new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        // Convert the image to a byte array
+    public static void takeScreenshot(PrintWriter writer) throws Exception {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle screenRectangle = new Rectangle(screenSize);
+
+        BufferedImage screenshot = new Robot().createScreenCapture(screenRectangle);
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(screenshot, "jpg", baos);
+        ImageIO.write(screenshot, "png", baos);
         byte[] imageBytes = baos.toByteArray();
         baos.close();
 
-        // Send the image size and the image data to the server
+
         writer.println(imageBytes.length);
         writer.flush();
-        socket.getOutputStream().write(imageBytes);
-        socket.getOutputStream().flush();
+
+        String imageString = Base64.getEncoder().encodeToString(imageBytes);
+        writer.println(imageString);
+        writer.flush();
     }
 
 
 
-    public static void requestScreenshot(Socket socket, PrintWriter writer, BufferedReader reader, String from) throws Exception{
-//        writer.println("screenshot"); //Goi len server
-//        writer.flush();
-//
-        BufferedImage screenshot = new Robot().createScreenCapture(
-                new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        // Convert the image to a byte array
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(screenshot, "jpg", baos);
-        byte[] imageBytes = baos.toByteArray();
 
-//        int imgSize = Integer.parseInt(reader.readLine());
-        int readByte = imageBytes.length;
-        if (readByte > 0) {
-            Path imgPath = Paths.get("screenshot" + ".jpg");
-            Files.write(imgPath, imageBytes);
-            System.out.println("Done!");
+    public static void requestScreenshot(PrintWriter writer, BufferedReader reader, String from) throws Exception {
+        writer.println("screenshot");
+        writer.flush();
+        System.out.println("ghahahahahaha");
+        int imgSize = Integer.parseInt(reader.readLine());
+        String imageString = reader.readLine();
+        byte[] imgBytes = Base64.getDecoder().decode(imageString);
 
-            SendMail.serversendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
-                    HTMLGenerator.generateHTML("Your request has been completed successfully",
-                            """
-                                    Taking screenshot successful. 
-                                    This is the screenshot you want.
-                                    """));
-            Files.delete(imgPath);
-        }
+        Path imgPath = Paths.get("./src/test/output/screenshot.png");
+        Files.write(imgPath, imgBytes);
+
+        System.out.println("Done!");
+
+        SendMail.serversendEmail(from, "Reply for request: Screenshot", imgPath.toString(),
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                        """
+                        Taking screenshot successful. 
+                        This is the screenshot you want.
+                        """));
     }
+
 }

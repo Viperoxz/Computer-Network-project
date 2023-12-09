@@ -41,7 +41,7 @@ public class main extends JFrame {
     }
 
     public main(){
-
+        setTitle("Activities log");
         JPanel mainPanel = new JPanel();
         ChatInterface chat= new ChatInterface();
         chat.setOpaque(false);
@@ -82,7 +82,6 @@ public class main extends JFrame {
 //        mainPanel.setOpaque(false);
 
         getContentPane().add(mainPanel);
-        setTitle("Hehe");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        setSize(350,470);

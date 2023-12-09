@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class Restart {
     public static void requestRestart(BufferedReader reader, PrintWriter writer, String from) throws IOException{
         SendMail.serversendEmail(from, "Reply for request: Restart", "",
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         "The device has just restarted."));
         writer.println("restart"); //Goi len server
         writer.flush();

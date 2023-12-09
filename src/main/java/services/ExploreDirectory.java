@@ -98,10 +98,10 @@ public class ExploreDirectory {
 
         System.out.println(response);
         try {
-            String fileName = "./src/test/java/output/directory.txt";
+            String fileName = "./src/test/output/directory.txt";
             File file = new File(fileName);
 
-            FileWriter fileWriter = new FileWriter(file, false); // Ghi đè nội dung vào file
+            FileWriter fileWriter = new FileWriter(file, false);
 
             fileWriter.write(response);
             fileWriter.flush();
@@ -110,14 +110,14 @@ public class ExploreDirectory {
             if (!response.equals("The directory doesn't exist.")) {
                 String fileTextPath = file.getAbsolutePath();
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", fileTextPath,
-                        HTMLGenerator.generateHTML("Your request has been completed successfully",
+                        HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                                 """
                                         Directory exploration successful. 
                                         The file below contains the directory structure you requested.
                                         """));
             } else {
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", "",
-                        HTMLGenerator.generateHTML("Your request has failed",
+                        HTMLGenerator.generateHTML("Your request has failed", "",
                                 """
                                         Can't explore this directory. Please ensure that the path is correct.
                                          """));
@@ -129,18 +129,15 @@ public class ExploreDirectory {
 }
 
 //    public static void main(String[] args) {
-//        // Thay đổi đường dẫn tới thư mục mà bạn muốn in ra cây thư mục của nó
 //        String directoryPath = "D:\\crawler";
 //
 //        File folder = new File(directoryPath);
 //
-//        // Kiểm tra xem thư mục tồn tại và là thư mục hay không
 //        if (!folder.exists() || !folder.isDirectory()) {
 //            System.out.println("Thư mục không tồn tại hoặc không phải là thư mục hợp lệ.");
 //            return;
 //        }
 //
-//        // In ra cây thư mục và tên các file trong đó
 //        String directoryTree = ExploreDirectory.printDirectoryTree(folder);
 //        System.out.println("Cây thư mục: \n" + directoryTree);
 //        try {

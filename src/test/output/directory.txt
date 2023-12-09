@@ -1,0 +1,1264 @@
+├──python/
+|  ├──Leetcode/
+|  |  ├──Training.ipynb
+|  ├──linked list/
+|  |  ├──.idea/
+|  |  |  ├──.gitignore
+|  |  |  ├──inspectionProfiles/
+|  |  |  |  ├──profiles_settings.xml
+|  |  |  |  ├──Project_Default.xml
+|  |  |  ├──linked list.iml
+|  |  |  ├──misc.xml
+|  |  |  ├──modules.xml
+|  |  |  ├──workspace.xml
+|  |  ├──linked list.py
+|  ├──Matplotlib/
+|  |  ├──intro_tomatplotlib.ipynb
+|  ├──OOP/
+|  |  ├──.idea/
+|  |  |  ├──.gitignore
+|  |  |  ├──inspectionProfiles/
+|  |  |  |  ├──profiles_settings.xml
+|  |  |  |  ├──Project_Default.xml
+|  |  |  ├──misc.xml
+|  |  |  ├──modules.xml
+|  |  |  ├──OOP.iml
+|  |  |  ├──workspace.xml
+|  |  ├──basic.py
+|  |  ├──test.py
+|  ├──pandas/
+|  |  ├──.idea/
+|  |  |  ├──.gitignore
+|  |  |  ├──inspectionProfiles/
+|  |  |  |  ├──profiles_settings.xml
+|  |  |  |  ├──Project_Default.xml
+|  |  |  ├──misc.xml
+|  |  |  ├──modules.xml
+|  |  |  ├──pandas.iml
+|  |  |  ├──workspace.xml
+|  |  ├──basic.py
+|  |  ├──credits.csv
+|  |  ├──Data.xlsx
+|  |  ├──Dataset2.xlsx
+|  |  ├──Lab08.pdf
+|  |  ├──Lich thi IC3.xlsx
+|  |  ├──movies_clean.csv
+|  |  ├──movies_complete.csv
+|  |  ├──nghich.ipynb
+|  |  ├──tesst.ipynb
+|  |  ├──TKB HK3.xlsx
+|  |  ├──Untitled-1.ipynb
+|  ├──pandas2/
+|  |  ├──lol_2021-2023/
+|  |  |  ├──.vscode/
+|  |  |  |  ├──settings.json
+|  |  |  ├──2020_LoL_esports_match_data_from_OraclesElixir.csv
+|  |  |  ├──2021_LoL_esports_match_data_from_OraclesElixir.csv
+|  |  |  ├──2022_LoL_esports_match_data_from_OraclesElixir.csv
+|  |  |  ├──2023_LoL_esports_match_data_from_OraclesElixir.csv
+|  |  |  ├──main.ipynb
+|  |  |  ├──T1.xlsx
+|  |  ├──lol_wc_2021/
+|  |  |  ├──.git/
+|  |  |  |  ├──COMMIT_EDITMSG
+|  |  |  |  ├──config
+|  |  |  |  ├──description
+|  |  |  |  ├──HEAD
+|  |  |  |  ├──hooks/
+|  |  |  |  |  ├──applypatch-msg.sample
+|  |  |  |  |  ├──commit-msg.sample
+|  |  |  |  |  ├──fsmonitor-watchman.sample
+|  |  |  |  |  ├──post-update.sample
+|  |  |  |  |  ├──pre-applypatch.sample
+|  |  |  |  |  ├──pre-commit.sample
+|  |  |  |  |  ├──pre-merge-commit.sample
+|  |  |  |  |  ├──pre-push.sample
+|  |  |  |  |  ├──pre-rebase.sample
+|  |  |  |  |  ├──pre-receive.sample
+|  |  |  |  |  ├──prepare-commit-msg.sample
+|  |  |  |  |  ├──push-to-checkout.sample
+|  |  |  |  |  ├──update.sample
+|  |  |  |  ├──index
+|  |  |  |  ├──info/
+|  |  |  |  |  ├──exclude
+|  |  |  |  ├──logs/
+|  |  |  |  |  ├──HEAD
+|  |  |  |  |  ├──refs/
+|  |  |  |  |  |  ├──heads/
+|  |  |  |  |  |  |  ├──main
+|  |  |  |  |  |  ├──remotes/
+|  |  |  |  |  |  |  ├──origin/
+|  |  |  |  |  |  |  |  ├──main
+|  |  |  |  ├──objects/
+|  |  |  |  |  ├──01/
+|  |  |  |  |  |  ├──bb9c12f526bdc4159eb2c1fb0d335d0841b9da
+|  |  |  |  |  ├──14/
+|  |  |  |  |  |  ├──47d617701257b3023b7beb73b06023dabf6758
+|  |  |  |  |  ├──1a/
+|  |  |  |  |  |  ├──7ed7a7a3284e65595c0f4ba42129b2315f9bdb
+|  |  |  |  |  ├──1d/
+|  |  |  |  |  |  ├──bdc798251905c2e79c332647cf1ffffe084f3a
+|  |  |  |  |  ├──26/
+|  |  |  |  |  |  ├──832a29180b6bf0a041642c2394798b868cd40e
+|  |  |  |  |  ├──34/
+|  |  |  |  |  |  ├──169655eb60805a837c0fd23d077b0e5c650bc0
+|  |  |  |  |  ├──3a/
+|  |  |  |  |  |  ├──2332c18cdf054bf7af23ef2c84f07690fd253c
+|  |  |  |  |  ├──51/
+|  |  |  |  |  |  ├──c656d69d5818bbd6a44fcae9d910c580383f0b
+|  |  |  |  |  ├──5d/
+|  |  |  |  |  |  ├──2b551e2ecc16fbf0c6289c5952f11faa4eeafb
+|  |  |  |  |  ├──61/
+|  |  |  |  |  |  ├──276a30380bc30fe012f616119ea0b518236e11
+|  |  |  |  |  ├──84/
+|  |  |  |  |  |  ├──c4e6f9f18d95c88b505ccc7c2ac3a2bd722373
+|  |  |  |  |  ├──d7/
+|  |  |  |  |  |  ├──18e47871877bc1026a82389951d1242efd443e
+|  |  |  |  |  ├──de/
+|  |  |  |  |  |  ├──f91c5f3073a38447f9dd383b0539d5b6ca57f3
+|  |  |  |  |  ├──info/
+|  |  |  |  |  ├──pack/
+|  |  |  |  ├──refs/
+|  |  |  |  |  ├──heads/
+|  |  |  |  |  |  ├──main
+|  |  |  |  |  ├──remotes/
+|  |  |  |  |  |  ├──origin/
+|  |  |  |  |  |  |  ├──main
+|  |  |  |  |  ├──tags/
+|  |  |  ├──2021_wc_stats.xlsx
+|  |  |  ├──2021_wc_stats_new.xlsx
+|  |  |  ├──README.md
+|  |  |  ├──xuli.ipynb
+|  ├──Python Projects/
+|  |  ├──.idea/
+|  |  |  ├──inspectionProfiles/
+|  |  |  |  ├──profiles_settings.xml
+|  |  |  |  ├──Project_Default.xml
+|  |  |  ├──misc.xml
+|  |  |  ├──modules.xml
+|  |  |  ├──Python Projects.iml
+|  |  |  ├──vcs.xml
+|  |  |  ├──workspace.xml
+|  |  ├──anhche.jpg
+|  |  ├──emiu.png
+|  |  ├──hainguyen.jpg
+|  |  ├──learn crawl/
+|  |  |  ├──.git/
+|  |  |  |  ├──COMMIT_EDITMSG
+|  |  |  |  ├──config
+|  |  |  |  ├──description
+|  |  |  |  ├──FETCH_HEAD
+|  |  |  |  ├──HEAD
+|  |  |  |  ├──hooks/
+|  |  |  |  |  ├──applypatch-msg.sample
+|  |  |  |  |  ├──commit-msg.sample
+|  |  |  |  |  ├──fsmonitor-watchman.sample
+|  |  |  |  |  ├──post-update.sample
+|  |  |  |  |  ├──pre-applypatch.sample
+|  |  |  |  |  ├──pre-commit.sample
+|  |  |  |  |  ├──pre-merge-commit.sample
+|  |  |  |  |  ├──pre-push.sample
+|  |  |  |  |  ├──pre-rebase.sample
+|  |  |  |  |  ├──pre-receive.sample
+|  |  |  |  |  ├──prepare-commit-msg.sample
+|  |  |  |  |  ├──push-to-checkout.sample
+|  |  |  |  |  ├──update.sample
+|  |  |  |  ├──index
+|  |  |  |  ├──info/
+|  |  |  |  |  ├──exclude
+|  |  |  |  ├──logs/
+|  |  |  |  |  ├──HEAD
+|  |  |  |  |  ├──refs/
+|  |  |  |  |  |  ├──heads/
+|  |  |  |  |  |  |  ├──master
+|  |  |  |  |  |  ├──remotes/
+|  |  |  |  |  |  |  ├──origin/
+|  |  |  |  |  |  |  |  ├──master
+|  |  |  |  ├──objects/
+|  |  |  |  |  ├──02/
+|  |  |  |  |  |  ├──d9c5cef6527c855e05be3f14914d289d2aa062
+|  |  |  |  |  ├──04/
+|  |  |  |  |  |  ├──ab4d52fdf9b9dec5136e388e6cd8c01bf1b798
+|  |  |  |  |  ├──10/
+|  |  |  |  |  |  ├──5ce2da2d6447d11dfe32bfb846c3d5b199fc99
+|  |  |  |  |  ├──18/
+|  |  |  |  |  |  ├──1891e0e46ba316e2e79aa647488f4a3809d8d2
+|  |  |  |  |  |  ├──a608ab87e42dff03ea1f509f88696f3cc76932
+|  |  |  |  |  ├──1f/
+|  |  |  |  |  |  ├──0ca4b2c1c81f56db50b54292e9138f922d242f
+|  |  |  |  |  ├──26/
+|  |  |  |  |  |  ├──d33521af10bcc7fd8cea344038eaaeb78d0ef5
+|  |  |  |  |  ├──30/
+|  |  |  |  |  |  ├──812a2add114e4550fab1964fe9832735557f71
+|  |  |  |  |  ├──3c/
+|  |  |  |  |  |  ├──9d9655fc72bf05ab5352c3ece599336971bf39
+|  |  |  |  |  ├──42/
+|  |  |  |  |  |  ├──5b8062b99d33c5d6555d9d59551558a3889e5d
+|  |  |  |  |  ├──46/
+|  |  |  |  |  |  ├──3fc2699c798fdbbe4c5d196db534eaca1ce0d7
+|  |  |  |  |  ├──50/
+|  |  |  |  |  |  ├──3497afd52b5c5bf91ddca7a926b0f296c071e1
+|  |  |  |  |  ├──53/
+|  |  |  |  |  |  ├──9175f327b696f144393917c8fe0b6c58bb3361
+|  |  |  |  |  ├──55/
+|  |  |  |  |  |  ├──4e744fa727a429ffab0bb0aa08b683e5527d19
+|  |  |  |  |  ├──57/
+|  |  |  |  |  |  ├──43b1148bbfdb2e2530141b0115dfc9c99b587c
+|  |  |  |  |  ├──62/
+|  |  |  |  |  |  ├──0198078fa975cb8cdf96c2bb9b663adb1387d2
+|  |  |  |  |  ├──89/
+|  |  |  |  |  |  ├──38d978697a5c743517aa174ed23b2189f27aa5
+|  |  |  |  |  |  ├──4e5a68e4e07cd18a73bb992280b3c3ee34f915
+|  |  |  |  |  ├──aa/
+|  |  |  |  |  |  ├──dd597c776b73b668077b192532cc7ecf8cf046
+|  |  |  |  |  ├──b6/
+|  |  |  |  |  |  ├──ebc92b4ee16b570fa68837b2678a7cf9cc2a3f
+|  |  |  |  |  ├──c2/
+|  |  |  |  |  |  ├──84cff80dc5d94e34facc0e8c7be581b1f1834b
+|  |  |  |  |  ├──d0/
+|  |  |  |  |  |  ├──876a78d06ac03b5d78c8dcdb95570281c6f1d6
+|  |  |  |  |  ├──dc/
+|  |  |  |  |  |  ├──d8fa09aa5f969ff226b6f0560b019ae2f9163d
+|  |  |  |  |  ├──e1/
+|  |  |  |  |  |  ├──d0f95ffbcbc5ad07df368d14ac2920a6b5e401
+|  |  |  |  |  ├──e5/
+|  |  |  |  |  |  ├──72559f4dea8e69ade053d210569342f413c349
+|  |  |  |  |  ├──e9/
+|  |  |  |  |  |  ├──fc6c478a7b9f6893c7b93fa6f2c11fbf688d07
+|  |  |  |  |  ├──ea/
+|  |  |  |  |  |  ├──cea41a6b3e296e7b0b0b7cddf627c3a3b96f86
+|  |  |  |  |  ├──ef/
+|  |  |  |  |  |  ├──06acd8b370597e02f690a4a75fe8e179516628
+|  |  |  |  |  ├──f4/
+|  |  |  |  |  |  ├──0b9d05bd692f6092770b772c468c2dcb6c6917
+|  |  |  |  |  ├──fe/
+|  |  |  |  |  |  ├──944321e3357aed74d400f20bd672f835d4083b
+|  |  |  |  |  ├──info/
+|  |  |  |  |  ├──pack/
+|  |  |  |  ├──ORIG_HEAD
+|  |  |  |  ├──refs/
+|  |  |  |  |  ├──heads/
+|  |  |  |  |  |  ├──master
+|  |  |  |  |  ├──remotes/
+|  |  |  |  |  |  ├──origin/
+|  |  |  |  |  |  |  ├──master
+|  |  |  |  |  ├──tags/
+|  |  |  ├──.idea/
+|  |  |  |  ├──.gitignore
+|  |  |  |  ├──inspectionProfiles/
+|  |  |  |  |  ├──profiles_settings.xml
+|  |  |  |  |  ├──Project_Default.xml
+|  |  |  |  ├──learn crawl.iml
+|  |  |  |  ├──misc.xml
+|  |  |  |  ├──modules.xml
+|  |  |  |  ├──vcs.xml
+|  |  |  |  ├──workspace.xml
+|  |  |  ├──18889C10
+|  |  |  ├──43ED9C10
+|  |  |  ├──beautifulsoup.py
+|  |  |  ├──cereal.csv
+|  |  |  ├──crawl_items_from_shopee.py
+|  |  |  ├──home.html
+|  |  |  ├──ketquathi.txt
+|  |  |  ├──ketquathi.xlsx
+|  |  |  ├──output.txt
+|  |  |  ├──README.md
+|  |  |  ├──seaborn-project.ipynb
+|  |  |  ├──thptqg23.ipynb
+|  |  ├──sudoku/
+|  |  |  ├──.idea/
+|  |  |  |  ├──inspectionProfiles/
+|  |  |  |  |  ├──profiles_settings.xml
+|  |  |  |  |  ├──Project_Default.xml
+|  |  |  |  ├──misc.xml
+|  |  |  |  ├──modules.xml
+|  |  |  |  ├──sudoku.iml
+|  |  |  |  ├──workspace.xml
+|  |  |  ├──sudoku_solve.py
+|  |  ├──test.py
+|  |  ├──Virtual assistant/
+|  |  |  ├──.idea/
+|  |  |  |  ├──.gitignore
+|  |  |  |  ├──.name
+|  |  |  |  ├──inspectionProfiles/
+|  |  |  |  |  ├──profiles_settings.xml
+|  |  |  |  |  ├──Project_Default.xml
+|  |  |  |  ├──misc.xml
+|  |  |  |  ├──modules.xml
+|  |  |  |  ├──Virtual assistant.iml
+|  |  |  |  ├──workspace.xml
+|  |  |  ├──train json.py
+|  |  |  ├──train.json
+|  |  |  ├──train1.json
+|  |  |  ├──Virtual Assistant.py
+|  ├──pythonProject/
+|  |  ├──.idea/
+|  |  |  ├──.gitignore
+|  |  |  ├──inspectionProfiles/
+|  |  |  |  ├──profiles_settings.xml
+|  |  |  |  ├──Project_Default.xml
+|  |  |  ├──misc.xml
+|  |  |  ├──modules.xml
+|  |  |  ├──pythonProject.iml
+|  |  |  ├──workspace.xml
+|  |  ├──test.py
+|  |  ├──traitim.html
+|  |  ├──venv/
+|  |  |  ├──.gitignore
+|  |  |  ├──Lib/
+|  |  |  |  ├──site-packages/
+|  |  |  |  |  ├──distutils-precedence.pth
+|  |  |  |  |  ├──pip/
+|  |  |  |  |  |  ├──py.typed
+|  |  |  |  |  |  ├──_internal/
+|  |  |  |  |  |  |  ├──build_env.py
+|  |  |  |  |  |  |  ├──cache.py
+|  |  |  |  |  |  |  ├──cli/
+|  |  |  |  |  |  |  |  ├──autocompletion.py
+|  |  |  |  |  |  |  |  ├──base_command.py
+|  |  |  |  |  |  |  |  ├──cmdoptions.py
+|  |  |  |  |  |  |  |  ├──command_context.py
+|  |  |  |  |  |  |  |  ├──main.py
+|  |  |  |  |  |  |  |  ├──main_parser.py
+|  |  |  |  |  |  |  |  ├──parser.py
+|  |  |  |  |  |  |  |  ├──progress_bars.py
+|  |  |  |  |  |  |  |  ├──req_command.py
+|  |  |  |  |  |  |  |  ├──spinners.py
+|  |  |  |  |  |  |  |  ├──status_codes.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──commands/
+|  |  |  |  |  |  |  |  ├──cache.py
+|  |  |  |  |  |  |  |  ├──check.py
+|  |  |  |  |  |  |  |  ├──completion.py
+|  |  |  |  |  |  |  |  ├──configuration.py
+|  |  |  |  |  |  |  |  ├──debug.py
+|  |  |  |  |  |  |  |  ├──download.py
+|  |  |  |  |  |  |  |  ├──freeze.py
+|  |  |  |  |  |  |  |  ├──hash.py
+|  |  |  |  |  |  |  |  ├──help.py
+|  |  |  |  |  |  |  |  ├──index.py
+|  |  |  |  |  |  |  |  ├──inspect.py
+|  |  |  |  |  |  |  |  ├──install.py
+|  |  |  |  |  |  |  |  ├──list.py
+|  |  |  |  |  |  |  |  ├──search.py
+|  |  |  |  |  |  |  |  ├──show.py
+|  |  |  |  |  |  |  |  ├──uninstall.py
+|  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──configuration.py
+|  |  |  |  |  |  |  ├──distributions/
+|  |  |  |  |  |  |  |  ├──base.py
+|  |  |  |  |  |  |  |  ├──installed.py
+|  |  |  |  |  |  |  |  ├──sdist.py
+|  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  ├──index/
+|  |  |  |  |  |  |  |  ├──collector.py
+|  |  |  |  |  |  |  |  ├──package_finder.py
+|  |  |  |  |  |  |  |  ├──sources.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──locations/
+|  |  |  |  |  |  |  |  ├──base.py
+|  |  |  |  |  |  |  |  ├──_distutils.py
+|  |  |  |  |  |  |  |  ├──_sysconfig.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──main.py
+|  |  |  |  |  |  |  ├──metadata/
+|  |  |  |  |  |  |  |  ├──base.py
+|  |  |  |  |  |  |  |  ├──importlib/
+|  |  |  |  |  |  |  |  |  ├──_compat.py
+|  |  |  |  |  |  |  |  |  ├──_dists.py
+|  |  |  |  |  |  |  |  |  ├──_envs.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──pkg_resources.py
+|  |  |  |  |  |  |  |  ├──_json.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──models/
+|  |  |  |  |  |  |  |  ├──candidate.py
+|  |  |  |  |  |  |  |  ├──direct_url.py
+|  |  |  |  |  |  |  |  ├──format_control.py
+|  |  |  |  |  |  |  |  ├──index.py
+|  |  |  |  |  |  |  |  ├──installation_report.py
+|  |  |  |  |  |  |  |  ├──link.py
+|  |  |  |  |  |  |  |  ├──scheme.py
+|  |  |  |  |  |  |  |  ├──search_scope.py
+|  |  |  |  |  |  |  |  ├──selection_prefs.py
+|  |  |  |  |  |  |  |  ├──target_python.py
+|  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──network/
+|  |  |  |  |  |  |  |  ├──auth.py
+|  |  |  |  |  |  |  |  ├──cache.py
+|  |  |  |  |  |  |  |  ├──download.py
+|  |  |  |  |  |  |  |  ├──lazy_wheel.py
+|  |  |  |  |  |  |  |  ├──session.py
+|  |  |  |  |  |  |  |  ├──utils.py
+|  |  |  |  |  |  |  |  ├──xmlrpc.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──operations/
+|  |  |  |  |  |  |  |  ├──build/
+|  |  |  |  |  |  |  |  |  ├──build_tracker.py
+|  |  |  |  |  |  |  |  |  ├──metadata.py
+|  |  |  |  |  |  |  |  |  ├──metadata_editable.py
+|  |  |  |  |  |  |  |  |  ├──metadata_legacy.py
+|  |  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  |  ├──wheel_editable.py
+|  |  |  |  |  |  |  |  |  ├──wheel_legacy.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──check.py
+|  |  |  |  |  |  |  |  ├──freeze.py
+|  |  |  |  |  |  |  |  ├──install/
+|  |  |  |  |  |  |  |  |  ├──editable_legacy.py
+|  |  |  |  |  |  |  |  |  ├──legacy.py
+|  |  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──prepare.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──pyproject.py
+|  |  |  |  |  |  |  ├──req/
+|  |  |  |  |  |  |  |  ├──constructors.py
+|  |  |  |  |  |  |  |  ├──req_file.py
+|  |  |  |  |  |  |  |  ├──req_install.py
+|  |  |  |  |  |  |  |  ├──req_set.py
+|  |  |  |  |  |  |  |  ├──req_uninstall.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──resolution/
+|  |  |  |  |  |  |  |  ├──base.py
+|  |  |  |  |  |  |  |  ├──legacy/
+|  |  |  |  |  |  |  |  |  ├──resolver.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──resolvelib/
+|  |  |  |  |  |  |  |  |  ├──base.py
+|  |  |  |  |  |  |  |  |  ├──candidates.py
+|  |  |  |  |  |  |  |  |  ├──factory.py
+|  |  |  |  |  |  |  |  |  ├──found_candidates.py
+|  |  |  |  |  |  |  |  |  ├──provider.py
+|  |  |  |  |  |  |  |  |  ├──reporter.py
+|  |  |  |  |  |  |  |  |  ├──requirements.py
+|  |  |  |  |  |  |  |  |  ├──resolver.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──self_outdated_check.py
+|  |  |  |  |  |  |  ├──utils/
+|  |  |  |  |  |  |  |  ├──appdirs.py
+|  |  |  |  |  |  |  |  ├──compat.py
+|  |  |  |  |  |  |  |  ├──compatibility_tags.py
+|  |  |  |  |  |  |  |  ├──datetime.py
+|  |  |  |  |  |  |  |  ├──deprecation.py
+|  |  |  |  |  |  |  |  ├──direct_url_helpers.py
+|  |  |  |  |  |  |  |  ├──distutils_args.py
+|  |  |  |  |  |  |  |  ├──egg_link.py
+|  |  |  |  |  |  |  |  ├──encoding.py
+|  |  |  |  |  |  |  |  ├──entrypoints.py
+|  |  |  |  |  |  |  |  ├──filesystem.py
+|  |  |  |  |  |  |  |  ├──filetypes.py
+|  |  |  |  |  |  |  |  ├──glibc.py
+|  |  |  |  |  |  |  |  ├──hashes.py
+|  |  |  |  |  |  |  |  ├──inject_securetransport.py
+|  |  |  |  |  |  |  |  ├──logging.py
+|  |  |  |  |  |  |  |  ├──misc.py
+|  |  |  |  |  |  |  |  ├──models.py
+|  |  |  |  |  |  |  |  ├──packaging.py
+|  |  |  |  |  |  |  |  ├──setuptools_build.py
+|  |  |  |  |  |  |  |  ├──subprocess.py
+|  |  |  |  |  |  |  |  ├──temp_dir.py
+|  |  |  |  |  |  |  |  ├──unpacking.py
+|  |  |  |  |  |  |  |  ├──urls.py
+|  |  |  |  |  |  |  |  ├──virtualenv.py
+|  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  ├──_log.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──vcs/
+|  |  |  |  |  |  |  |  ├──bazaar.py
+|  |  |  |  |  |  |  |  ├──git.py
+|  |  |  |  |  |  |  |  ├──mercurial.py
+|  |  |  |  |  |  |  |  ├──subversion.py
+|  |  |  |  |  |  |  |  ├──versioncontrol.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──wheel_builder.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──_vendor/
+|  |  |  |  |  |  |  ├──cachecontrol/
+|  |  |  |  |  |  |  |  ├──adapter.py
+|  |  |  |  |  |  |  |  ├──cache.py
+|  |  |  |  |  |  |  |  ├──caches/
+|  |  |  |  |  |  |  |  |  ├──file_cache.py
+|  |  |  |  |  |  |  |  |  ├──redis_cache.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──compat.py
+|  |  |  |  |  |  |  |  ├──controller.py
+|  |  |  |  |  |  |  |  ├──filewrapper.py
+|  |  |  |  |  |  |  |  ├──heuristics.py
+|  |  |  |  |  |  |  |  ├──serialize.py
+|  |  |  |  |  |  |  |  ├──wrapper.py
+|  |  |  |  |  |  |  |  ├──_cmd.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──certifi/
+|  |  |  |  |  |  |  |  ├──cacert.pem
+|  |  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  |  ├──chardet/
+|  |  |  |  |  |  |  |  ├──big5freq.py
+|  |  |  |  |  |  |  |  ├──big5prober.py
+|  |  |  |  |  |  |  |  ├──chardistribution.py
+|  |  |  |  |  |  |  |  ├──charsetgroupprober.py
+|  |  |  |  |  |  |  |  ├──charsetprober.py
+|  |  |  |  |  |  |  |  ├──cli/
+|  |  |  |  |  |  |  |  |  ├──chardetect.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──codingstatemachine.py
+|  |  |  |  |  |  |  |  ├──cp949prober.py
+|  |  |  |  |  |  |  |  ├──enums.py
+|  |  |  |  |  |  |  |  ├──escprober.py
+|  |  |  |  |  |  |  |  ├──escsm.py
+|  |  |  |  |  |  |  |  ├──eucjpprober.py
+|  |  |  |  |  |  |  |  ├──euckrfreq.py
+|  |  |  |  |  |  |  |  ├──euckrprober.py
+|  |  |  |  |  |  |  |  ├──euctwfreq.py
+|  |  |  |  |  |  |  |  ├──euctwprober.py
+|  |  |  |  |  |  |  |  ├──gb2312freq.py
+|  |  |  |  |  |  |  |  ├──gb2312prober.py
+|  |  |  |  |  |  |  |  ├──hebrewprober.py
+|  |  |  |  |  |  |  |  ├──jisfreq.py
+|  |  |  |  |  |  |  |  ├──johabfreq.py
+|  |  |  |  |  |  |  |  ├──johabprober.py
+|  |  |  |  |  |  |  |  ├──jpcntx.py
+|  |  |  |  |  |  |  |  ├──langbulgarianmodel.py
+|  |  |  |  |  |  |  |  ├──langgreekmodel.py
+|  |  |  |  |  |  |  |  ├──langhebrewmodel.py
+|  |  |  |  |  |  |  |  ├──langhungarianmodel.py
+|  |  |  |  |  |  |  |  ├──langrussianmodel.py
+|  |  |  |  |  |  |  |  ├──langthaimodel.py
+|  |  |  |  |  |  |  |  ├──langturkishmodel.py
+|  |  |  |  |  |  |  |  ├──latin1prober.py
+|  |  |  |  |  |  |  |  ├──mbcharsetprober.py
+|  |  |  |  |  |  |  |  ├──mbcsgroupprober.py
+|  |  |  |  |  |  |  |  ├──mbcssm.py
+|  |  |  |  |  |  |  |  ├──metadata/
+|  |  |  |  |  |  |  |  |  ├──languages.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──sbcharsetprober.py
+|  |  |  |  |  |  |  |  ├──sbcsgroupprober.py
+|  |  |  |  |  |  |  |  ├──sjisprober.py
+|  |  |  |  |  |  |  |  ├──universaldetector.py
+|  |  |  |  |  |  |  |  ├──utf1632prober.py
+|  |  |  |  |  |  |  |  ├──utf8prober.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──colorama/
+|  |  |  |  |  |  |  |  ├──ansi.py
+|  |  |  |  |  |  |  |  ├──ansitowin32.py
+|  |  |  |  |  |  |  |  ├──initialise.py
+|  |  |  |  |  |  |  |  ├──win32.py
+|  |  |  |  |  |  |  |  ├──winterm.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──distlib/
+|  |  |  |  |  |  |  |  ├──compat.py
+|  |  |  |  |  |  |  |  ├──database.py
+|  |  |  |  |  |  |  |  ├──index.py
+|  |  |  |  |  |  |  |  ├──locators.py
+|  |  |  |  |  |  |  |  ├──manifest.py
+|  |  |  |  |  |  |  |  ├──markers.py
+|  |  |  |  |  |  |  |  ├──metadata.py
+|  |  |  |  |  |  |  |  ├──resources.py
+|  |  |  |  |  |  |  |  ├──scripts.py
+|  |  |  |  |  |  |  |  ├──t32.exe
+|  |  |  |  |  |  |  |  ├──t64-arm.exe
+|  |  |  |  |  |  |  |  ├──t64.exe
+|  |  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──w32.exe
+|  |  |  |  |  |  |  |  ├──w64-arm.exe
+|  |  |  |  |  |  |  |  ├──w64.exe
+|  |  |  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──distro/
+|  |  |  |  |  |  |  |  ├──distro.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  |  ├──idna/
+|  |  |  |  |  |  |  |  ├──codec.py
+|  |  |  |  |  |  |  |  ├──compat.py
+|  |  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  |  ├──idnadata.py
+|  |  |  |  |  |  |  |  ├──intranges.py
+|  |  |  |  |  |  |  |  ├──package_data.py
+|  |  |  |  |  |  |  |  ├──uts46data.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──msgpack/
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──ext.py
+|  |  |  |  |  |  |  |  ├──fallback.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──packaging/
+|  |  |  |  |  |  |  |  ├──markers.py
+|  |  |  |  |  |  |  |  ├──requirements.py
+|  |  |  |  |  |  |  |  ├──specifiers.py
+|  |  |  |  |  |  |  |  ├──tags.py
+|  |  |  |  |  |  |  |  ├──utils.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──_manylinux.py
+|  |  |  |  |  |  |  |  ├──_musllinux.py
+|  |  |  |  |  |  |  |  ├──_structures.py
+|  |  |  |  |  |  |  |  ├──__about__.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──pep517/
+|  |  |  |  |  |  |  |  ├──build.py
+|  |  |  |  |  |  |  |  ├──check.py
+|  |  |  |  |  |  |  |  ├──colorlog.py
+|  |  |  |  |  |  |  |  ├──dirtools.py
+|  |  |  |  |  |  |  |  ├──envbuild.py
+|  |  |  |  |  |  |  |  ├──in_process/
+|  |  |  |  |  |  |  |  |  ├──_in_process.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──meta.py
+|  |  |  |  |  |  |  |  ├──wrappers.py
+|  |  |  |  |  |  |  |  ├──_compat.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──pkg_resources/
+|  |  |  |  |  |  |  |  ├──py31compat.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──platformdirs/
+|  |  |  |  |  |  |  |  ├──android.py
+|  |  |  |  |  |  |  |  ├──api.py
+|  |  |  |  |  |  |  |  ├──macos.py
+|  |  |  |  |  |  |  |  ├──unix.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──windows.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  |  ├──pygments/
+|  |  |  |  |  |  |  |  ├──cmdline.py
+|  |  |  |  |  |  |  |  ├──console.py
+|  |  |  |  |  |  |  |  ├──filter.py
+|  |  |  |  |  |  |  |  ├──filters/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──formatter.py
+|  |  |  |  |  |  |  |  ├──formatters/
+|  |  |  |  |  |  |  |  |  ├──bbcode.py
+|  |  |  |  |  |  |  |  |  ├──groff.py
+|  |  |  |  |  |  |  |  |  ├──html.py
+|  |  |  |  |  |  |  |  |  ├──img.py
+|  |  |  |  |  |  |  |  |  ├──irc.py
+|  |  |  |  |  |  |  |  |  ├──latex.py
+|  |  |  |  |  |  |  |  |  ├──other.py
+|  |  |  |  |  |  |  |  |  ├──pangomarkup.py
+|  |  |  |  |  |  |  |  |  ├──rtf.py
+|  |  |  |  |  |  |  |  |  ├──svg.py
+|  |  |  |  |  |  |  |  |  ├──terminal.py
+|  |  |  |  |  |  |  |  |  ├──terminal256.py
+|  |  |  |  |  |  |  |  |  ├──_mapping.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──lexer.py
+|  |  |  |  |  |  |  |  ├──lexers/
+|  |  |  |  |  |  |  |  |  ├──python.py
+|  |  |  |  |  |  |  |  |  ├──_mapping.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──modeline.py
+|  |  |  |  |  |  |  |  ├──plugin.py
+|  |  |  |  |  |  |  |  ├──regexopt.py
+|  |  |  |  |  |  |  |  ├──scanner.py
+|  |  |  |  |  |  |  |  ├──sphinxext.py
+|  |  |  |  |  |  |  |  ├──style.py
+|  |  |  |  |  |  |  |  ├──styles/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──token.py
+|  |  |  |  |  |  |  |  ├──unistring.py
+|  |  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  |  ├──pyparsing/
+|  |  |  |  |  |  |  |  ├──actions.py
+|  |  |  |  |  |  |  |  ├──common.py
+|  |  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  |  ├──diagram/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──helpers.py
+|  |  |  |  |  |  |  |  ├──results.py
+|  |  |  |  |  |  |  |  ├──testing.py
+|  |  |  |  |  |  |  |  ├──unicode.py
+|  |  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──requests/
+|  |  |  |  |  |  |  |  ├──adapters.py
+|  |  |  |  |  |  |  |  ├──api.py
+|  |  |  |  |  |  |  |  ├──auth.py
+|  |  |  |  |  |  |  |  ├──certs.py
+|  |  |  |  |  |  |  |  ├──compat.py
+|  |  |  |  |  |  |  |  ├──cookies.py
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──help.py
+|  |  |  |  |  |  |  |  ├──hooks.py
+|  |  |  |  |  |  |  |  ├──models.py
+|  |  |  |  |  |  |  |  ├──packages.py
+|  |  |  |  |  |  |  |  ├──sessions.py
+|  |  |  |  |  |  |  |  ├──status_codes.py
+|  |  |  |  |  |  |  |  ├──structures.py
+|  |  |  |  |  |  |  |  ├──utils.py
+|  |  |  |  |  |  |  |  ├──_internal_utils.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__version__.py
+|  |  |  |  |  |  |  ├──resolvelib/
+|  |  |  |  |  |  |  |  ├──compat/
+|  |  |  |  |  |  |  |  |  ├──collections_abc.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──providers.py
+|  |  |  |  |  |  |  |  ├──reporters.py
+|  |  |  |  |  |  |  |  ├──resolvers.py
+|  |  |  |  |  |  |  |  ├──structs.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──rich/
+|  |  |  |  |  |  |  |  ├──abc.py
+|  |  |  |  |  |  |  |  ├──align.py
+|  |  |  |  |  |  |  |  ├──ansi.py
+|  |  |  |  |  |  |  |  ├──bar.py
+|  |  |  |  |  |  |  |  ├──box.py
+|  |  |  |  |  |  |  |  ├──cells.py
+|  |  |  |  |  |  |  |  ├──color.py
+|  |  |  |  |  |  |  |  ├──color_triplet.py
+|  |  |  |  |  |  |  |  ├──columns.py
+|  |  |  |  |  |  |  |  ├──console.py
+|  |  |  |  |  |  |  |  ├──constrain.py
+|  |  |  |  |  |  |  |  ├──containers.py
+|  |  |  |  |  |  |  |  ├──control.py
+|  |  |  |  |  |  |  |  ├──default_styles.py
+|  |  |  |  |  |  |  |  ├──diagnose.py
+|  |  |  |  |  |  |  |  ├──emoji.py
+|  |  |  |  |  |  |  |  ├──errors.py
+|  |  |  |  |  |  |  |  ├──filesize.py
+|  |  |  |  |  |  |  |  ├──file_proxy.py
+|  |  |  |  |  |  |  |  ├──highlighter.py
+|  |  |  |  |  |  |  |  ├──json.py
+|  |  |  |  |  |  |  |  ├──jupyter.py
+|  |  |  |  |  |  |  |  ├──layout.py
+|  |  |  |  |  |  |  |  ├──live.py
+|  |  |  |  |  |  |  |  ├──live_render.py
+|  |  |  |  |  |  |  |  ├──logging.py
+|  |  |  |  |  |  |  |  ├──markup.py
+|  |  |  |  |  |  |  |  ├──measure.py
+|  |  |  |  |  |  |  |  ├──padding.py
+|  |  |  |  |  |  |  |  ├──pager.py
+|  |  |  |  |  |  |  |  ├──palette.py
+|  |  |  |  |  |  |  |  ├──panel.py
+|  |  |  |  |  |  |  |  ├──pretty.py
+|  |  |  |  |  |  |  |  ├──progress.py
+|  |  |  |  |  |  |  |  ├──progress_bar.py
+|  |  |  |  |  |  |  |  ├──prompt.py
+|  |  |  |  |  |  |  |  ├──protocol.py
+|  |  |  |  |  |  |  |  ├──region.py
+|  |  |  |  |  |  |  |  ├──repr.py
+|  |  |  |  |  |  |  |  ├──rule.py
+|  |  |  |  |  |  |  |  ├──scope.py
+|  |  |  |  |  |  |  |  ├──screen.py
+|  |  |  |  |  |  |  |  ├──segment.py
+|  |  |  |  |  |  |  |  ├──spinner.py
+|  |  |  |  |  |  |  |  ├──status.py
+|  |  |  |  |  |  |  |  ├──style.py
+|  |  |  |  |  |  |  |  ├──styled.py
+|  |  |  |  |  |  |  |  ├──syntax.py
+|  |  |  |  |  |  |  |  ├──table.py
+|  |  |  |  |  |  |  |  ├──terminal_theme.py
+|  |  |  |  |  |  |  |  ├──text.py
+|  |  |  |  |  |  |  |  ├──theme.py
+|  |  |  |  |  |  |  |  ├──themes.py
+|  |  |  |  |  |  |  |  ├──traceback.py
+|  |  |  |  |  |  |  |  ├──tree.py
+|  |  |  |  |  |  |  |  ├──_cell_widths.py
+|  |  |  |  |  |  |  |  ├──_emoji_codes.py
+|  |  |  |  |  |  |  |  ├──_emoji_replace.py
+|  |  |  |  |  |  |  |  ├──_export_format.py
+|  |  |  |  |  |  |  |  ├──_extension.py
+|  |  |  |  |  |  |  |  ├──_inspect.py
+|  |  |  |  |  |  |  |  ├──_log_render.py
+|  |  |  |  |  |  |  |  ├──_loop.py
+|  |  |  |  |  |  |  |  ├──_palettes.py
+|  |  |  |  |  |  |  |  ├──_pick.py
+|  |  |  |  |  |  |  |  ├──_ratio.py
+|  |  |  |  |  |  |  |  ├──_spinners.py
+|  |  |  |  |  |  |  |  ├──_stack.py
+|  |  |  |  |  |  |  |  ├──_timer.py
+|  |  |  |  |  |  |  |  ├──_win32_console.py
+|  |  |  |  |  |  |  |  ├──_windows.py
+|  |  |  |  |  |  |  |  ├──_windows_renderer.py
+|  |  |  |  |  |  |  |  ├──_wrap.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  |  ├──six.py
+|  |  |  |  |  |  |  ├──tenacity/
+|  |  |  |  |  |  |  |  ├──after.py
+|  |  |  |  |  |  |  |  ├──before.py
+|  |  |  |  |  |  |  |  ├──before_sleep.py
+|  |  |  |  |  |  |  |  ├──nap.py
+|  |  |  |  |  |  |  |  ├──retry.py
+|  |  |  |  |  |  |  |  ├──stop.py
+|  |  |  |  |  |  |  |  ├──tornadoweb.py
+|  |  |  |  |  |  |  |  ├──wait.py
+|  |  |  |  |  |  |  |  ├──_asyncio.py
+|  |  |  |  |  |  |  |  ├──_utils.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──tomli/
+|  |  |  |  |  |  |  |  ├──_parser.py
+|  |  |  |  |  |  |  |  ├──_re.py
+|  |  |  |  |  |  |  |  ├──_types.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──typing_extensions.py
+|  |  |  |  |  |  |  ├──urllib3/
+|  |  |  |  |  |  |  |  ├──connection.py
+|  |  |  |  |  |  |  |  ├──connectionpool.py
+|  |  |  |  |  |  |  |  ├──contrib/
+|  |  |  |  |  |  |  |  |  ├──appengine.py
+|  |  |  |  |  |  |  |  |  ├──ntlmpool.py
+|  |  |  |  |  |  |  |  |  ├──pyopenssl.py
+|  |  |  |  |  |  |  |  |  ├──securetransport.py
+|  |  |  |  |  |  |  |  |  ├──socks.py
+|  |  |  |  |  |  |  |  |  ├──_appengine_environ.py
+|  |  |  |  |  |  |  |  |  ├──_securetransport/
+|  |  |  |  |  |  |  |  |  |  ├──bindings.py
+|  |  |  |  |  |  |  |  |  |  ├──low_level.py
+|  |  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──fields.py
+|  |  |  |  |  |  |  |  ├──filepost.py
+|  |  |  |  |  |  |  |  ├──packages/
+|  |  |  |  |  |  |  |  |  ├──backports/
+|  |  |  |  |  |  |  |  |  |  ├──makefile.py
+|  |  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  |  ├──six.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──poolmanager.py
+|  |  |  |  |  |  |  |  ├──request.py
+|  |  |  |  |  |  |  |  ├──response.py
+|  |  |  |  |  |  |  |  ├──util/
+|  |  |  |  |  |  |  |  |  ├──connection.py
+|  |  |  |  |  |  |  |  |  ├──proxy.py
+|  |  |  |  |  |  |  |  |  ├──queue.py
+|  |  |  |  |  |  |  |  |  ├──request.py
+|  |  |  |  |  |  |  |  |  ├──response.py
+|  |  |  |  |  |  |  |  |  ├──retry.py
+|  |  |  |  |  |  |  |  |  ├──ssltransport.py
+|  |  |  |  |  |  |  |  |  ├──ssl_.py
+|  |  |  |  |  |  |  |  |  ├──ssl_match_hostname.py
+|  |  |  |  |  |  |  |  |  ├──timeout.py
+|  |  |  |  |  |  |  |  |  ├──url.py
+|  |  |  |  |  |  |  |  |  ├──wait.py
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──_collections.py
+|  |  |  |  |  |  |  |  ├──_version.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──vendor.txt
+|  |  |  |  |  |  |  ├──webencodings/
+|  |  |  |  |  |  |  |  ├──labels.py
+|  |  |  |  |  |  |  |  ├──mklabels.py
+|  |  |  |  |  |  |  |  ├──tests.py
+|  |  |  |  |  |  |  |  ├──x_user_defined.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  |  ├──__pip-runner__.py
+|  |  |  |  |  ├──pip-22.3.1.dist-info/
+|  |  |  |  |  |  ├──entry_points.txt
+|  |  |  |  |  |  ├──INSTALLER
+|  |  |  |  |  |  ├──LICENSE.txt
+|  |  |  |  |  |  ├──METADATA
+|  |  |  |  |  |  ├──RECORD
+|  |  |  |  |  |  ├──top_level.txt
+|  |  |  |  |  |  ├──WHEEL
+|  |  |  |  |  ├──pip-22.3.1.virtualenv
+|  |  |  |  |  ├──pkg_resources/
+|  |  |  |  |  |  ├──extern/
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  ├──_vendor/
+|  |  |  |  |  |  |  ├──appdirs.py
+|  |  |  |  |  |  |  ├──importlib_resources/
+|  |  |  |  |  |  |  |  ├──abc.py
+|  |  |  |  |  |  |  |  ├──readers.py
+|  |  |  |  |  |  |  |  ├──simple.py
+|  |  |  |  |  |  |  |  ├──_adapters.py
+|  |  |  |  |  |  |  |  ├──_common.py
+|  |  |  |  |  |  |  |  ├──_compat.py
+|  |  |  |  |  |  |  |  ├──_itertools.py
+|  |  |  |  |  |  |  |  ├──_legacy.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──jaraco/
+|  |  |  |  |  |  |  |  ├──context.py
+|  |  |  |  |  |  |  |  ├──functools.py
+|  |  |  |  |  |  |  |  ├──text/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  |  ├──context.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──functools.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  |  ├──more_itertools/
+|  |  |  |  |  |  |  |  ├──more.py
+|  |  |  |  |  |  |  |  ├──recipes.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  |  ├──more.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──recipes.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  |  ├──packaging/
+|  |  |  |  |  |  |  |  ├──markers.py
+|  |  |  |  |  |  |  |  ├──requirements.py
+|  |  |  |  |  |  |  |  ├──specifiers.py
+|  |  |  |  |  |  |  |  ├──tags.py
+|  |  |  |  |  |  |  |  ├──utils.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──_manylinux.py
+|  |  |  |  |  |  |  |  ├──_musllinux.py
+|  |  |  |  |  |  |  |  ├──_structures.py
+|  |  |  |  |  |  |  |  ├──__about__.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  |  ├──markers.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──requirements.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──specifiers.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──tags.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──utils.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──version.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──_manylinux.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──_musllinux.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──_structures.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──__about__.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  |  ├──pyparsing/
+|  |  |  |  |  |  |  |  ├──actions.py
+|  |  |  |  |  |  |  |  ├──common.py
+|  |  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  |  ├──diagram/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──helpers.py
+|  |  |  |  |  |  |  |  ├──results.py
+|  |  |  |  |  |  |  |  ├──testing.py
+|  |  |  |  |  |  |  |  ├──unicode.py
+|  |  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  |  ├──actions.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──common.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──core.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──exceptions.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──helpers.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──results.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──testing.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──unicode.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──util.cpython-39.pyc
+|  |  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  |  ├──zipp.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  |  ├──appdirs.cpython-39.pyc
+|  |  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  ├──setuptools/
+|  |  |  |  |  |  ├──archive_util.py
+|  |  |  |  |  |  ├──build_meta.py
+|  |  |  |  |  |  ├──cli-32.exe
+|  |  |  |  |  |  ├──cli-64.exe
+|  |  |  |  |  |  ├──cli-arm64.exe
+|  |  |  |  |  |  ├──cli.exe
+|  |  |  |  |  |  ├──command/
+|  |  |  |  |  |  |  ├──alias.py
+|  |  |  |  |  |  |  ├──bdist_egg.py
+|  |  |  |  |  |  |  ├──bdist_rpm.py
+|  |  |  |  |  |  |  ├──build.py
+|  |  |  |  |  |  |  ├──build_clib.py
+|  |  |  |  |  |  |  ├──build_ext.py
+|  |  |  |  |  |  |  ├──build_py.py
+|  |  |  |  |  |  |  ├──develop.py
+|  |  |  |  |  |  |  ├──dist_info.py
+|  |  |  |  |  |  |  ├──easy_install.py
+|  |  |  |  |  |  |  ├──editable_wheel.py
+|  |  |  |  |  |  |  ├──egg_info.py
+|  |  |  |  |  |  |  ├──install.py
+|  |  |  |  |  |  |  ├──install_egg_info.py
+|  |  |  |  |  |  |  ├──install_lib.py
+|  |  |  |  |  |  |  ├──install_scripts.py
+|  |  |  |  |  |  |  ├──launcher manifest.xml
+|  |  |  |  |  |  |  ├──py36compat.py
+|  |  |  |  |  |  |  ├──register.py
+|  |  |  |  |  |  |  ├──rotate.py
+|  |  |  |  |  |  |  ├──saveopts.py
+|  |  |  |  |  |  |  ├──sdist.py
+|  |  |  |  |  |  |  ├──setopt.py
+|  |  |  |  |  |  |  ├──test.py
+|  |  |  |  |  |  |  ├──upload.py
+|  |  |  |  |  |  |  ├──upload_docs.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──config/
+|  |  |  |  |  |  |  ├──expand.py
+|  |  |  |  |  |  |  ├──pyprojecttoml.py
+|  |  |  |  |  |  |  ├──setupcfg.py
+|  |  |  |  |  |  |  ├──_apply_pyprojecttoml.py
+|  |  |  |  |  |  |  ├──_validate_pyproject/
+|  |  |  |  |  |  |  |  ├──error_reporting.py
+|  |  |  |  |  |  |  |  ├──extra_validations.py
+|  |  |  |  |  |  |  |  ├──fastjsonschema_exceptions.py
+|  |  |  |  |  |  |  |  ├──fastjsonschema_validations.py
+|  |  |  |  |  |  |  |  ├──formats.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──depends.py
+|  |  |  |  |  |  ├──dep_util.py
+|  |  |  |  |  |  ├──discovery.py
+|  |  |  |  |  |  ├──dist.py
+|  |  |  |  |  |  ├──errors.py
+|  |  |  |  |  |  ├──extension.py
+|  |  |  |  |  |  ├──extern/
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──glob.py
+|  |  |  |  |  |  ├──gui-32.exe
+|  |  |  |  |  |  ├──gui-64.exe
+|  |  |  |  |  |  ├──gui-arm64.exe
+|  |  |  |  |  |  ├──gui.exe
+|  |  |  |  |  |  ├──installer.py
+|  |  |  |  |  |  ├──launch.py
+|  |  |  |  |  |  ├──logging.py
+|  |  |  |  |  |  ├──monkey.py
+|  |  |  |  |  |  ├──msvc.py
+|  |  |  |  |  |  ├──namespaces.py
+|  |  |  |  |  |  ├──package_index.py
+|  |  |  |  |  |  ├──py34compat.py
+|  |  |  |  |  |  ├──sandbox.py
+|  |  |  |  |  |  ├──script (dev).tmpl
+|  |  |  |  |  |  ├──script.tmpl
+|  |  |  |  |  |  ├──unicode_utils.py
+|  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  ├──wheel.py
+|  |  |  |  |  |  ├──windows_support.py
+|  |  |  |  |  |  ├──_deprecation_warning.py
+|  |  |  |  |  |  ├──_distutils/
+|  |  |  |  |  |  |  ├──archive_util.py
+|  |  |  |  |  |  |  ├──bcppcompiler.py
+|  |  |  |  |  |  |  ├──ccompiler.py
+|  |  |  |  |  |  |  ├──cmd.py
+|  |  |  |  |  |  |  ├──command/
+|  |  |  |  |  |  |  |  ├──bdist.py
+|  |  |  |  |  |  |  |  ├──bdist_dumb.py
+|  |  |  |  |  |  |  |  ├──bdist_rpm.py
+|  |  |  |  |  |  |  |  ├──build.py
+|  |  |  |  |  |  |  |  ├──build_clib.py
+|  |  |  |  |  |  |  |  ├──build_ext.py
+|  |  |  |  |  |  |  |  ├──build_py.py
+|  |  |  |  |  |  |  |  ├──build_scripts.py
+|  |  |  |  |  |  |  |  ├──check.py
+|  |  |  |  |  |  |  |  ├──clean.py
+|  |  |  |  |  |  |  |  ├──config.py
+|  |  |  |  |  |  |  |  ├──install.py
+|  |  |  |  |  |  |  |  ├──install_data.py
+|  |  |  |  |  |  |  |  ├──install_egg_info.py
+|  |  |  |  |  |  |  |  ├──install_headers.py
+|  |  |  |  |  |  |  |  ├──install_lib.py
+|  |  |  |  |  |  |  |  ├──install_scripts.py
+|  |  |  |  |  |  |  |  ├──py37compat.py
+|  |  |  |  |  |  |  |  ├──register.py
+|  |  |  |  |  |  |  |  ├──sdist.py
+|  |  |  |  |  |  |  |  ├──upload.py
+|  |  |  |  |  |  |  |  ├──_framework_compat.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──config.py
+|  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  ├──cygwinccompiler.py
+|  |  |  |  |  |  |  ├──debug.py
+|  |  |  |  |  |  |  ├──dep_util.py
+|  |  |  |  |  |  |  ├──dir_util.py
+|  |  |  |  |  |  |  ├──dist.py
+|  |  |  |  |  |  |  ├──errors.py
+|  |  |  |  |  |  |  ├──extension.py
+|  |  |  |  |  |  |  ├──fancy_getopt.py
+|  |  |  |  |  |  |  ├──filelist.py
+|  |  |  |  |  |  |  ├──file_util.py
+|  |  |  |  |  |  |  ├──log.py
+|  |  |  |  |  |  |  ├──msvc9compiler.py
+|  |  |  |  |  |  |  ├──msvccompiler.py
+|  |  |  |  |  |  |  ├──py38compat.py
+|  |  |  |  |  |  |  ├──py39compat.py
+|  |  |  |  |  |  |  ├──spawn.py
+|  |  |  |  |  |  |  ├──sysconfig.py
+|  |  |  |  |  |  |  ├──text_file.py
+|  |  |  |  |  |  |  ├──unixccompiler.py
+|  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  ├──versionpredicate.py
+|  |  |  |  |  |  |  ├──_collections.py
+|  |  |  |  |  |  |  ├──_functools.py
+|  |  |  |  |  |  |  ├──_macos_compat.py
+|  |  |  |  |  |  |  ├──_msvccompiler.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──_entry_points.py
+|  |  |  |  |  |  ├──_imp.py
+|  |  |  |  |  |  ├──_importlib.py
+|  |  |  |  |  |  ├──_itertools.py
+|  |  |  |  |  |  ├──_path.py
+|  |  |  |  |  |  ├──_reqs.py
+|  |  |  |  |  |  ├──_vendor/
+|  |  |  |  |  |  |  ├──importlib_metadata/
+|  |  |  |  |  |  |  |  ├──_adapters.py
+|  |  |  |  |  |  |  |  ├──_collections.py
+|  |  |  |  |  |  |  |  ├──_compat.py
+|  |  |  |  |  |  |  |  ├──_functools.py
+|  |  |  |  |  |  |  |  ├──_itertools.py
+|  |  |  |  |  |  |  |  ├──_meta.py
+|  |  |  |  |  |  |  |  ├──_text.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──importlib_resources/
+|  |  |  |  |  |  |  |  ├──abc.py
+|  |  |  |  |  |  |  |  ├──readers.py
+|  |  |  |  |  |  |  |  ├──simple.py
+|  |  |  |  |  |  |  |  ├──_adapters.py
+|  |  |  |  |  |  |  |  ├──_common.py
+|  |  |  |  |  |  |  |  ├──_compat.py
+|  |  |  |  |  |  |  |  ├──_itertools.py
+|  |  |  |  |  |  |  |  ├──_legacy.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──jaraco/
+|  |  |  |  |  |  |  |  ├──context.py
+|  |  |  |  |  |  |  |  ├──functools.py
+|  |  |  |  |  |  |  |  ├──text/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──more_itertools/
+|  |  |  |  |  |  |  |  ├──more.py
+|  |  |  |  |  |  |  |  ├──recipes.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──ordered_set.py
+|  |  |  |  |  |  |  ├──packaging/
+|  |  |  |  |  |  |  |  ├──markers.py
+|  |  |  |  |  |  |  |  ├──requirements.py
+|  |  |  |  |  |  |  |  ├──specifiers.py
+|  |  |  |  |  |  |  |  ├──tags.py
+|  |  |  |  |  |  |  |  ├──utils.py
+|  |  |  |  |  |  |  |  ├──version.py
+|  |  |  |  |  |  |  |  ├──_manylinux.py
+|  |  |  |  |  |  |  |  ├──_musllinux.py
+|  |  |  |  |  |  |  |  ├──_structures.py
+|  |  |  |  |  |  |  |  ├──__about__.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──pyparsing/
+|  |  |  |  |  |  |  |  ├──actions.py
+|  |  |  |  |  |  |  |  ├──common.py
+|  |  |  |  |  |  |  |  ├──core.py
+|  |  |  |  |  |  |  |  ├──diagram/
+|  |  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  |  ├──exceptions.py
+|  |  |  |  |  |  |  |  ├──helpers.py
+|  |  |  |  |  |  |  |  ├──results.py
+|  |  |  |  |  |  |  |  ├──testing.py
+|  |  |  |  |  |  |  |  ├──unicode.py
+|  |  |  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──tomli/
+|  |  |  |  |  |  |  |  ├──_parser.py
+|  |  |  |  |  |  |  |  ├──_re.py
+|  |  |  |  |  |  |  |  ├──_types.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──typing_extensions.py
+|  |  |  |  |  |  |  ├──zipp.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  ├──setuptools-65.5.1.dist-info/
+|  |  |  |  |  |  ├──entry_points.txt
+|  |  |  |  |  |  ├──INSTALLER
+|  |  |  |  |  |  ├──LICENSE
+|  |  |  |  |  |  ├──METADATA
+|  |  |  |  |  |  ├──RECORD
+|  |  |  |  |  |  ├──top_level.txt
+|  |  |  |  |  |  ├──WHEEL
+|  |  |  |  |  ├──setuptools-65.5.1.virtualenv
+|  |  |  |  |  ├──wheel/
+|  |  |  |  |  |  ├──bdist_wheel.py
+|  |  |  |  |  |  ├──cli/
+|  |  |  |  |  |  |  ├──convert.py
+|  |  |  |  |  |  |  ├──pack.py
+|  |  |  |  |  |  |  ├──unpack.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──macosx_libfile.py
+|  |  |  |  |  |  ├──metadata.py
+|  |  |  |  |  |  ├──util.py
+|  |  |  |  |  |  ├──vendored/
+|  |  |  |  |  |  |  ├──packaging/
+|  |  |  |  |  |  |  |  ├──tags.py
+|  |  |  |  |  |  |  |  ├──_manylinux.py
+|  |  |  |  |  |  |  |  ├──_musllinux.py
+|  |  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──wheelfile.py
+|  |  |  |  |  |  ├──_setuptools_logging.py
+|  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__main__.py
+|  |  |  |  |  ├──wheel-0.38.4.dist-info/
+|  |  |  |  |  |  ├──entry_points.txt
+|  |  |  |  |  |  ├──INSTALLER
+|  |  |  |  |  |  ├──LICENSE.txt
+|  |  |  |  |  |  ├──METADATA
+|  |  |  |  |  |  ├──RECORD
+|  |  |  |  |  |  ├──top_level.txt
+|  |  |  |  |  |  ├──WHEEL
+|  |  |  |  |  ├──wheel-0.38.4.virtualenv
+|  |  |  |  |  ├──_distutils_hack/
+|  |  |  |  |  |  ├──override.py
+|  |  |  |  |  |  ├──__init__.py
+|  |  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  |  ├──__init__.cpython-39.pyc
+|  |  |  |  |  ├──_virtualenv.pth
+|  |  |  |  |  ├──_virtualenv.py
+|  |  |  |  |  ├──__pycache__/
+|  |  |  |  |  |  ├──_virtualenv.cpython-39.pyc
+|  |  |  ├──pyvenv.cfg
+|  |  |  ├──Scripts/
+|  |  |  |  ├──activate
+|  |  |  |  ├──activate.bat
+|  |  |  |  ├──activate.fish
+|  |  |  |  ├──activate.nu
+|  |  |  |  ├──activate.ps1
+|  |  |  |  ├──activate_this.py
+|  |  |  |  ├──deactivate.bat
+|  |  |  |  ├──deactivate.nu
+|  |  |  |  ├──pip-3.9.exe
+|  |  |  |  ├──pip.exe
+|  |  |  |  ├──pip3.9.exe
+|  |  |  |  ├──pip3.exe
+|  |  |  |  ├──pydoc.bat
+|  |  |  |  ├──python.exe
+|  |  |  |  ├──pythonw.exe
+|  |  |  |  ├──wheel-3.9.exe
+|  |  |  |  ├──wheel.exe
+|  |  |  |  ├──wheel3.9.exe
+|  |  |  |  ├──wheel3.exe
+|  |  ├──web driver/
+|  |  |  ├──chromedriver.exe
+|  |  |  ├──scraping.py
+|  ├──scikit-learn/
+|  |  ├──home-data-for-ml-course/
+|  |  |  ├──data_description.txt
+|  |  |  ├──sample_submission.csv
+|  |  |  ├──sample_submission.csv.gz
+|  |  |  ├──test.csv
+|  |  |  ├──test.csv.gz
+|  |  |  ├──train.csv.gz
+|  |  ├──preprocessing/
+|  |  |  ├──data.csv
+|  |  |  ├──sckikit-learn_1.ipynb
+|  |  ├──Titanic_kaggle/
+|  |  |  ├──data/
+|  |  |  |  ├──gender_submission.csv
+|  |  |  |  ├──test.csv
+|  |  |  |  ├──train.csv
+|  |  |  ├──main.ipynb
+|  |  ├──Training_ML_Model/
+|  |  |  ├──data/
+|  |  |  |  ├──train.csv
+|  |  |  ├──house_prices_prediction.ipynb
+

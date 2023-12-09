@@ -1,7 +1,7 @@
 package services;
 
 public class HTMLGenerator {
-    public static String generateHTML(String title, String content) {
+    public static String generateHTML(String title, String appName, String content) {
         return String.format("""
             <!DOCTYPE html>
             <html lang="en">
@@ -17,12 +17,12 @@ public class HTMLGenerator {
                         width: 50%%;
                         margin: 50px auto;
                         padding: 20px;
-                        border: 2px solid #8a2be2; /* Viền màu tím */
+                        border: 2px solid #03667a; /* Viền màu tím */
                         border-radius: 8px;
                     }
                     h2 {
                         text-align: center;
-                        background-color: #8a2be2; /* Màu nền tím cho header */
+                        background-color: #03737a; /* Màu nền xanh cho header */
                         color: #ffffff; /* Màu chữ trắng cho header */
                         padding: 10px; /* Khoảng cách giữa header và border */
                         border-radius: 5px; /* Bo tròn góc cho header */
@@ -46,7 +46,7 @@ public class HTMLGenerator {
         String title = "Reply Email Form";
         String content = "Please provide an update on the request.";
 
-        String htmlString = generateHTML(title, content);
+        String htmlString = generateHTML(title, "", content);
         System.out.println(htmlString);
     }
 }

