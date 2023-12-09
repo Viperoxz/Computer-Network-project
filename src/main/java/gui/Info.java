@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Info extends DrawerItem {
     public Info(){
-        super("Info");
+        super("Status");
         setBackground(new Color(8, 131, 149));
         ImageIcon icon = new ImageIcon(main.class.getResource("/icon/info.png"));
         icon = new ImageIcon(main.resize(icon,20,20));

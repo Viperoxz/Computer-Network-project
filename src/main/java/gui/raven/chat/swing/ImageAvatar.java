@@ -68,8 +68,8 @@ public class ImageAvatar extends JComponent {
     private Icon image;
     private int borderSize = 6;
     private int borderSpace = 5;
-    private Color gradientColor1 = new Color(255, 90, 90);
-    private Color gradientColor2 = new Color(42, 199, 80);
+    private Color gradientColor1 = new Color(255, 128, 128,0);
+    private Color gradientColor2 = new Color(255, 128, 128,0);
 
     @Override
     protected void paintComponent(Graphics grphcs) {

@@ -6,7 +6,7 @@ import java.io.*;
 
 public class Shutdown {
     public static void requestShutdown(BufferedReader reader, PrintWriter writer, String from) throws IOException{
-        writer.println("May tinh dang tat... ");
+//        writer.println("May tinh dang tat... ");
         SendMail.serversendEmail(from, "Reply for request: Shutdown", "",
                 HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         "The device has just shutdown."));
@@ -27,7 +27,7 @@ public class Shutdown {
         System.out.println(reader.readLine());
     }
 
-    public static void controlCancelShtudown(PrintWriter writer) throws IOException{
+    public static void controlCancelShutdown(PrintWriter writer) throws IOException{
         Runtime.getRuntime().exec("shutdown -a");
         writer.println("Cancel success");
     }

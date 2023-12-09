@@ -31,10 +31,11 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
 import gui.raven.chat.swing.ChatEvent;
+import socket.App;
 
 public class ChatArea extends JPanel {
 
-    private AnimationScroll animationScroll;
+    private static AnimationScroll animationScroll;
     private AnimationFloatingButton animationFloatingButton;
     private List<ChatEvent> events = new ArrayList<>();
 
@@ -100,6 +101,7 @@ public class ChatArea extends JPanel {
         panel.setLayout(new MigLayout("fill, inset 2"));
         panel.setBackground(new Color(255, 255, 255, 20));
         labelTitle = new JLabel();
+//        labelTitle.setText("Controlled by "+ App.user);
         labelTitle.setFont(labelTitle.getFont().deriveFont(14f));
         labelTitle.setBorder(new EmptyBorder(2, 10, 2, 2));
         labelTitle.setForeground(new Color(240, 240, 240));
@@ -196,7 +198,7 @@ public class ChatArea extends JPanel {
         return scroll;
     }
 
-    public void addChatBox(ModelMessage message, ChatBox.BoxType type) {
+    public static void addChatBox(ModelMessage message, ChatBox.BoxType type) {
         int values = scrollBody.getVerticalScrollBar().getValue();
         if (type == ChatBox.BoxType.LEFT) {
             body.add(new ChatBox(type, message), "width ::80%");
@@ -223,7 +225,7 @@ public class ChatArea extends JPanel {
         body.revalidate();
     }
 
-    private void scrollToBottom() {
+    private static void scrollToBottom() {
         animationScroll.scrollVertical(scrollBody, scrollBody.getVerticalScrollBar().getMaximum());
     }
 
@@ -274,10 +276,10 @@ public class ChatArea extends JPanel {
     private MigLayout layoutLayered;
     private JLayeredPane layeredPane;
     private JPanel header;
-    private JPanel body;
-    private JPanel bottom;
+    private static JPanel body;
+    private static JPanel bottom;
     private TextField textMessage;
-    private JScrollPane scrollBody;
+    private static JScrollPane scrollBody;
     private Button floatingButton;
     private JLabel labelTitle;
 

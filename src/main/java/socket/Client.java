@@ -4,11 +4,19 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import gui.main;
+import gui.raven.chat.component.ChatArea;
+import gui.raven.chat.component.ChatBox;
+import gui.raven.chat.model.ModelMessage;
 import services.*;
+
+import javax.swing.*;
 
 public class Client {
     private Socket socket;
@@ -31,6 +39,15 @@ public class Client {
         private final Socket socket;
         private final BufferedReader reader;
         private final PrintWriter writer;
+        private SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy, hh:mmaa");
+        private void logActivities(String subject){
+            Icon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
+
+            String name = "Bot";
+            String date = df.format(new Date());
+            String mess = "Received request: " + subject ;
+            ChatArea.addChatBox(new ModelMessage(icon, name, date, mess), ChatBox.BoxType.LEFT);
+        }
 
         public Task(Socket socket) {
             this.socket = socket;
@@ -52,60 +69,76 @@ public class Client {
         }
 
         private void processEmailCommands() throws Exception {
-            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+            ReceiveMail mailReceived = new ReceiveMail();
             List<CustomPair<String, String>> commands = mailReceived.getRequirements();
-
             for (CustomPair<String, String> cmd : commands) {
                 String[] choice = cmd.getValue().split("&&");
                 String from = cmd.getKey();
-                System.out.println(choice);
-
+                System.out.println(choice[0]);
+//                System.out.println(123556);
                 switch (choice[0].toLowerCase()) {
                     case "shutdown":
+                        logActivities("Shutting down your computer");
                         Shutdown.requestShutdown(reader, writer, from);
                         break;
                     case "restart":
+                        logActivities("Restarting your computer");
                         Restart.requestRestart(reader, writer, from);
                         break;
                     case "cancel":
+                        logActivities("Shutdown got canceled");
                         Shutdown.requestCancelShutdown(reader, writer);
                         break;
                     case "screenshot":
-                        ScreenShot.requestScreenshot(writer, reader, from);
+                        logActivities("Taking a screenshot");
+                        ScreenShot.requestScreenshot( writer, reader, from);
+//                        new ReceiveMail().getAttachments(App.user);
+
                         break;
                     case "listprocess":
+                        logActivities("Sent a list of process on your computer");
                         HandleProcess.requestListProcess(socket, writer, from);
+//                        new ReceiveMail().getAttachments(App.user);
                         break;
                     case "startapp":
+                        logActivities("Starting "+ choice[1]);
                         HandleProcess.requestStartApp(socket, writer, choice[1], from);
                         break;
                     case "stopapp":
+                        logActivities("Ending "+ choice[1]);
                         HandleProcess.requestStopApp(socket, writer, choice[1], from);
                         break;
                     case "exploredirectory":
+                        logActivities("Entering "+choice[1]);
                         ExploreDirectory.requestExploreDir(socket, writer, choice[1], from);
                         break;
                     case "getfile[1]":
+                        logActivities("Getting "+choice[1]);
                         GetFile.searchFileInRoots(choice[1], from);
                         break;
                     case "getfile[2]":
+                        logActivities("Getting "+choice[1]);
                         GetFile.getFileByPath(choice[1], from);
                         break;
                     case "startkeylogger":
+                        logActivities("Starting key logger");
                         KeyLogger.startKeylogger(from);
                         break;
                     case "stopkeylogger":
+                        logActivities("Stopped key logger");
                         KeyLogger.stopKeylogger(from);
                         break;
                     case "help":
                         GuideTable.requestGuide(from);
                         break;
                     case "listapp":
+                        logActivities("Sent a list of running apps on your computer");
                         HandleProcess.requestListApplications(socket, writer, from);
                         break;
                     default:
+
                         System.out.println("Something went wrong!");
-                        HandleSubCase.handleWrongRequest(from);
+//                        HandleSubCase.handleWrongRequest(from);
 //                        throw new AssertionError();
                         break;
                 }

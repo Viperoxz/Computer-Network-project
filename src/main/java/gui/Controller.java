@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class Controller extends DrawerItem{
 
     Controller() {
-        super("Controller");
+        super("Requests");
         setForeground(new Color(30, 44, 44, 244));
 //        setBackground(new Color(8, 131, 149));
 

@@ -6,9 +6,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import gui.raven.chat.component.ChatArea;
 import gui.raven.chat.component.ChatBox;
 import gui.raven.chat.model.ModelMessage;
 import gui.raven.chat.swing.ChatEvent;
+import socket.App;
 import socket.SendMail;
 
 /**
@@ -27,14 +30,15 @@ public class ChatInterface extends javax.swing.JPanel {
             @Override
             public void mousePressedSendButton(ActionEvent evt) {
                 Icon icon = new ImageIcon(main.class.getResource("/icon/man.png"));
-                String name = "Me";
+                String name ="Me";
                 String date = df.format(new Date());
                 String message = chatArea.getText().trim();
                 if (!message.isEmpty()){
-                    System.out.println(message);
+//                    System.out.println(message);
                     SendMail client= new SendMail();
-                    client.clientsendEmail(message);
-                    chatArea.addChatBox(new ModelMessage(icon, name, date, message), ChatBox.BoxType.RIGHT);
+//                    new Thread()
+                    SendMail.clientsendEmail(message);
+                    ChatArea.addChatBox(new ModelMessage(icon, name, date, message), ChatBox.BoxType.RIGHT);
                     chatArea.clearTextAndGrabFocus();
                 }
 
@@ -50,6 +54,10 @@ public class ChatInterface extends javax.swing.JPanel {
 
             }
         });
+        Icon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
+        String name ="Me";
+        String date = df.format(new Date());
+        ChatArea.addChatBox(new ModelMessage(icon,name,date,"Waiting for request..."), ChatBox.BoxType.LEFT);
     }
 
 
