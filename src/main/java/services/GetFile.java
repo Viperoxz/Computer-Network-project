@@ -4,7 +4,6 @@ package services;
 //VD: getfile[1]toan
 
 import socket.SendMail;
-
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,7 +22,6 @@ public class GetFile {
                             // Tiếp tục đệ quy tìm kiếm trong thư mục con
                             pathToFile = searchFile(file, fileNameToSearch);
                             if (!pathToFile.isEmpty()) {
-                                // Nếu tìm thấy tệp, thoát vòng lặp
                                 break;
                             }
                         } else if (fileNameToSearch.equals(file.getName())) {
@@ -55,32 +53,12 @@ public class GetFile {
         }
         if (!pathToFile.isEmpty()) {
             SendMail.serversendEmail(from, "Reply for request: Get File", pathToFile,
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "\n" +
-                            "<h1>Your request has done successfully</h1>\n" +
-                            "<p>This is a paragraph.</p>\n" +
-                            "\n" +
-                            "</body>\n" +
-                            "</html>");
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                            String.format("Get file %s successful. This is what you want.", fileNameToSearch)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Get File", "",
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "\n" +
-                            "<h1>Your request has failed</h1>\n" +
-                            "<p>This is a paragraph.</p>\n" +
-                            "\n" +
-                            "</body>\n" +
-                            "</html>");
+                    HTMLGenerator.generateHTML("Your request has failed", "",
+                            String.format("Get file %s failed. This file is not found.", fileNameToSearch)));
         }
     }
 
@@ -88,38 +66,13 @@ public class GetFile {
         Path checkPathExists = Paths.get(path);
         if (Files.isRegularFile(checkPathExists)) {
             SendMail.serversendEmail(from, "Reply for request: Get File", path,
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "<h1>Your request has done successfully</h1>\n" +
-                            "<p></p>\n" +
-                            "</body>\n" +
-                            "</html>");
+                    HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                            String.format("Get file %s successful. This is what you want.", path)));
         }
         else {
             SendMail.serversendEmail(from, "Reply for request: Get File", "",
-                    "<!DOCTYPE html>\n" +
-                            "<html>\n" +
-                            "<head>\n" +
-                            "<title>Page Title</title>\n" +
-                            "</head>\n" +
-                            "<body>\n" +
-                            "<h1>This file does not exist. Please check the file path.</h1>\n" +
-                            "<p></p>\n" +
-                            "</body>\n" +
-                            "</html>");
+                    HTMLGenerator.generateHTML("Your request has failed", "",
+                            String.format("Get file %s failed. This file is not found.", path)));
         }
     }
-
-
-
-//    public static void main(String[] args) {
-//        String fileNameToSearch = "Bai tap Chuong 2_Dong luc hoc chat diem.pdf";
-//
-//        // Sử dụng phương thức tĩnh để tìm kiếm tệp trong các root
-//        GetFile.searchFileInRoots(fileNameToSearch, "pvhn191004@gmail.com");
-//    }
 }

@@ -22,11 +22,11 @@ public class ReceiveMail {
     private String username;
     private String password;
 
-//    public ReceiveMail(String host, String username, String password) {
-//        this.host = host;
-//        this.username = username;
-//        this.password = password;
-//    }
+    public ReceiveMail(String host, String username, String password) {
+        this.host = host;
+        this.username = username;
+        this.password = password;
+    }
 
     public void getAttachments(int id) throws MessagingException, IOException {
         this.username= SendMail.from[id];
@@ -92,47 +92,28 @@ public class ReceiveMail {
 
     public List<CustomPair<String, String>> getRequirements() {
         try {
-            this.username = SendMail.from[0];
-            this.password = SendMail.password[0];
             Properties props = new Properties();
             props.setProperty("mail.store.protocol", "imap");
             props.setProperty("mail.imap.host", host);
             props.setProperty("mail.imap.port", "993");
             props.setProperty("mail.imap.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             props.setProperty("mail.imap.socketFactory.fallback", "false");
-
             Session session = Session.getDefaultInstance(props, null);
-
             Store store = session.getStore("imap");
-            store.connect(host, username, password);
 
+            store.connect(host, username, password);
             Folder emailFolder = store.getFolder("INBOX");
             emailFolder.open(Folder.READ_WRITE);
-
             List<CustomPair<String, String>> requirements = new ArrayList<>();
             Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
 
             for (int i = 0; i < messages.length; i++) {
                 Message message = messages[i];
-//                System.out.println(message.getFrom()[0]).getAddress.toString());
-
-
                 String sender = ((InternetAddress) message.getFrom()[0]).getAddress();
-
-                if (sender.equals(App.user)){
-                    String subject = message.getSubject();
-                    requirements.add(new CustomPair<>(sender, subject));
-
-                    // Example server response handling
-                }
-                else if (!sender.equals(SendMail.from[0])){
-//                    if (message.getFlags().contains(new Flags(Flags.Flag.RECENT)))
-//                    System.out.println(sender);
-                    SendMail.serversendEmail(sender,"Server Busy","","Server is under control by "+App.user+"\nPlease comeback later.");
-                }
+                String subject = message.getSubject();
+                requirements.add(new CustomPair<>(sender, subject));
                 message.setFlag(Flags.Flag.SEEN,true);
             }
-
             emailFolder.close(false);
             store.close();
             return requirements;

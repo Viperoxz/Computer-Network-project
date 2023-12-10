@@ -32,7 +32,6 @@ public class App {
 
     public void startClient() {
             client.start();
-
     }
 
     public static void main(String[] args) throws InterruptedException {
