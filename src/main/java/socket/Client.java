@@ -132,6 +132,7 @@ public class Client {
                             KeyLogger.stopKeylogger(from);
                             break;
                         case "help":
+                            logActivities("Send the application usage guide.");
                             GuideTable.requestGuide(from);
                             break;
                         case "listapp":
@@ -140,7 +141,7 @@ public class Client {
                             break;
                         default:
                             System.out.println("Something went wrong!");
-                            logActivities(String.format("%s request is wrong.", from));
+                            logActivities(String.format("request from %s is wrong.", from));
                             HandleSubCase.handleWrongRequest(from);
 //                        throw new AssertionError();
                             break;

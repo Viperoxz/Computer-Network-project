@@ -65,7 +65,7 @@ public class HandleProcess {
                 ProcessBuilder pb = new ProcessBuilder(appLocation);
                 Process process = pb.start();
                 int exitCode = process.waitFor();
-
+                System.out.println("Exit code: " + exitCode);
                 if (exitCode == 0) {
                     writer.println("APP_STARTED");
                 } else {
@@ -92,7 +92,7 @@ public class HandleProcess {
             SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
                     HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
                             String.format("""
-                                    The app %s has started.
+                                    %s has started.
                                     """, appName)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
@@ -139,7 +139,7 @@ public class HandleProcess {
             SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
                     HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                             String.format("""
-                                    The app %s has stop.
+                                    %s has stop.
                                     """, appName)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",

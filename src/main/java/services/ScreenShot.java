@@ -45,7 +45,7 @@ public class ScreenShot {
     public static void requestScreenshot(PrintWriter writer, BufferedReader reader, String from) throws Exception {
         writer.println("screenshot");
         writer.flush();
-        System.out.println("ghahahahahaha");
+
         int imgSize = Integer.parseInt(reader.readLine());
         String imageString = reader.readLine();
         byte[] imgBytes = Base64.getDecoder().decode(imageString);
