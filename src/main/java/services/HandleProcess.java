@@ -58,26 +58,27 @@ public class HandleProcess {
                                 """));
     }
 
-        public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
-            try {
-                String appLocation = reader.readLine();
-                System.out.println(appLocation);
-                ProcessBuilder pb = new ProcessBuilder(appLocation);
-                Process process = pb.start();
-                int exitCode = process.waitFor();
-                System.out.println("Exit code: " + exitCode);
-                if (exitCode == 0) {
-                    writer.println("APP_STARTED");
-                } else {
+            public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
+                try {
+                    String appLocation = reader.readLine();
+                    System.out.println(appLocation);
+                    ProcessBuilder pb = new ProcessBuilder(appLocation);
+                    Process process = pb.start();
+//                    int exitCode = process.waitFor();
+//                    System.out.println("Exit code: " + exitCode);
+                    if (process.isAlive()) {
+                        System.out.println("xong");
+                        writer.println("APP_STARTED");
+                    } else {
+                        writer.println("APP_START_FAILED");
+                    }
+                    writer.flush();
+                } catch (IOException e/*| InterruptedException e*/) {
+                    e.printStackTrace();
                     writer.println("APP_START_FAILED");
+                    writer.flush();
                 }
-                writer.flush();
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-                writer.println("APP_START_FAILED");
-                writer.flush();
             }
-        }
 
     public static void requestStartApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
         writer.println("startapp");
@@ -112,7 +113,6 @@ public class HandleProcess {
             ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
             Process process = pb.start();
             int exitCode = process.waitFor();
-
             if (exitCode == 0) {
                 writer.println("APP_STOPPED");
             } else {

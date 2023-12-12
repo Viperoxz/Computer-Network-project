@@ -1,11 +1,12 @@
 
-   Id Name                 MainWindowTitle                                                                             
-   -- ----                 ---------------                                                                             
-25008 ApplicationFrameHost Settings                                                                                    
-14920 chrome               Computer-Network-project/src/main/java/socket/Client.java at 97e65c2829ed34bf192c01d4bad7...
- 4768 idea64               socket - App.java                                                                           
-14316 java                 Activities log                                                                              
-15844 SystemSettings       Settings                                                                                    
-26684 TextInputHost        Windows Input Experience                                                                    
+   Id Name                 MainWindowTitle                                          
+   -- ----                 ---------------                                          
+11964 ApplicationFrameHost Settings                                                 
+12816 chrome               Thu da g?i - pvhn191004@gmail.com - Gmail - Google Chrome
+20048 idea64               socket - App.java                                        
+12268 java                 Activities log                                           
+  696 SystemSettings       Settings                                                 
+14260 TextInputHost        Windows Input Experience                                 
+12356 WindowsTerminal      Command Prompt                                           
 
 
