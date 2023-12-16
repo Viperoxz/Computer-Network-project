@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
@@ -12,6 +13,7 @@ import gui.raven.chat.component.ChatBox;
 import gui.raven.chat.model.ModelMessage;
 import gui.raven.chat.swing.ChatEvent;
 import socket.App;
+import socket.Client;
 import socket.SendMail;
 
 /**
@@ -38,7 +40,7 @@ public class ChatInterface extends javax.swing.JPanel {
                     SendMail client= new SendMail();
 //                    new Thread()
                     SendMail.clientsendEmail(message);
-                    ChatArea.addChatBox(new ModelMessage(icon, name, date, message), ChatBox.BoxType.RIGHT);
+                    ChatArea.addChatBox(new ModelMessage(icon, name, date, message), Client.color[Client.users.indexOf(name)], ChatBox.BoxType.RIGHT);
                     chatArea.clearTextAndGrabFocus();
                 }
 
@@ -55,9 +57,9 @@ public class ChatInterface extends javax.swing.JPanel {
             }
         });
         Icon icon = new ImageIcon(main.class.getResource("/icon/reindeer.png"));
-        String name ="Me";
+        String name ="Bot";
         String date = df.format(new Date());
-        ChatArea.addChatBox(new ModelMessage(icon,name,date,"Waiting for request..."), ChatBox.BoxType.LEFT);
+        ChatArea.addChatBox(new ModelMessage(icon,name,date,"Waiting for request..."),Client.color[9], ChatBox.BoxType.LEFT);
     }
 
 

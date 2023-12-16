@@ -28,17 +28,21 @@ public class HandleProcess {
     }
 
 
-    public static void requestListProcess(Socket socket, PrintWriter writer, String from) throws IOException {
-        writer.println("listprocess");
-        writer.flush();
+    public static void requestListProcess( String from) throws IOException {
+//        writer.println("listprocess");
+//        writer.flush();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        Process process = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
+        // Buffered reader to read from the process object
+        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
         String fileName = "./src/test/output/processes.txt";
         File file = new File(fileName);
         FileWriter myWriter = new FileWriter(file, false);
 
-        while ((line = reader.readLine()) != null) {
+        while ((line = br.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {
                 break;
             }
@@ -80,27 +84,33 @@ public class HandleProcess {
                 }
             }
 
-    public static void requestStartApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
-        writer.println("startapp");
-        writer.flush();
-        writer.println(appName);
-        writer.flush();
+    public static void requestStartApp( String appName, String from) throws IOException {
+//        writer.println("startapp");
+//        writer.flush();
+//        writer.println(appName);
+//        writer.flush();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String response = reader.readLine();
+        try{
 
-        if (response != null && response.equals("APP_STARTED")) {
-            SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
-                            String.format("""
+            String appLocation = appName;
+            ProcessBuilder pb = new ProcessBuilder(appLocation);
+            Process process = pb.start();
+            if (process.isAlive()) {
+                SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
+                        HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
+                                String.format("""
                                     %s has started.
                                     """, appName)));
-        } else {
+
+            }
+
+        } catch(Exception e) {
             SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
                     String.format("""
                                     There was a failure when starting %s.
                                     Something went wrong.
                                     """, appName));
+            e.printStackTrace();
         }
     }
 
@@ -126,29 +136,38 @@ public class HandleProcess {
         }
     }
 
-    public static void requestStopApp(Socket socket, PrintWriter writer, String appName, String from) throws IOException {
-        writer.println("stopapp");
-        writer.flush();
-        writer.println(appName);
-        writer.flush();
+    public static void requestStopApp( String appName, String from) throws IOException {
+//        writer.println("stopapp");
+//        writer.flush();
+//        writer.println(appName);
+//        writer.flush();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String response = reader.readLine();
-
-        if (response != null && response.equals("APP_STOPPED")) {
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//        String response = reader.readLine();
+    try {
+        String appLocation= appName;
+        ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
+        Process process = pb.start();
+        int exitCode = process.waitFor();
+        if (exitCode == 0) {
             SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
                     HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                             String.format("""
                                     %s has stop.
                                     """, appName)));
-        } else {
-            SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
-                    HTMLGenerator.generateHTML("Your request has failed", "",
-                            String.format("""
+        }else {
+            throw new Exception("Hoi non");
+        }
+    } catch (Exception e) {
+        SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
+                HTMLGenerator.generateHTML("Your request has failed", "",
+                        String.format("""
                                     There was a failure when stopping %s.
                                     Something went wrong.
                                     """, appName)));
-        }
+    }
+
+
     }
 
 
@@ -174,17 +193,25 @@ public class HandleProcess {
         }
     }
 
-    public static void requestListApplications(Socket socket, PrintWriter writer, String from) throws IOException {
-        writer.println("listapp");
-        writer.flush();
+    public static void requestListApplications( String from) throws IOException {
+//        writer.println("listapp");
+//        writer.flush();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+        ProcessBuilder processBuilder = new ProcessBuilder("powershell.exe",
+                "Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle -AutoSize");
+        processBuilder.redirectErrorStream(true);
+        Process process = processBuilder.start();
+
+        // Buffered reader to read from the process object
+        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String line;
         String fileName = "./src/test/output/applications.txt";
         File file = new File(fileName);
         FileWriter myWriter = new FileWriter(file, false);
 
-        while ((line = reader.readLine()) != null) {
+        while ((line = br.readLine()) != null) {
             if (line.equals("END_OF_LIST")) {
                 break;
             }

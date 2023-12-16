@@ -88,7 +88,7 @@ public class ChatArea extends JPanel {
 //        layeredPane.setBackground(new Color(200,101,110));
         add(header);
         add(layeredPane);
-        add(bottom);
+//        add(bottom);
     }
 
     private void initAnimator() {
@@ -198,12 +198,12 @@ public class ChatArea extends JPanel {
         return scroll;
     }
 
-    public static void addChatBox(ModelMessage message, ChatBox.BoxType type) {
+    public static void addChatBox(ModelMessage message,Color c, ChatBox.BoxType type) {
         int values = scrollBody.getVerticalScrollBar().getValue();
         if (type == ChatBox.BoxType.LEFT) {
-            body.add(new ChatBox(type, message), "width ::80%");
+            body.add(new ChatBox(type, message,c), "width ::80%");
         } else {
-            body.add(new ChatBox(type, message), "al right,width ::80%");
+            body.add(new ChatBox(type, message,c), "al right,width ::80%");
         }
         SwingUtilities.invokeLater(new Runnable() {
             @Override

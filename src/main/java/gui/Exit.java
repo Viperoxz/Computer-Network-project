@@ -2,11 +2,13 @@ package gui;
 
 import javaswingdev.drawer.DrawerItem;
 import socket.App;
+import socket.Client;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 public class Exit extends DrawerItem{
@@ -23,8 +25,8 @@ public class Exit extends DrawerItem{
             @Override
             public void actionPerformed(ActionEvent e) {
                 m.dispose();
-                App.user="";
-                Login.user="";
+                Client.users.clear();
+                Login.isOn=0;
             }
         });
         icon(icon);

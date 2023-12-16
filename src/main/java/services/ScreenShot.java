@@ -42,13 +42,20 @@ public class ScreenShot {
 
 
 
-    public static void requestScreenshot(PrintWriter writer, BufferedReader reader, String from) throws Exception {
-        writer.println("screenshot");
-        writer.flush();
+    public static void requestScreenshot( String from) throws Exception {
 
-        int imgSize = Integer.parseInt(reader.readLine());
-        String imageString = reader.readLine();
-        byte[] imgBytes = Base64.getDecoder().decode(imageString);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle screenRectangle = new Rectangle(screenSize);
+
+        BufferedImage screenshot = new Robot().createScreenCapture(screenRectangle);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(screenshot, "png", baos);
+        byte[] imgBytes = baos.toByteArray();
+        baos.close();
+        String imageString = Base64.getEncoder().encodeToString(imgBytes);
+
+        imgBytes = Base64.getDecoder().decode(imageString);
 
         Path imgPath = Paths.get("./src/test/output/screenshot.png");
         Files.write(imgPath, imgBytes);

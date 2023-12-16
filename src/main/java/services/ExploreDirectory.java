@@ -7,6 +7,8 @@ import java.io.*;
 import java.net.Socket;
 import java.util.stream.Collectors;
 
+import static java.lang.Math.max;
+
 public class ExploreDirectory {
 
     /**
@@ -21,33 +23,41 @@ public class ExploreDirectory {
         }
         int indent = 0;
         StringBuilder sb = new StringBuilder();
-        printDirectoryTree(folder, indent, sb);
+        printDirectoryTree(folder,folder, indent, sb);
         return sb.toString();
     }
 
-    private static void printDirectoryTree(File folder, int indent,
+    private static void printDirectoryTree(File par,File folder, int indent,
                                            StringBuilder sb) {
         if (!folder.isDirectory()) {
             throw new IllegalArgumentException("folder is not a Directory");
         }
         sb.append(getIndentString(indent));
-        sb.append("├──");
+        //if here
+        if (!folder.equals(par) &&  folder.equals(par.listFiles()[ par.listFiles().length-1] ) )
+            sb.append("└──");
+        else
+            sb.append("├──");
         sb.append(folder.getName());
         sb.append("/");
         sb.append("\n");
+//        System.out.println(folder.listFiles()[par.listFiles().length-1].getName());
         for (File file : folder.listFiles()) {
             if (file.isDirectory()) {
-                printDirectoryTree(file, indent + 1, sb);
+                printDirectoryTree(folder,file, indent + 1, sb);
             } else {
-                printFile(file, indent + 1, sb);
+                printFile(folder,file, indent + 1, sb);
             }
         }
 
     }
 
-    private static void printFile(File file, int indent, StringBuilder sb) {
+    private static void printFile(File par, File file, int indent, StringBuilder sb) {
         sb.append(getIndentString(indent));
-        sb.append("├──");
+        if (!file.equals(par) &&  file.equals(par.listFiles()[ par.listFiles().length-1] ))
+            sb.append("└──");
+        else
+            sb.append("├──");
         sb.append(file.getName());
         sb.append("\n");
     }
@@ -55,7 +65,7 @@ public class ExploreDirectory {
     private static String getIndentString(int indent) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < indent; i++) {
-            sb.append("|  ");
+            sb.append("│  ");
         }
         return sb.toString();
     }
@@ -80,23 +90,27 @@ public class ExploreDirectory {
         }
     }
 
-    public static void requestExploreDir(Socket socket, PrintWriter writer, String path, String from) throws IOException {
-        writer.println("exploredirectory");
-        writer.flush();
-        writer.println(path);
-        writer.flush();
+    public static void requestExploreDir( String path, String from) throws IOException {
+//        writer.println("exploredirectory");
+//        writer.flush();
+//        writer.println(path);
+//        writer.flush();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        StringBuilder responseBuilder = new StringBuilder();
-        String line;
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-        while ((line = reader.readLine()) != null) {
-            responseBuilder.append(line).append(System.lineSeparator());
+        File folder = new File(path);
+        String reader="";
+        if (!folder.exists() || !folder.isDirectory()) {
+            reader="The directory doesn't exist.";
+
+        } else {
+            String directoryTree = ExploreDirectory.printDirectoryTree(folder);
+            reader=directoryTree;
+
         }
+        String response = reader;
 
-        String response = responseBuilder.toString();
-
-        System.out.println(response);
+//        System.out.println(response);
         try {
             String fileName = "./src/test/output/directory.txt";
             File file = new File(fileName);
@@ -126,26 +140,9 @@ public class ExploreDirectory {
             System.out.println("Error occurred.");
         }
     }
+
 }
 
-//    public static void main(String[] args) {
-//        String directoryPath = "D:\\crawler";
-//
-//        File folder = new File(directoryPath);
-//
-//        if (!folder.exists() || !folder.isDirectory()) {
-//            System.out.println("Thư mục không tồn tại hoặc không phải là thư mục hợp lệ.");
-//            return;
-//        }
-//
-//        String directoryTree = ExploreDirectory.printDirectoryTree(folder);
-//        System.out.println("Cây thư mục: \n" + directoryTree);
-//        try {
-//            String fileName = "list_directory" + System.currentTimeMillis() + ".txt";
-//            File file = new File(fileName);
-//            FileWriter myWriter = new FileWriter(file);
-//            myWriter.write(directoryTree);
-//            myWriter.flush();
-//        }
-//        catch (IOException e){}
-//    }
+
+
+
