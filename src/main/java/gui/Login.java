@@ -8,8 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
     public class Login extends JFrame {
-        static String cache="";
-        public static String user="";
+        static String cache="hehehehehe";
+        public static int isOn=0;
         public Login() {
             init();
         }
@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
             setSize(500, 450);
             setLocationRelativeTo(null);
             setLayout(new MigLayout("fill,insets 20", "[center]", "[center]"));
-            usernameField = new JTextField();
+            usernameField = new JPasswordField();
             chRememberMe = new JCheckBox("Remember me");
             cmdLogin = new JButton("Start Access");
             JPanel panel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
@@ -61,10 +61,10 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent e) {
                     String username = usernameField.getText();
 
-                    if (!username.contains("@gmail.com")){
-                        JOptionPane.showMessageDialog(Login.this, "Invalid email address");
+                    if (!username.equals("hehehehehe")){
+                        JOptionPane.showMessageDialog(Login.this, "Invalid password");
                     }else{
-                        user=username;
+                        isOn=1;
                         dispose();
                     }
                     if (chRememberMe.isSelected())
@@ -73,14 +73,14 @@ import java.awt.event.ActionListener;
                         cache="";
                 }
             });
-            panel.add(chRememberMe, "grow 0");
+//            panel.add(chRememberMe, "grow 0");
             panel.add(cmdLogin, "gapy 10");
             add(panel);
             setVisible(true);
         }
 
 
-        private JTextField usernameField;
+        private JPasswordField usernameField;
         private JCheckBox chRememberMe;
         private JButton cmdLogin;
     }

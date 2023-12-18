@@ -18,10 +18,12 @@ public class ChatBox extends JComponent {
 
     private final BoxType boxType;
     private final ModelMessage message;
+    private final Color col;
 
-    public ChatBox(BoxType boxType, ModelMessage message) {
+    public ChatBox(BoxType boxType, ModelMessage message,Color c) {
         this.boxType = boxType;
         this.message = message;
+        this.col= c;
         init();
     }
 
@@ -64,7 +66,7 @@ public class ChatBox extends JComponent {
         if (boxType == BoxType.LEFT) {
             Area area = new Area(new RoundRectangle2D.Double(25, 25, width - 25, height - 25 - 16 - 10, 5, 5));
             area.subtract(new Area(new Ellipse2D.Double(5, 5, 45, 45)));
-            g2.setPaint(new GradientPaint(0, 0, new Color(0, 85, 85), width, 0, new Color(6, 154, 142)));
+            g2.setPaint(new GradientPaint(0, 0, this.col, width, 0, this.col));
             g2.fill(area);
         } else {
             Area area = new Area(new RoundRectangle2D.Double(0, 25, width - 25, height - 25 - 16 - 10, 5, 5));

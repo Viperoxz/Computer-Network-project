@@ -1,12 +1,13 @@
 
-   Id Name                 MainWindowTitle                                          
-   -- ----                 ---------------                                          
-11964 ApplicationFrameHost Settings                                                 
-12816 chrome               Thu da g?i - pvhn191004@gmail.com - Gmail - Google Chrome
-20048 idea64               socket - App.java                                        
-12268 java                 Activities log                                           
-  696 SystemSettings       Settings                                                 
-14260 TextInputHost        Windows Input Experience                                 
-12356 WindowsTerminal      Command Prompt                                           
+   Id Name                 MainWindowTitle                                                  
+   -- ----                 ---------------                                                  
+18064 ApplicationFrameHost Settings                                                         
+15956 chrome               Inbox (11) - neildo0408@gmail.com - Gmail - Google Chrome        
+ 8520 idea64               Computer-Network-project - HandleProcess.java                    
+11076 java                 Activities log                                                   
+ 3204 Rainmeter            C:\Users\MTBH\Documents\Rainmeter\Skins\Robik\Weather\Weather.ini
+11400 SystemSettings       Settings                                                         
+17860 TextInputHost        Windows Input Experience                                         
+12800 WindowsTerminal      Command Prompt                                                   
 
 

@@ -3,15 +3,18 @@ package gui;
 import javax.swing.*;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import javaswingdev.GoogleMaterialDesignIcon;
+import javaswingdev.GoogleMaterialIcon;
+import javaswingdev.GradientType;
 import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
-
+import gui.raven.chat.swing.Button;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class main extends JFrame {
     private JPanel heheeh;
-    private JButton dropdownButton;
+    private Button dropdownButton;
     private DrawerController drawer;
 
     public static JPanel containerPanel;
@@ -27,13 +30,13 @@ public class main extends JFrame {
         return originalImage.getScaledInstance(desiredWidth, desiredHeight, Image.SCALE_SMOOTH);
     }
     private  void remakeButton(){
-//        dropdownButton.setBackground(new Color(10, 148, 112, 163));
-        ImageIcon icon = new ImageIcon(main.class.getResource("/icon/right-chevron.png"));
-        Image resizedImage= resize(icon,20,20);
+        dropdownButton.setFocusable(false);
+        dropdownButton.setBackground(new Color(10, 148, 112, 55));
+
 
         // Create a new ImageIcon with the resized Image
-        ImageIcon resizedIcon = new ImageIcon(resizedImage);
-        dropdownButton.setIcon(resizedIcon);
+        GoogleMaterialIcon icon = new GoogleMaterialIcon(GoogleMaterialDesignIcon.CHEVRON_RIGHT, GradientType.VERTICAL, new Color(10, 148, 112), new Color(58, 189, 114), 35);
+        dropdownButton.setIcon(icon.toIcon());
         dropdownButton.setEnabled(true);
         dropdownButton.setBounds(0,0,30,460);
 //        dropdownButton.setPreferredSize(new Dimension(30,460));
@@ -51,7 +54,6 @@ public class main extends JFrame {
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.white);
         getRootPane().putClientProperty("JRootPane.arc", 999);
         remakeButton();
-        System.out.println(123);
         drawer= Drawer.newDrawer(this)
                 .header(new Header())
                 .separator(2,new Color(28, 114, 105, 118))
@@ -72,39 +74,27 @@ public class main extends JFrame {
         containerPanel.add(chat,"chat");
         containerPanel.add(info,"info");
         containerPanel.setOpaque(false);
-        containerPanel.setBackground(new Color(0,0,0,0));
+
 
         heheeh.setOpaque(false);
-        mainPanel.setLayout(new FlowLayout());
+        mainPanel.setLayout(new BoxLayout(mainPanel,BoxLayout.X_AXIS));
         mainPanel.add(heheeh);
         mainPanel.add(containerPanel);
+//        mainPanel.add(info);
 
 //        mainPanel.setOpaque(false);
 
         getContentPane().add(mainPanel);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setSize(350,470);
+        setSize(500,470);
         setLocationRelativeTo(null);
-        pack();
+//        pack();
 
 
         setVisible(true);
         dropdownButton.addActionListener(this::menuActionPerformed);
     }
-//    public static void main (String [] args){
-
-//        UIManager.put( "Component.arc", 999 );
-//
-//        UIManager.put( "Button.arc", 999 );
-//        UIManager.put( "TextComponent.arc", 5 );
-//        UIManager.put("ScrollPane.background",new Color(0,0,0,0));
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new main().setVisible(true);
-//            }
-//        });
-//    }
 
 
 
