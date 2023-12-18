@@ -45,7 +45,6 @@ public class HTMLGenerator {
     public static void main(String[] args) {
         String title = "Reply Email Form";
         String content = "Please provide an update on the request.";
-
         String htmlString = generateHTML(title, "", content);
         System.out.println(htmlString);
     }
