@@ -81,24 +81,20 @@ public class HandleProcess {
                 }
             }
 
-    public static void requestStartApp( String appName, String from) throws IOException {
-//        writer.println("startapp");
-//        writer.flush();
-//        writer.println(appName);
-//        writer.flush();
+    public static void requestStartApp( String appLocation, String from) throws IOException {
+        String[] appLoc = appLocation.split("\\\\");
+        String appName = appLoc[appLoc.length-1];
 
         try{
-
-            String appLocation = appName;
             ProcessBuilder pb = new ProcessBuilder(appLocation);
             Process process = pb.start();
+
             if (process.isAlive()) {
                 SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
                         HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
                                 String.format("""
                                     %s has started.
                                     """, appName)));
-
             }
 
         } catch(Exception e) {
@@ -135,13 +131,6 @@ public class HandleProcess {
     }
 
     public static void requestStopApp( String appName, String from) throws IOException {
-//        writer.println("stopapp");
-//        writer.flush();
-//        writer.println(appName);
-//        writer.flush();
-
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//        String response = reader.readLine();
     try {
         String appLocation= appName;
         ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
@@ -192,10 +181,6 @@ public class HandleProcess {
     }
 
     public static void requestListApplications( String from) throws IOException {
-//        writer.println("listapp");
-//        writer.flush();
-
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
         ProcessBuilder processBuilder = new ProcessBuilder("powershell.exe",
                 "Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle -AutoSize");

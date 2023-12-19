@@ -1,11 +1,11 @@
 
-   Id Name                 MainWindowTitle                                                                       
-   -- ----                 ---------------                                                                       
-19576 ApplicationFrameHost Settings                                                                              
-19568 chrome               Reply for request control PC - phamvanhoangnam191004@gmail.com - Gmail - Google Chrome
- 6624 idea64               socket - App.java                                                                     
-19072 java                 Activities log                                                                        
-21192 SystemSettings       Settings                                                                              
- 2736 TextInputHost        Windows Input Experience                                                              
+   Id Name                 MainWindowTitle                                                            
+   -- ----                 ---------------                                                            
+ 6980 ApplicationFrameHost Settings                                                                   
+17724 chrome               Reply for request control PC - pvhn191004@gmail.com - Gmail - Google Chrome
+14388 idea64               App.java - App.java                                                        
+15908 java                 Activities log                                                             
+11616 SystemSettings       Settings                                                                   
+16120 TextInputHost        Windows Input Experience                                                   
 
 

@@ -95,7 +95,7 @@ public class ServerProcess {
                             break;
                         case "cancel":
                             logActivities(from,"Shutdown got canceled");
-                            Shutdown.requestCancelShutdown();
+                            PowerPC.requestCancelShutdown();
                             break;
                         case "screenshot":
                             logActivities(from,"Taking a screenshot");
