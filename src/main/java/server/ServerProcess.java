@@ -1,19 +1,13 @@
-package socket;
+package server;
 
 import java.awt.*;
-import java.awt.image.AreaAveragingScaleFilter;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
 import java.util.Timer;
 
-import gui.Login;
 import gui.main;
 import gui.raven.chat.component.ChatArea;
 import gui.raven.chat.component.ChatBox;
@@ -22,7 +16,7 @@ import services.*;
 
 import javax.swing.*;
 
-public class Client {
+public class ServerProcess {
     private Socket socket;
 
     public static ArrayList<String> users=new ArrayList<>();
@@ -54,7 +48,7 @@ public class Client {
             String name = from;
             String date = currentTime.format(DateTimeFormatter.ofPattern("HH:mm"));
             String mess =  subject ;
-            ChatArea.addChatBox(new ModelMessage(icon, name, date, mess),Client.color[Client.users.indexOf(name)], ChatBox.BoxType.LEFT);
+            ChatArea.addChatBox(new ModelMessage(icon, name, date, mess), ServerProcess.color[ServerProcess.users.indexOf(name)], ChatBox.BoxType.LEFT);
         }
 
         @Override
@@ -72,10 +66,10 @@ public class Client {
             for (CustomPair<String, String> cmd : commands) {
                 String[] choice = cmd.getValue().split("&&");
                 String from = cmd.getKey();
-                System.out.println(Client.users.contains(from));
-                if (!Client.users.contains(from)){
-                    if (!Client.newUsers.contains(from))
-                        Client.newUsers.add(from);
+                System.out.println(ServerProcess.users.contains(from));
+                if (!ServerProcess.users.contains(from)){
+                    if (!ServerProcess.newUsers.contains(from))
+                        ServerProcess.newUsers.add(from);
                     SendMail.serversendEmail(from, "Reply for request control PC", "",
                             HTMLGenerator.generateHTML("You are not authorized", "",
                                     "Waiting for Server to accept your request "));
@@ -85,11 +79,19 @@ public class Client {
                     switch (choice[0].toLowerCase()) {
                         case "shutdown":
                             logActivities(from,"Shutting down your computer");
-                            Shutdown.requestShutdown(from);
+                            PowerPC.requestShutdown();
                             break;
                         case "restart":
                             logActivities(from,"Restarting your computer");
-                            Restart.requestRestart( from);
+                            PowerPC.requestRestart();
+                            break;
+                        case "logout":
+                            logActivities(from, "Logging out your computer");
+                            PowerPC.requestLogout();
+                            break;
+                        case "sleep":
+                            logActivities(from, "Putting your computer to sleep.");
+                            PowerPC.requestSleep();
                             break;
                         case "cancel":
                             logActivities(from,"Shutdown got canceled");
@@ -98,12 +100,10 @@ public class Client {
                         case "screenshot":
                             logActivities(from,"Taking a screenshot");
                             ScreenShot.requestScreenshot( from);
-//                        new ReceiveMail().getAttachments(App.user);
                             break;
                         case "listprocess":
                             logActivities(from,"Sending a list of process ");
                             HandleProcess.requestListProcess(from);
-//                        new ReceiveMail().getAttachments(App.user);
                             break;
                         case "startapp":
                             logActivities(from,"Starting " + choice[1]);

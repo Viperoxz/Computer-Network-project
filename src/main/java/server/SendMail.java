@@ -1,10 +1,11 @@
-package socket;
+package server;
 
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 //ixzg pazh pwmz bqaf
+
 public class SendMail {
 
     static final String[] from = {"pvhoangnamzz@gmail.com","neildo0408@gmail.com"};

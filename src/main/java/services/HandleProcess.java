@@ -1,11 +1,8 @@
 package services;
 
-import socket.SendMail;
+import server.SendMail;
 
 import java.io.*;
-import java.net.Socket;
-import java.util.*;
-import java.nio.charset.StandardCharsets;
 
 public class HandleProcess {
     public static void controlListProcess(PrintWriter writer){
@@ -106,10 +103,11 @@ public class HandleProcess {
 
         } catch(Exception e) {
             SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
-                    String.format("""
+                    HTMLGenerator.generateHTML("Your request has failed", "",
+                                    String.format("""
                                     There was a failure when starting %s.
                                     Something went wrong.
-                                    """, appName));
+                                    """, appName)));
             e.printStackTrace();
         }
     }

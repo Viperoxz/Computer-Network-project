@@ -1,20 +1,13 @@
-package socket;
-
-import gui.main;
-import gui.raven.chat.component.ChatArea;
-import gui.raven.chat.component.ChatBox;
-import gui.raven.chat.model.ModelMessage;
+package server;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeUtility;
 import javax.mail.search.FlagTerm;
-import javax.swing.*;
 
 
 public class ReceiveMail {

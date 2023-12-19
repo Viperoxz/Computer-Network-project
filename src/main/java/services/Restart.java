@@ -1,8 +1,7 @@
 package services;
 
-import socket.SendMail;
+import server.SendMail;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,4 +21,6 @@ public class Restart {
         Runtime.getRuntime().exec("shutdown -r -t 5");
         writer.println("May tinh dang khoi dong lai... ");
     }
+
+
 }

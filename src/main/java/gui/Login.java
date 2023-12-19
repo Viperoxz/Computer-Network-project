@@ -61,7 +61,7 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent e) {
                     String username = usernameField.getText();
 
-                    if (!username.equals("hehehehehe")){
+                    if (!username.equals("mangmaytinhnhom10")){
                         JOptionPane.showMessageDialog(Login.this, "Invalid password");
                     }else{
                         isOn=1;

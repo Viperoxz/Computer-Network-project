@@ -1,6 +1,6 @@
 package services;
 
-import socket.SendMail;
+import server.SendMail;
 import java.io.*;
 
 
@@ -11,7 +11,6 @@ public class Shutdown {
                 HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         "The device has just shutdown."));
         Runtime.getRuntime().exec("shutdown -s -t 10");
-
     }
 
 

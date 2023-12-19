@@ -1,4 +1,4 @@
-package socket;
+package server;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
@@ -8,27 +8,22 @@ import gui.main;
 import javax.swing.*;
 
 public class App {
-//    private Server server;
-    private Client client;
+    private ServerProcess serverProcess;
 
     public App() {
-//        server = new Server();
-        client = new Client();
+        serverProcess = new ServerProcess();
     }
 
-    public void startServer() throws InterruptedException {
+    public void startClient() throws InterruptedException {
         Login login= new Login();
         while(Login.isOn==0){
-//            System.out.println(123);
             Thread.sleep(500);
         }
         new main();
-
-
     }
 
-    public void startClient() {
-            client.start();
+    public void startServer() {
+        serverProcess.start();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -38,14 +33,12 @@ public class App {
         JFrame.setDefaultLookAndFeelDecorated(true);
         UIManager.put( "Button.arc", 999 );
         App app = new App();
-//        app.server.start();
+
         try {
             while (true) {
-//                System.out.println(1234);
                 if (Login.isOn==0){
-//                    System.out.println("h"+App.user);
-                    app.startServer();
                     app.startClient();
+                    app.startServer();
                 }
                 Thread.sleep(1000);
             }

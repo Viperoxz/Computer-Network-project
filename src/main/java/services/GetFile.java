@@ -3,7 +3,7 @@ package services;
 //***Luu y: Gui mail voi cu phap: getfile[1]+filename(Khong co ngoac kep)
 //VD: getfile[1]toan
 
-import socket.SendMail;
+import server.SendMail;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;

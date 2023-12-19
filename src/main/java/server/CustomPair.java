@@ -1,4 +1,4 @@
-package socket;
+package server;
 
 public class CustomPair<K, V> {
     private K key;

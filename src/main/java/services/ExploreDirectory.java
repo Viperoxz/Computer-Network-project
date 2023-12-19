@@ -1,11 +1,8 @@
 package services;
 
-import socket.SendMail;
+import server.SendMail;
 
-import javax.swing.text.html.HTML;
 import java.io.*;
-import java.net.Socket;
-import java.util.stream.Collectors;
 
 import static java.lang.Math.max;
 
@@ -91,13 +88,6 @@ public class ExploreDirectory {
     }
 
     public static void requestExploreDir( String path, String from) throws IOException {
-//        writer.println("exploredirectory");
-//        writer.flush();
-//        writer.println(path);
-//        writer.flush();
-
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
         File folder = new File(path);
         String reader="";
         if (!folder.exists() || !folder.isDirectory()) {

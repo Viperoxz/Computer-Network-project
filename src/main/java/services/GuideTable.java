@@ -1,6 +1,6 @@
 package services;
 
-import socket.SendMail;
+import server.SendMail;
 
 public class GuideTable {
     private static String content = """
@@ -10,7 +10,6 @@ public class GuideTable {
                         <meta charset="UTF-8">
                         <title>Command List</title>
                         <style>
-                            /* Thêm CSS nếu cần */
                             table {
                                 border-collapse: collapse;
                                 width: 100%;
@@ -48,7 +47,7 @@ public class GuideTable {
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td rowspan="2">CONTROL PC</td>
+                    <td rowspan="4">CONTROL PC</td>
                     <td>shutdown</td>
                     <td>Shutdown the user’s PC</td>
                     <td>shutdown</td>
@@ -61,39 +60,51 @@ public class GuideTable {
                 </tr>
                 <tr>
                     <td>5</td>
+                    <td>logout</td>
+                    <td>Logout the user’s PC</td>
+                    <td>logout</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>sleep</td>
+                    <td>Sleep the user’s PC</td>
+                    <td>sleep</td>
+                </tr>
+                <tr>
+                    <td>7</td>
                     <td rowspan="2">KEYLOGGER</td>
                     <td>startkeylogger</td>
                     <td>Start the process of capturing keystrokes typed into user’s computer</td>
                     <td>startkeylogger</td>
                 </tr>
                 <tr>
-                    <td>6</td>
+                    <td>8</td>
                     <td>stopkeylogger</td>
                     <td>Stop the process of capturing keystrokes typed into user’s computer</td>
                     <td>stopkeylogger</td>
                 </tr>
                 <tr>
-                    <td>7</td>
+                    <td>9</td>
                     <td rowspan="3">PROCESS</td>
                     <td>listprocess</td>
                     <td>Get the list of processes currently running on the user’s devices</td>
                     <td>listprocess</td>
                 </tr>
                 <tr>
-                    <td>8</td>
+                    <td>10</td>
                     <td>startapp&&amp;&lt;app_name&gt;</td>
                     <td>Open a specified application</td>
                     <td>startapp&amp;&amp;mspaint.exe</td>
                 </tr>
                 <tr>
-                    <td>9</td>
+                    <td>11</td>
                     <td>stopapp&&amp;&lt;app_name&gt;</td>
                     <td>Close a specified application</td>
                     <td>stopapp&amp;&amp;mspaint.exe</td>
                 </tr>
                 
                 <tr>
-                    <td>10</td>
+                    <td>12</td>
                     <td rowspan="2">FILE</td>
                     <td>getfile[1]&&amp;&lt;file_name&gt;</td>
                     <td>Get a specified file by filename</td>
@@ -101,20 +112,20 @@ public class GuideTable {
                 </tr>
                 
                 <tr>
-                    <td>11</td>
+                    <td>13</td>
                     <td>getfile[2]&&amp;&lt;file_path&gt;</td>
                     <td>Get a specified file by path to the file</td>
                     <td>getfile&amp;&amp;D:\\IT\\mmt.txt</td>
                 </tr>
                 <tr>
-                    <td>12</td>
+                    <td>14</td>
                     <td>DIRECTORY</td>
                     <td>exploredirectory&&amp;&lt;dir_path&gt;</td>
                     <td>Display entire specified directory as a tree</td>
                     <td>exploredirectory&amp;&amp;D:\\IT</td>
                 </tr>
                 <tr>
-                    <td>13</td>
+                    <td>15</td>
                     <td>APP</td>
                     <td>listapp</td>
                     <td>Get the list of applications currently running on the user’s devices</td>
