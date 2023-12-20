@@ -10,7 +10,6 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.formdev.flatlaf.FlatClientProperties;
 import javaswingdev.FontAwesome;
 import javaswingdev.FontAwesomeIcon;
 import javaswingdev.GoogleMaterialDesignIcon;
@@ -27,11 +26,9 @@ import gui.raven.chat.swing.RoundPanel;
 import gui.raven.chat.swing.TextField;
 import raven.chat.swing.scroll.ScrollBar;
 
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
 import gui.raven.chat.swing.ChatEvent;
-import socket.App;
 
 public class ChatArea extends JPanel {
 
