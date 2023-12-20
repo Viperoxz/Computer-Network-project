@@ -81,7 +81,7 @@ public class HandleProcess {
                                    <b>%s</b> has stop.
                                     """, appName)));
         }else {
-            throw new Exception("Hoi non");
+            throw new Exception("Can't stop app");
         }
     } catch (Exception e) {
         SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
