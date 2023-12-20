@@ -67,26 +67,6 @@ public class ExploreDirectory {
         return sb.toString();
     }
 
-    public static void controlExploreDir(BufferedReader reader, PrintWriter writer) {
-        try {
-            String path = reader.readLine();
-            System.out.println(path);
-            File folder = new File(path);
-            if (!folder.exists() || !folder.isDirectory()) {
-                System.out.println("Thư mục không tồn tại hoặc không phải là thư mục hợp lệ.");
-                writer.println("The directory doesn't exist.");
-                writer.flush();
-                writer.close();
-            } else {
-                String directoryTree = ExploreDirectory.printDirectoryTree(folder);
-                writer.println(directoryTree);
-                writer.flush();
-                writer.close();
-            }
-        } catch (IOException e) {
-        }
-    }
-
     public static void requestExploreDir( String path, String from) throws IOException {
         File folder = new File(path);
         String reader="";
@@ -116,14 +96,15 @@ public class ExploreDirectory {
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", fileTextPath,
                         HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                                 """
-                                        Directory exploration successful. 
-                                        The file below contains the directory structure you requested.
+                                        Directory exploration successful. <br>
+                                       <b>The file below</b> contains the directory structure you requested.
                                         """));
             } else {
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", "",
                         HTMLGenerator.generateHTML("Your request has failed", "",
                                 """
-                                        Can't explore this directory. Please ensure that the path is correct.
+                                        <b>Can't explore this directory.</b><br>
+                                         Please ensure that the path is correct.
                                          """));
             }
         } catch (IOException e) {

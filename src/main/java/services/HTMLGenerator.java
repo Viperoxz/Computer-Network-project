@@ -11,21 +11,21 @@ public class HTMLGenerator {
                 <style>
                     body {
                         font-family: Arial, sans-serif;
-                        background-color: #ffffff; /* Màu nền trắng */
+                        background-color: #ffffff; 
                     }
                     .container {
                         width: 50%%;
                         margin: 50px auto;
                         padding: 20px;
-                        border: 2px solid #03667a; /* Viền màu tím */
+                        border: 2px solid #03667a; 
                         border-radius: 8px;
                     }
                     h2 {
                         text-align: center;
-                        background-color: #03737a; /* Màu nền xanh cho header */
-                        color: #ffffff; /* Màu chữ trắng cho header */
-                        padding: 10px; /* Khoảng cách giữa header và border */
-                        border-radius: 5px; /* Bo tròn góc cho header */
+                        background-color: #03737a; 
+                        color: #ffffff; 
+                        padding: 10px; 
+                        border-radius: 5px; 
                     }
                     p {
                         text-align: center;

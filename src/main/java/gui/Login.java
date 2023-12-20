@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
     public class Login extends JFrame {
-        static String cache="hehehehehe";
+        static String cache="mangmaytinhnhom10";
         public static int isOn=0;
         public Login() {
             init();

