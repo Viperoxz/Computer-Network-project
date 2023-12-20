@@ -61,7 +61,9 @@ public class ServerProcess {
         }
 
         private void processEmailCommands() throws Exception {
-            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com",
+                    "computernetworkinggroup5@gmail.com",
+                    "vexk yroe jygo mqlh");
             List<CustomPair<String, String>> commands = mailReceived.getRequirements();
             for (CustomPair<String, String> cmd : commands) {
                 String[] choice = cmd.getValue().split("&&");

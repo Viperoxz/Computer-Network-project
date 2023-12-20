@@ -54,7 +54,7 @@ public class GuideTable {
                             <body>
                                 <div class="container">
                                     <h2>Remote Control PC by Email</h2>
-                                    <p class="content">Sending greetings from <b>Group 10 - TNT1 2022</b>, University of Science, HCMUS.<br>
+                                    <p class="content">Sending greetings from <b>Group 5 - TNT1 2022</b>, University of Science, HCMUS.<br>
                                     Welcome to our final project for <b>Computer Networking</b> course.<br>
                                     This is a list of requests that you can use to control others' PC. Hope you enjoy it!</p>
                                 </div>

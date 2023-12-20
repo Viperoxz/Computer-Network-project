@@ -1,0 +1,422 @@
+├──DSA/
+│  ├──BST/
+│  │  ├──.vs/
+│  │  │  └──BST/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──1928bb5d-818c-4b11-8958-adda44cd3bfe.vsidx
+│  │  │  │  │  ├──433b9b0e-97d9-45b9-9345-736ff825ecb0.vsidx
+│  │  │  │  │  ├──8a226d0b-335b-4e97-a362-173e9188f463.vsidx
+│  │  │  │  │  ├──cb2d3967-f4b2-4abd-96f0-f633433386ef.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  ├──4fe871f4499fd61d/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  ├──5db7cc4a4467cc3d/
+│  │  │  │  │  │  │  │  └──MAIN.ipch
+│  │  │  │  │  │  │  ├──bf40c23e78d28ee9/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  └──e7a4c0198c196c0/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  ├──BST/
+│  │  │  ├──Bai 1.cpp
+│  │  │  ├──Bai 2.cpp
+│  │  │  ├──BST.vcxproj
+│  │  │  ├──BST.vcxproj.filters
+│  │  │  ├──BST.vcxproj.user
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──Bai 1.obj
+│  │  │  │  │  ├──Bai 2.obj
+│  │  │  │  │  ├──BST.exe.recipe
+│  │  │  │  │  ├──BST.ilk
+│  │  │  │  │  ├──BST.log
+│  │  │  │  │  ├──BST.tlog/
+│  │  │  │  │  │  ├──BST.lastbuildstate
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  └──link.write.1.tlog
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──BST.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──BST.exe
+│  │  │  │  └──BST.pdb
+│  ├──CTDL&GT (CDIO) - Ke hoach giang day.docx
+│  ├──CTDL&GT (CDIO) - Qui dinh can biet.ppt
+│  ├──On tap 1.docx
+│  ├──On tap 2.docx
+│  ├──On tap 3.docx
+│  ├──On tap 4.docx
+│  ├──onthicuoiki_tree/
+│  │  ├──.vs/
+│  │  │  └──onthicuoiki_tree/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──8c5fb1fc-562c-4b34-965d-a95a33846e45.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  └──2d4d23eb32bdfbbb/
+│  │  │  │  │  │  │  │  └──SOURCE.ipch
+│  │  ├──onthicuoiki_tree/
+│  │  │  ├──onthicuoiki_tree.vcxproj
+│  │  │  ├──onthicuoiki_tree.vcxproj.filters
+│  │  │  ├──onthicuoiki_tree.vcxproj.user
+│  │  │  ├──Source.cpp
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──onthicuoiki_tree.exe.recipe
+│  │  │  │  │  ├──onthicuoiki_tree.ilk
+│  │  │  │  │  ├──onthicuoiki_tree.log
+│  │  │  │  │  ├──onthicuoiki_tree.tlog/
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  ├──link.write.1.tlog
+│  │  │  │  │  │  └──onthicuoiki_tree.lastbuildstate
+│  │  │  │  │  ├──Source.obj
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──onthicuoiki_tree.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──onthicuoiki_tree.exe
+│  │  │  │  └──onthicuoiki_tree.pdb
+│  ├──On_gk/
+│  │  ├──.vs/
+│  │  │  └──On_gk/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──5b4b262e-e22d-46f8-af7d-1e406a62e5ee.vsidx
+│  │  │  │  │  ├──951cd5ee-5472-4dbb-97d5-346c4d69e1dc.vsidx
+│  │  │  │  │  ├──9c21a4c2-d7ed-4009-b6f6-8b73431fd3a9.vsidx
+│  │  │  │  │  ├──d99415cc-6161-4092-81c3-684ef8364c34.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  ├──1cbf4c1475eef636/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  ├──28864a4a36cc3b42/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──28b02cb6d97e6e32/
+│  │  │  │  │  │  │  │  └──QUANLISV.ipch
+│  │  │  │  │  │  │  ├──42293e509611b695/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  ├──4ca76639ca639bc2/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──7a7b71ecf554672b/
+│  │  │  │  │  │  │  │  └──ONTAP.ipch
+│  │  │  │  │  │  │  ├──882936387fb10c2d/
+│  │  │  │  │  │  │  │  └──QUANLISV.ipch
+│  │  │  │  │  │  │  ├──890bb8f8d84ad688/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──8b7f5f7692935f39/
+│  │  │  │  │  │  │  │  └──ONLINKEDLIST.ipch
+│  │  │  │  │  │  │  ├──8ccd84864ee8c313/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──92062aecee9af21f/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  ├──98288075c83440d2/
+│  │  │  │  │  │  │  │  └──QUANLISV.ipch
+│  │  │  │  │  │  │  ├──aad77b7bc6136bf8/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──c79b69e70b2fa24e/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──cc8a4defae7dbf4b/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──d2a00133cc46bdfd/
+│  │  │  │  │  │  │  │  └──BAI 2.ipch
+│  │  │  │  │  │  │  ├──da4c19288472446f/
+│  │  │  │  │  │  │  │  └──22120220PHAMVANHOANGNAM.ipch
+│  │  │  │  │  │  │  ├──e7a2db4390da4220/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  ├──f12f4d65a74a4a33/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  │  │  │  │  │  └──fa100a1ff2c99a/
+│  │  │  │  │  │  │  │  └──BAI 1.ipch
+│  │  ├──On_gk/
+│  │  │  ├──Onlinkedlist.cpp
+│  │  │  ├──ontap.cpp
+│  │  │  ├──On_gk.vcxproj
+│  │  │  ├──On_gk.vcxproj.filters
+│  │  │  ├──On_gk.vcxproj.user
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──Onlinkedlist.obj
+│  │  │  │  │  ├──ontap.obj
+│  │  │  │  │  ├──On_gk.exe.recipe
+│  │  │  │  │  ├──On_gk.ilk
+│  │  │  │  │  ├──On_gk.log
+│  │  │  │  │  ├──On_gk.tlog/
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  ├──link.write.1.tlog
+│  │  │  │  │  │  └──On_gk.lastbuildstate
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──On_gk.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──On_gk.exe
+│  │  │  │  └──On_gk.pdb
+│  ├──PriorityQueue/
+│  │  ├──.vs/
+│  │  │  └──PriorityQueue/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──0fe49335-a0f6-4232-8be9-68cd5680ea08.vsidx
+│  │  │  │  │  ├──394f99f1-e328-4d46-8233-0025cd6a27fc.vsidx
+│  │  │  │  │  ├──5cbb7f0e-4b71-4e2c-b872-ba84e0fc0ace.vsidx
+│  │  │  │  │  ├──66ec49ef-2db0-42e2-9ab7-96917b170006.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  ├──468186e1ff7e2eb7/
+│  │  │  │  │  │  │  │  └──MAIN.ipch
+│  │  │  │  │  │  │  ├──4d1af657bc406dac/
+│  │  │  │  │  │  │  │  └──BAI1.ipch
+│  │  │  │  │  │  │  ├──5e30819a6320f4b9/
+│  │  │  │  │  │  │  │  └──22120220_PHAMVANHOANGNAM_TUAN8.ipch
+│  │  │  │  │  │  │  ├──c088e5e08db54667/
+│  │  │  │  │  │  │  │  └──FILENAME.ipch
+│  │  │  │  │  │  │  └──f99f6c732c770f92/
+│  │  │  │  │  │  │  │  └──BTREE.ipch
+│  │  ├──PriorityQueue/
+│  │  │  ├──22120220_PhamVanHoangNam_Tuan8.cpp
+│  │  │  ├──BTree.cpp
+│  │  │  ├──FileName.cpp
+│  │  │  ├──PriorityQueue.vcxproj
+│  │  │  ├──PriorityQueue.vcxproj.filters
+│  │  │  ├──PriorityQueue.vcxproj.user
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──BTree.obj
+│  │  │  │  │  ├──FileName.obj
+│  │  │  │  │  ├──Main.obj
+│  │  │  │  │  ├──PriorityQueue.exe.recipe
+│  │  │  │  │  ├──PriorityQueue.ilk
+│  │  │  │  │  ├──PriorityQueue.log
+│  │  │  │  │  ├──PriorityQueue.tlog/
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  ├──link.write.1.tlog
+│  │  │  │  │  │  └──PriorityQueue.lastbuildstate
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──PriorityQueue.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──PriorityQueue.exe
+│  │  │  │  └──PriorityQueue.pdb
+│  ├──Sort/
+│  │  ├──.vs/
+│  │  │  └──Sort/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──2aee0e7d-0a28-4850-ab92-fd24660f9dbd.vsidx
+│  │  │  │  │  ├──8546cac5-2883-4915-96b0-39a424bbe63b.vsidx
+│  │  │  │  │  ├──9dc59236-d605-44cb-b2d2-11504b2cc8bb.vsidx
+│  │  │  │  │  ├──b18d3222-71d0-46ca-9f2f-f3b459559918.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  ├──393189d1e3ea1566/
+│  │  │  │  │  │  │  │  └──MAIN.ipch
+│  │  │  │  │  │  │  ├──41c4d786713bf4c2/
+│  │  │  │  │  │  │  ├──5fcbc513a51993c2/
+│  │  │  │  │  │  │  ├──801ab4869506596f/
+│  │  │  │  │  │  │  │  └──SORT.ipch
+│  │  │  │  │  │  │  └──98d5d778ca900ad7/
+│  │  │  │  │  │  │  │  └──22120220 (3).ipch
+│  │  ├──Sort/
+│  │  │  ├──22120220_PhamVanHoangNam.zip
+│  │  │  ├──cau3_comparison.xlsx
+│  │  │  ├──create_table.ipynb
+│  │  │  ├──Do_on_dinh_thuat_toan.docx
+│  │  │  ├──main.cpp
+│  │  │  ├──output.txt
+│  │  │  ├──Sort.cpp
+│  │  │  ├──Sort.hpp
+│  │  │  ├──Sort.vcxproj
+│  │  │  ├──Sort.vcxproj.filters
+│  │  │  ├──Sort.vcxproj.user
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──main.obj
+│  │  │  │  │  ├──Sort.exe.recipe
+│  │  │  │  │  ├──Sort.ilk
+│  │  │  │  │  ├──Sort.log
+│  │  │  │  │  ├──Sort.obj
+│  │  │  │  │  ├──Sort.tlog/
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  ├──link.write.1.tlog
+│  │  │  │  │  │  └──Sort.lastbuildstate
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──Sort.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──Sort.exe
+│  │  │  │  └──Sort.pdb
+│  ├──Tuan 1/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──Cac thuat toan sap xep.ppt
+│  │  ├──Chuong 1 - Tinh chi phi thuat toan.ppt
+│  │  ├──code/
+│  │  │  ├──.vscode/
+│  │  │  │  ├──launch.json
+│  │  │  │  ├──settings.json
+│  │  │  │  └──tasks.json
+│  │  │  ├──sort.cpp
+│  │  │  └──sort.exe
+│  │  ├──On tap 1.docx
+│  │  ├──On tap Heap sort.docx
+│  │  ├──On tap Quick sort.docx
+│  │  ├──Radix sort.ppt
+│  │  ├──Tu doc tai lieu - cac thuat toan sort.docx
+│  │  └──~$ doc tai lieu - cac thuat toan sort.docx
+│  ├──Tuan 10/
+│  │  └──Chuong 5 - Cac thuat toan nen.ppt
+│  ├──Tuan 11/
+│  │  ├──Bai tap CN4 - Moodle.docx
+│  │  └──Bai tap nhom N4 - Tai lop.docx
+│  ├──Tuan 12/
+│  │  ├──Bai tap CC5 - Moodle.docx
+│  │  └──Bai tap CN5 - Moodle.docx
+│  ├──Tuan 2/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──Bai tap CC1 - Moodle.docx
+│  │  ├──Bai tap nhom N1 - Tai lop.docx
+│  │  ├──Searching.ppt
+│  │  ├──String Searching (P1).ppt
+│  │  ├──String Searching.pdf
+│  │  └──String Searching.ppt
+│  ├──Tuan 3/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──Bai tap CC2 - Tai lop.docx
+│  │  ├──Bai tap CN1 - Moodle.docx
+│  │  ├──code/
+│  │  │  ├──.vscode/
+│  │  │  │  └──tasks.json
+│  │  │  ├──code.cpp
+│  │  │  └──code.exe
+│  │  ├──On tap De qui.docx
+│  │  ├──On tap De qui.pptx
+│  │  └──~$i tap CC2 - Tai lop.docx
+│  ├──Tuan 4/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──Chuong 3 - Cac khai niem co ban.ppt
+│  │  ├──code/
+│  │  │  ├──code.cpp
+│  │  │  └──code.exe
+│  │  └──Tu doc tai lieu - cac khai niem ve cay.docx
+│  ├──Tuan 5/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──._Chuong 4 - Cac cau truc du lieu.pptx
+│  │  ├──Bai tap CC3 - Moodle.docx
+│  │  ├──Bai tap nhom N2 - Tai lop.docx
+│  │  ├──BTree.ppt
+│  │  ├──Chiec non ky dieu.mp3
+│  │  ├──Chuong 4 - Cac cau truc du lieu.pptx
+│  │  ├──Chuong 4 - Red Black + AA tree.ppt
+│  │  ├──Thuat toan Reverse Polish notation.doc
+│  │  └──Thuat toan Tinh gia tri bieu thuc Postfix.doc
+│  ├──Tuan 6/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──._Bai tap tree + priority queue.docx
+│  │  ├──Bai tap CN2 - Moodle.docx
+│  │  └──Bai tap tree + priority queue new.docx
+│  ├──Tuan 7/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  └──Bai tap CC4 - Tai lop.docx
+│  ├──Tuan 8/
+│  │  ├──.DS_Store
+│  │  ├──._.DS_Store
+│  │  ├──._Tu doc tai lieu - cay Do-Den AA.docx
+│  │  ├──Bai tap AVL + hash table.docx
+│  │  ├──Bai tap CN3 - Moodle.docx
+│  │  ├──Bai tap nhom N3 - tai lop.docx
+│  │  └──Tu doc tai lieu - cay Do-Den + AA.docx
+│  ├──Tuan 9/
+│  │  └──Bai thi giua ky.docx
+│  └──tuan1/
+│  │  ├──.vs/
+│  │  │  └──tuan1/
+│  │  │  │  ├──FileContentIndex/
+│  │  │  │  │  ├──81e860da-2112-43dd-8b03-915451e8c4b7.vsidx
+│  │  │  │  │  ├──b55fbb1e-768f-471b-985a-36e2381e3600.vsidx
+│  │  │  │  │  ├──merges/
+│  │  │  │  │  └──read.lock
+│  │  │  │  └──v17/
+│  │  │  │  │  ├──.suo
+│  │  │  │  │  ├──Browse.VC.db
+│  │  │  │  │  └──ipch/
+│  │  │  │  │  │  └──AutoPCH/
+│  │  │  │  │  │  │  └──92d0412a83c3f9a6/
+│  │  │  │  │  │  │  │  └──FIRST.ipch
+│  │  ├──tuan1/
+│  │  │  ├──first.cpp
+│  │  │  ├──tuan1.vcxproj
+│  │  │  ├──tuan1.vcxproj.filters
+│  │  │  ├──tuan1.vcxproj.user
+│  │  │  └──x64/
+│  │  │  │  └──Debug/
+│  │  │  │  │  ├──first.obj
+│  │  │  │  │  ├──tuan1.exe.recipe
+│  │  │  │  │  ├──tuan1.ilk
+│  │  │  │  │  ├──tuan1.log
+│  │  │  │  │  ├──tuan1.tlog/
+│  │  │  │  │  │  ├──CL.command.1.tlog
+│  │  │  │  │  │  ├──CL.read.1.tlog
+│  │  │  │  │  │  ├──CL.write.1.tlog
+│  │  │  │  │  │  ├──link.command.1.tlog
+│  │  │  │  │  │  ├──link.read.1.tlog
+│  │  │  │  │  │  ├──link.write.1.tlog
+│  │  │  │  │  │  └──tuan1.lastbuildstate
+│  │  │  │  │  ├──vc143.idb
+│  │  │  │  │  └──vc143.pdb
+│  │  ├──tuan1.sln
+│  │  └──x64/
+│  │  │  └──Debug/
+│  │  │  │  ├──tuan1.exe
+│  │  │  │  └──tuan1.pdb

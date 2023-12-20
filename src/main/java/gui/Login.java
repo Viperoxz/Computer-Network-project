@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
     public class Login extends JFrame {
-        static String cache="mangmaytinhnhom10";
+        static String cache="mangmaytinhnhom5";
         public static int isOn=0;
         public Login() {
             init();
@@ -61,7 +61,7 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent e) {
                     String username = password.getText();
 
-                    if (!username.equals("mangmaytinhnhom10")){
+                    if (!username.equals("mangmaytinhnhom5")){
                         JOptionPane.showMessageDialog(Login.this, "Invalid password");
                     }else{
                         isOn=1;

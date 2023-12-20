@@ -64,15 +64,18 @@ public class GetFile {
 
     public static void getFileByPath(String path, String from) {
         Path checkPathExists = Paths.get(path);
+        String[] slicePath = path.split("\\\\");
+        String appName = slicePath[slicePath.length-1];
+
         if (Files.isRegularFile(checkPathExists)) {
             SendMail.serversendEmail(from, "Reply for request: Get File", path,
                     HTMLGenerator.generateHTML("Your request has been completed successfully", "",
-                            String.format("Get file <b>%s</b> successful. <br>This is what you want.", path)));
+                            String.format("Get file <b>%s</b> successful. <br>This is what you want.", appName)));
         }
         else {
             SendMail.serversendEmail(from, "Reply for request: Get File", "",
                     HTMLGenerator.generateHTML("Your request has failed", "",
-                            String.format("Get file <b>%s</b> failed. <br>This file is not found.", path)));
+                            String.format("Get file <b>%s</b> failed. <br>This file is not found.", appName)));
         }
     }
 }
