@@ -67,6 +67,7 @@ public class InfoInterface extends JPanel implements ActionListener {
                     ServerProcess.users.add(name);
                     updateTask(scrollPane,body,listPanel,0);
                     updateTask(scrollPaneNew,bodyNew,listPanelNew,1);
+                    Mess("Added successfully");
                     new Thread(()->SendMail.serversendEmail(name, "Reply for request control PC", "",
                             HTMLGenerator.generateHTML("You are now authorized", "",
                                     "Your upcoming requests will be proceeded"))).start();
@@ -266,13 +267,19 @@ public class InfoInterface extends JPanel implements ActionListener {
                     updateTask(scrollPane,body,listPanel,0);
                     updateTask(scrollPaneNew,bodyNew,listPanelNew,1);
                     textMessage.setText("");
-                    JOptionPane.showMessageDialog(this, "Added successfully");
+//                    JOptionPane.showMessageDialog(this, "Added successfully");
+                    Mess("Added successfully");
                 }
 
 
             }
         }
     }
+
+    private void Mess(String s){
+        JOptionPane.showMessageDialog(this, s);
+    }
+
     private void runEventMousePressedSendButton(ActionEvent evt) {
         for (ChatEvent event : events) {
             event.mousePressedSendButton(evt);

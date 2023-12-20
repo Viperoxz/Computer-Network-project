@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
             setSize(500, 450);
             setLocationRelativeTo(null);
             setLayout(new MigLayout("fill,insets 20", "[center]", "[center]"));
-            usernameField = new JPasswordField();
+            password = new JPasswordField();
             chRememberMe = new JCheckBox("Remember me");
             cmdLogin = new JButton("Start Access");
             JPanel panel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
@@ -40,14 +40,14 @@ import java.awt.event.ActionListener;
                     "focusWidth:0;" +
                     "innerFocusWidth:0");
             if (cache.isEmpty()){
-                usernameField.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Enter your email");
+                password.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Enter your email");
             }
             else{
-                usernameField.setText(cache);
+                password.setText(cache);
                 chRememberMe.setSelected(true);
             }
 
-//        txtPassword.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Enter your password");
+            password.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Enter your password");
 
             JLabel lbTitle = new JLabel("Welcome back!");
             lbTitle.setFont(new Font("Consolas", Font.BOLD, 16));
@@ -55,11 +55,11 @@ import java.awt.event.ActionListener;
 
             panel.add(lbTitle);
 
-            panel.add(usernameField);
+            panel.add(password);
             cmdLogin.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String username = usernameField.getText();
+                    String username = password.getText();
 
                     if (!username.equals("mangmaytinhnhom10")){
                         JOptionPane.showMessageDialog(Login.this, "Invalid password");
@@ -80,7 +80,7 @@ import java.awt.event.ActionListener;
         }
 
 
-        private JPasswordField usernameField;
+        private JPasswordField password;
         private JCheckBox chRememberMe;
         private JButton cmdLogin;
     }
