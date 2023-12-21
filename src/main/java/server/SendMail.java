@@ -4,7 +4,7 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-//ixzg pazh pwmz bqaf
+
 
 public class SendMail {
 

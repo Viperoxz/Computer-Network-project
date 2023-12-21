@@ -154,13 +154,19 @@ public class GuideTable {
                                                             </tr>
                                                             <tr>
                                                                 <td>14</td>
-                                                                <td>DIRECTORY</td>
+                                                                <td rowspan="2">DIRECTORY</td>
                                                                 <td>exploredirectory&&amp;&lt;dir_path&gt;</td>
                                                                 <td>Display entire specified directory as a tree</td>
                                                                 <td>exploredirectory&amp;&amp;D:\\\\IT</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>15</td>
+                                                                <td>exploredrive&&amp;&lt;drive&gt;</td>
+                                                                <td>Display entire contents of specified drive</td>
+                                                                <td>exploredrive&amp;&amp;D</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>16</td>
                                                                 <td>APP</td>
                                                                 <td>listapp</td>
                                                                 <td>Get the list of applications currently running on the user’s devices</td>

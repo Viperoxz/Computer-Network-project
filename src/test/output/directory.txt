@@ -1,422 +1,713 @@
-├──DSA/
-│  ├──BST/
-│  │  ├──.vs/
-│  │  │  └──BST/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──1928bb5d-818c-4b11-8958-adda44cd3bfe.vsidx
-│  │  │  │  │  ├──433b9b0e-97d9-45b9-9345-736ff825ecb0.vsidx
-│  │  │  │  │  ├──8a226d0b-335b-4e97-a362-173e9188f463.vsidx
-│  │  │  │  │  ├──cb2d3967-f4b2-4abd-96f0-f633433386ef.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  ├──4fe871f4499fd61d/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  ├──5db7cc4a4467cc3d/
-│  │  │  │  │  │  │  │  └──MAIN.ipch
-│  │  │  │  │  │  │  ├──bf40c23e78d28ee9/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  └──e7a4c0198c196c0/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  ├──BST/
-│  │  │  ├──Bai 1.cpp
-│  │  │  ├──Bai 2.cpp
-│  │  │  ├──BST.vcxproj
-│  │  │  ├──BST.vcxproj.filters
-│  │  │  ├──BST.vcxproj.user
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──Bai 1.obj
-│  │  │  │  │  ├──Bai 2.obj
-│  │  │  │  │  ├──BST.exe.recipe
-│  │  │  │  │  ├──BST.ilk
-│  │  │  │  │  ├──BST.log
-│  │  │  │  │  ├──BST.tlog/
-│  │  │  │  │  │  ├──BST.lastbuildstate
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  └──link.write.1.tlog
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──BST.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──BST.exe
-│  │  │  │  └──BST.pdb
-│  ├──CTDL&GT (CDIO) - Ke hoach giang day.docx
-│  ├──CTDL&GT (CDIO) - Qui dinh can biet.ppt
-│  ├──On tap 1.docx
-│  ├──On tap 2.docx
-│  ├──On tap 3.docx
-│  ├──On tap 4.docx
-│  ├──onthicuoiki_tree/
-│  │  ├──.vs/
-│  │  │  └──onthicuoiki_tree/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──8c5fb1fc-562c-4b34-965d-a95a33846e45.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  └──2d4d23eb32bdfbbb/
-│  │  │  │  │  │  │  │  └──SOURCE.ipch
-│  │  ├──onthicuoiki_tree/
-│  │  │  ├──onthicuoiki_tree.vcxproj
-│  │  │  ├──onthicuoiki_tree.vcxproj.filters
-│  │  │  ├──onthicuoiki_tree.vcxproj.user
-│  │  │  ├──Source.cpp
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──onthicuoiki_tree.exe.recipe
-│  │  │  │  │  ├──onthicuoiki_tree.ilk
-│  │  │  │  │  ├──onthicuoiki_tree.log
-│  │  │  │  │  ├──onthicuoiki_tree.tlog/
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  ├──link.write.1.tlog
-│  │  │  │  │  │  └──onthicuoiki_tree.lastbuildstate
-│  │  │  │  │  ├──Source.obj
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──onthicuoiki_tree.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──onthicuoiki_tree.exe
-│  │  │  │  └──onthicuoiki_tree.pdb
-│  ├──On_gk/
-│  │  ├──.vs/
-│  │  │  └──On_gk/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──5b4b262e-e22d-46f8-af7d-1e406a62e5ee.vsidx
-│  │  │  │  │  ├──951cd5ee-5472-4dbb-97d5-346c4d69e1dc.vsidx
-│  │  │  │  │  ├──9c21a4c2-d7ed-4009-b6f6-8b73431fd3a9.vsidx
-│  │  │  │  │  ├──d99415cc-6161-4092-81c3-684ef8364c34.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  ├──1cbf4c1475eef636/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  ├──28864a4a36cc3b42/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──28b02cb6d97e6e32/
-│  │  │  │  │  │  │  │  └──QUANLISV.ipch
-│  │  │  │  │  │  │  ├──42293e509611b695/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  ├──4ca76639ca639bc2/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──7a7b71ecf554672b/
-│  │  │  │  │  │  │  │  └──ONTAP.ipch
-│  │  │  │  │  │  │  ├──882936387fb10c2d/
-│  │  │  │  │  │  │  │  └──QUANLISV.ipch
-│  │  │  │  │  │  │  ├──890bb8f8d84ad688/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──8b7f5f7692935f39/
-│  │  │  │  │  │  │  │  └──ONLINKEDLIST.ipch
-│  │  │  │  │  │  │  ├──8ccd84864ee8c313/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──92062aecee9af21f/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  ├──98288075c83440d2/
-│  │  │  │  │  │  │  │  └──QUANLISV.ipch
-│  │  │  │  │  │  │  ├──aad77b7bc6136bf8/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──c79b69e70b2fa24e/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──cc8a4defae7dbf4b/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──d2a00133cc46bdfd/
-│  │  │  │  │  │  │  │  └──BAI 2.ipch
-│  │  │  │  │  │  │  ├──da4c19288472446f/
-│  │  │  │  │  │  │  │  └──22120220PHAMVANHOANGNAM.ipch
-│  │  │  │  │  │  │  ├──e7a2db4390da4220/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  ├──f12f4d65a74a4a33/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  │  │  │  │  │  └──fa100a1ff2c99a/
-│  │  │  │  │  │  │  │  └──BAI 1.ipch
-│  │  ├──On_gk/
-│  │  │  ├──Onlinkedlist.cpp
-│  │  │  ├──ontap.cpp
-│  │  │  ├──On_gk.vcxproj
-│  │  │  ├──On_gk.vcxproj.filters
-│  │  │  ├──On_gk.vcxproj.user
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──Onlinkedlist.obj
-│  │  │  │  │  ├──ontap.obj
-│  │  │  │  │  ├──On_gk.exe.recipe
-│  │  │  │  │  ├──On_gk.ilk
-│  │  │  │  │  ├──On_gk.log
-│  │  │  │  │  ├──On_gk.tlog/
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  ├──link.write.1.tlog
-│  │  │  │  │  │  └──On_gk.lastbuildstate
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──On_gk.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──On_gk.exe
-│  │  │  │  └──On_gk.pdb
-│  ├──PriorityQueue/
-│  │  ├──.vs/
-│  │  │  └──PriorityQueue/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──0fe49335-a0f6-4232-8be9-68cd5680ea08.vsidx
-│  │  │  │  │  ├──394f99f1-e328-4d46-8233-0025cd6a27fc.vsidx
-│  │  │  │  │  ├──5cbb7f0e-4b71-4e2c-b872-ba84e0fc0ace.vsidx
-│  │  │  │  │  ├──66ec49ef-2db0-42e2-9ab7-96917b170006.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  ├──468186e1ff7e2eb7/
-│  │  │  │  │  │  │  │  └──MAIN.ipch
-│  │  │  │  │  │  │  ├──4d1af657bc406dac/
-│  │  │  │  │  │  │  │  └──BAI1.ipch
-│  │  │  │  │  │  │  ├──5e30819a6320f4b9/
-│  │  │  │  │  │  │  │  └──22120220_PHAMVANHOANGNAM_TUAN8.ipch
-│  │  │  │  │  │  │  ├──c088e5e08db54667/
-│  │  │  │  │  │  │  │  └──FILENAME.ipch
-│  │  │  │  │  │  │  └──f99f6c732c770f92/
-│  │  │  │  │  │  │  │  └──BTREE.ipch
-│  │  ├──PriorityQueue/
-│  │  │  ├──22120220_PhamVanHoangNam_Tuan8.cpp
-│  │  │  ├──BTree.cpp
-│  │  │  ├──FileName.cpp
-│  │  │  ├──PriorityQueue.vcxproj
-│  │  │  ├──PriorityQueue.vcxproj.filters
-│  │  │  ├──PriorityQueue.vcxproj.user
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──BTree.obj
-│  │  │  │  │  ├──FileName.obj
-│  │  │  │  │  ├──Main.obj
-│  │  │  │  │  ├──PriorityQueue.exe.recipe
-│  │  │  │  │  ├──PriorityQueue.ilk
-│  │  │  │  │  ├──PriorityQueue.log
-│  │  │  │  │  ├──PriorityQueue.tlog/
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  ├──link.write.1.tlog
-│  │  │  │  │  │  └──PriorityQueue.lastbuildstate
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──PriorityQueue.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──PriorityQueue.exe
-│  │  │  │  └──PriorityQueue.pdb
-│  ├──Sort/
-│  │  ├──.vs/
-│  │  │  └──Sort/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──2aee0e7d-0a28-4850-ab92-fd24660f9dbd.vsidx
-│  │  │  │  │  ├──8546cac5-2883-4915-96b0-39a424bbe63b.vsidx
-│  │  │  │  │  ├──9dc59236-d605-44cb-b2d2-11504b2cc8bb.vsidx
-│  │  │  │  │  ├──b18d3222-71d0-46ca-9f2f-f3b459559918.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  ├──393189d1e3ea1566/
-│  │  │  │  │  │  │  │  └──MAIN.ipch
-│  │  │  │  │  │  │  ├──41c4d786713bf4c2/
-│  │  │  │  │  │  │  ├──5fcbc513a51993c2/
-│  │  │  │  │  │  │  ├──801ab4869506596f/
-│  │  │  │  │  │  │  │  └──SORT.ipch
-│  │  │  │  │  │  │  └──98d5d778ca900ad7/
-│  │  │  │  │  │  │  │  └──22120220 (3).ipch
-│  │  ├──Sort/
-│  │  │  ├──22120220_PhamVanHoangNam.zip
-│  │  │  ├──cau3_comparison.xlsx
-│  │  │  ├──create_table.ipynb
-│  │  │  ├──Do_on_dinh_thuat_toan.docx
-│  │  │  ├──main.cpp
-│  │  │  ├──output.txt
-│  │  │  ├──Sort.cpp
-│  │  │  ├──Sort.hpp
-│  │  │  ├──Sort.vcxproj
-│  │  │  ├──Sort.vcxproj.filters
-│  │  │  ├──Sort.vcxproj.user
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──main.obj
-│  │  │  │  │  ├──Sort.exe.recipe
-│  │  │  │  │  ├──Sort.ilk
-│  │  │  │  │  ├──Sort.log
-│  │  │  │  │  ├──Sort.obj
-│  │  │  │  │  ├──Sort.tlog/
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  ├──link.write.1.tlog
-│  │  │  │  │  │  └──Sort.lastbuildstate
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──Sort.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──Sort.exe
-│  │  │  │  └──Sort.pdb
-│  ├──Tuan 1/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──Cac thuat toan sap xep.ppt
-│  │  ├──Chuong 1 - Tinh chi phi thuat toan.ppt
-│  │  ├──code/
-│  │  │  ├──.vscode/
-│  │  │  │  ├──launch.json
-│  │  │  │  ├──settings.json
-│  │  │  │  └──tasks.json
-│  │  │  ├──sort.cpp
-│  │  │  └──sort.exe
-│  │  ├──On tap 1.docx
-│  │  ├──On tap Heap sort.docx
-│  │  ├──On tap Quick sort.docx
-│  │  ├──Radix sort.ppt
-│  │  ├──Tu doc tai lieu - cac thuat toan sort.docx
-│  │  └──~$ doc tai lieu - cac thuat toan sort.docx
-│  ├──Tuan 10/
-│  │  └──Chuong 5 - Cac thuat toan nen.ppt
-│  ├──Tuan 11/
-│  │  ├──Bai tap CN4 - Moodle.docx
-│  │  └──Bai tap nhom N4 - Tai lop.docx
-│  ├──Tuan 12/
-│  │  ├──Bai tap CC5 - Moodle.docx
-│  │  └──Bai tap CN5 - Moodle.docx
-│  ├──Tuan 2/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──Bai tap CC1 - Moodle.docx
-│  │  ├──Bai tap nhom N1 - Tai lop.docx
-│  │  ├──Searching.ppt
-│  │  ├──String Searching (P1).ppt
-│  │  ├──String Searching.pdf
-│  │  └──String Searching.ppt
-│  ├──Tuan 3/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──Bai tap CC2 - Tai lop.docx
-│  │  ├──Bai tap CN1 - Moodle.docx
-│  │  ├──code/
-│  │  │  ├──.vscode/
-│  │  │  │  └──tasks.json
-│  │  │  ├──code.cpp
-│  │  │  └──code.exe
-│  │  ├──On tap De qui.docx
-│  │  ├──On tap De qui.pptx
-│  │  └──~$i tap CC2 - Tai lop.docx
-│  ├──Tuan 4/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──Chuong 3 - Cac khai niem co ban.ppt
-│  │  ├──code/
-│  │  │  ├──code.cpp
-│  │  │  └──code.exe
-│  │  └──Tu doc tai lieu - cac khai niem ve cay.docx
-│  ├──Tuan 5/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──._Chuong 4 - Cac cau truc du lieu.pptx
-│  │  ├──Bai tap CC3 - Moodle.docx
-│  │  ├──Bai tap nhom N2 - Tai lop.docx
-│  │  ├──BTree.ppt
-│  │  ├──Chiec non ky dieu.mp3
-│  │  ├──Chuong 4 - Cac cau truc du lieu.pptx
-│  │  ├──Chuong 4 - Red Black + AA tree.ppt
-│  │  ├──Thuat toan Reverse Polish notation.doc
-│  │  └──Thuat toan Tinh gia tri bieu thuc Postfix.doc
-│  ├──Tuan 6/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──._Bai tap tree + priority queue.docx
-│  │  ├──Bai tap CN2 - Moodle.docx
-│  │  └──Bai tap tree + priority queue new.docx
-│  ├──Tuan 7/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  └──Bai tap CC4 - Tai lop.docx
-│  ├──Tuan 8/
-│  │  ├──.DS_Store
-│  │  ├──._.DS_Store
-│  │  ├──._Tu doc tai lieu - cay Do-Den AA.docx
-│  │  ├──Bai tap AVL + hash table.docx
-│  │  ├──Bai tap CN3 - Moodle.docx
-│  │  ├──Bai tap nhom N3 - tai lop.docx
-│  │  └──Tu doc tai lieu - cay Do-Den + AA.docx
-│  ├──Tuan 9/
-│  │  └──Bai thi giua ky.docx
-│  └──tuan1/
-│  │  ├──.vs/
-│  │  │  └──tuan1/
-│  │  │  │  ├──FileContentIndex/
-│  │  │  │  │  ├──81e860da-2112-43dd-8b03-915451e8c4b7.vsidx
-│  │  │  │  │  ├──b55fbb1e-768f-471b-985a-36e2381e3600.vsidx
-│  │  │  │  │  ├──merges/
-│  │  │  │  │  └──read.lock
-│  │  │  │  └──v17/
-│  │  │  │  │  ├──.suo
-│  │  │  │  │  ├──Browse.VC.db
-│  │  │  │  │  └──ipch/
-│  │  │  │  │  │  └──AutoPCH/
-│  │  │  │  │  │  │  └──92d0412a83c3f9a6/
-│  │  │  │  │  │  │  │  └──FIRST.ipch
-│  │  ├──tuan1/
-│  │  │  ├──first.cpp
-│  │  │  ├──tuan1.vcxproj
-│  │  │  ├──tuan1.vcxproj.filters
-│  │  │  ├──tuan1.vcxproj.user
-│  │  │  └──x64/
-│  │  │  │  └──Debug/
-│  │  │  │  │  ├──first.obj
-│  │  │  │  │  ├──tuan1.exe.recipe
-│  │  │  │  │  ├──tuan1.ilk
-│  │  │  │  │  ├──tuan1.log
-│  │  │  │  │  ├──tuan1.tlog/
-│  │  │  │  │  │  ├──CL.command.1.tlog
-│  │  │  │  │  │  ├──CL.read.1.tlog
-│  │  │  │  │  │  ├──CL.write.1.tlog
-│  │  │  │  │  │  ├──link.command.1.tlog
-│  │  │  │  │  │  ├──link.read.1.tlog
-│  │  │  │  │  │  ├──link.write.1.tlog
-│  │  │  │  │  │  └──tuan1.lastbuildstate
-│  │  │  │  │  ├──vc143.idb
-│  │  │  │  │  └──vc143.pdb
-│  │  ├──tuan1.sln
-│  │  └──x64/
-│  │  │  └──Debug/
-│  │  │  │  ├──tuan1.exe
-│  │  │  │  └──tuan1.pdb
+├──Bet&Win/
+│  ├──AI_final.h5
+│  ├──assets/
+│  │  ├──background-menus-main.png
+│  │  ├──font.ttf
+│  │  ├──rect-options.png
+│  │  ├──rect-play.png
+│  │  └──simple-font.ttf
+│  ├──banner/
+│  │  ├──bg.png
+│  │  ├──coin.png
+│  │  ├──credit.png
+│  │  ├──dollar.png
+│  │  ├──formula-1.png
+│  │  └──logo_banner.png
+│  ├──data/
+│  │  ├──info.txt
+│  │  └──userhistory.xlsx
+│  ├──font/
+│  │  ├──arial.ttf
+│  │  ├──Audiowide-Regular.ttf
+│  │  ├──Audiowide.zip
+│  │  ├──Gamefont.ttf
+│  │  ├──geoaittf.zip
+│  │  ├──GEO_AI__.TTF
+│  │  ├──LG.otf
+│  │  ├──LT.otf
+│  │  └──Pixel Coleco.otf
+│  ├──Image/
+│  │  ├──19333403.eps
+│  │  ├──assets/
+│  │  │  ├──Help/
+│  │  │  │  ├──BG menu.png
+│  │  │  │  ├──guide-minigame1.png
+│  │  │  │  ├──guide-minigame2.png
+│  │  │  │  ├──Help2/
+│  │  │  │  │  ├──0.png
+│  │  │  │  │  ├──1.png
+│  │  │  │  │  ├──10.png
+│  │  │  │  │  ├──11.png
+│  │  │  │  │  ├──12.png
+│  │  │  │  │  ├──2.png
+│  │  │  │  │  ├──3.png
+│  │  │  │  │  ├──4.png
+│  │  │  │  │  ├──5.png
+│  │  │  │  │  ├──6.png
+│  │  │  │  │  ├──7.png
+│  │  │  │  │  ├──8.png
+│  │  │  │  │  └──9.png
+│  │  │  │  ├──left.png
+│  │  │  │  └──right.png
+│  │  │  ├──Mode/
+│  │  │  │  ├──1.png
+│  │  │  │  ├──100.png
+│  │  │  │  ├──1000.png
+│  │  │  │  ├──2.png
+│  │  │  │  ├──200.png
+│  │  │  │  ├──3.png
+│  │  │  │  ├──4.png
+│  │  │  │  ├──5.png
+│  │  │  │  ├──500.png
+│  │  │  │  ├──allin.png
+│  │  │  │  ├──back-hover.png
+│  │  │  │  ├──cost1.png
+│  │  │  │  ├──cost2.png
+│  │  │  │  ├──easy1.png
+│  │  │  │  ├──easy2.png
+│  │  │  │  ├──half.png
+│  │  │  │  ├──hard1.png
+│  │  │  │  ├──hard2.png
+│  │  │  │  ├──help-hover.png
+│  │  │  │  ├──hover 169.png
+│  │  │  │  ├──hover-square.png
+│  │  │  │  ├──hover.png
+│  │  │  │  ├──mode.png
+│  │  │  │  ├──Mode1.png
+│  │  │  │  ├──next-hover.png
+│  │  │  │  ├──normal1.png
+│  │  │  │  ├──normal2.png
+│  │  │  │  ├──off.png
+│  │  │  │  ├──on.png
+│  │  │  │  ├──play1.png
+│  │  │  │  ├──play2.png
+│  │  │  │  └──start-hover.png
+│  │  │  ├──Options/
+│  │  │  │  ├──1.png
+│  │  │  │  ├──2.png
+│  │  │  │  ├──3.png
+│  │  │  │  ├──4.png
+│  │  │  │  ├──5.png
+│  │  │  │  ├──bg1.png
+│  │  │  │  ├──bg2.png
+│  │  │  │  ├──bg3.png
+│  │  │  │  ├──blue.png
+│  │  │  │  ├──his_bg.png
+│  │  │  │  ├──off.png
+│  │  │  │  ├──on.png
+│  │  │  │  └──silver.png
+│  │  │  ├──SetMenu/
+│  │  │  │  ├──arrow.png
+│  │  │  │  ├──arrow1.png
+│  │  │  │  ├──arrow2.png
+│  │  │  │  ├──back.png
+│  │  │  │  ├──help.png
+│  │  │  │  ├──next.png
+│  │  │  │  └──START.png
+│  │  │  └──set_0.png
+│  │  ├──bet/
+│  │  │  ├──choose bet.png
+│  │  │  └──choose_bet.png
+│  │  ├──Characters/
+│  │  │  ├──ava/
+│  │  │  │  ├──0.png
+│  │  │  │  ├──ava0.png
+│  │  │  │  └──light.png
+│  │  │  ├──set1.png
+│  │  │  ├──set2.png
+│  │  │  ├──set3.png
+│  │  │  ├──set4.png
+│  │  │  └──set5.png
+│  │  ├──choose mini/
+│  │  │  ├──choose mini.png
+│  │  │  ├──minigame1-hover.png
+│  │  │  ├──minigame1.png
+│  │  │  ├──minigame2-hover.png
+│  │  │  └──minigame2.png
+│  │  ├──choose set/
+│  │  │  ├──2112_w026_n002_1180b_p1_1180_ss.eps
+│  │  │  ├──2112_w026_n002_1180b_p1_1180_ss.jpg
+│  │  │  ├──bg/
+│  │  │  │  ├──1189.jpg
+│  │  │  │  ├──1238.jpg
+│  │  │  │  ├──1295.jpg
+│  │  │  │  ├──1591.jpg
+│  │  │  │  ├──1602.jpg
+│  │  │  │  ├──1603.jpg
+│  │  │  │  ├──1605.jpg
+│  │  │  │  ├──1658.png
+│  │  │  │  ├──2560px-Allee_de_chataigniers_-_Alfred_Sisley.jpg
+│  │  │  │  ├──2880px-Claude_Monet_-_Arrival_of_the_Normandy_Train,_Gare_Saint-Lazare_-_Google_Art_Project.jpg
+│  │  │  │  ├──2880px-Merging_galaxies_NGC_4676_(captured_by_the_Hubble_Space_Telescope).jpg
+│  │  │  │  ├──620.jpg
+│  │  │  │  ├──785.jpg
+│  │  │  │  ├──9Z_2102.w026.n002.120B.p1.120.jpg
+│  │  │  │  ├──Antennae_galaxies_xl.jpg
+│  │  │  │  ├──background-sea.png
+│  │  │  │  ├──Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg
+│  │  │  │  ├──M101_hires_STScI-PRC2006-10a.jpg
+│  │  │  │  ├──M82_HST_ACS_2006-14-a-large_web.jpg
+│  │  │  │  └──Sisley-Early_Snow_at_Louveciennes.jpg
+│  │  │  ├──bg.rar
+│  │  │  ├──bg0.png
+│  │  │  ├──bg1.png
+│  │  │  ├──bg2.png
+│  │  │  ├──bg3.png
+│  │  │  ├──bg4.png
+│  │  │  ├──choose_set.png
+│  │  │  ├──road.png
+│  │  │  └──straight-highway-disappear-mountain-landscape.zip
+│  │  ├──choose track/
+│  │  │  └──choose_track.png
+│  │  ├──Gameplay/
+│  │  │  ├──set0/
+│  │  │  │  ├──car0.png
+│  │  │  │  ├──car1.png
+│  │  │  │  ├──car2.png
+│  │  │  │  ├──car3.png
+│  │  │  │  └──car4.png
+│  │  │  ├──set1/
+│  │  │  │  ├──car0.png
+│  │  │  │  ├──car1.png
+│  │  │  │  ├──car2.png
+│  │  │  │  ├──car3.png
+│  │  │  │  └──car4.png
+│  │  │  ├──set2/
+│  │  │  │  ├──car0.png
+│  │  │  │  ├──car1.png
+│  │  │  │  ├──car2.png
+│  │  │  │  ├──car3.png
+│  │  │  │  └──car4.png
+│  │  │  ├──set3/
+│  │  │  │  ├──car0.png
+│  │  │  │  ├──car1.png
+│  │  │  │  ├──car2.png
+│  │  │  │  ├──car3.png
+│  │  │  │  └──car4.png
+│  │  │  └──set4/
+│  │  │  │  ├──car0.png
+│  │  │  │  ├──car1.png
+│  │  │  │  ├──car2.png
+│  │  │  │  ├──car3.png
+│  │  │  │  └──car4.png
+│  │  ├──History/
+│  │  │  ├──b.png
+│  │  │  ├──back.png
+│  │  │  ├──back1.png
+│  │  │  ├──bg.jpg
+│  │  │  ├──L-arrow.png
+│  │  │  └──R-arrow.png
+│  │  ├──login/
+│  │  │  ├──bg.png
+│  │  │  ├──sidebg.jpg
+│  │  │  ├──sidebg1.jpg
+│  │  │  └──sidebg2.png
+│  │  ├──menugame1.jpg
+│  │  ├──menugame2.png
+│  │  └──Store/
+│  │  │  ├──chat_box.png
+│  │  │  ├──eff/
+│  │  │  │  ├──1.png
+│  │  │  │  ├──2.png
+│  │  │  │  ├──3.png
+│  │  │  │  └──4.png
+│  │  │  ├──garage1.png
+│  │  │  ├──items/
+│  │  │  │  ├──1-hover.png
+│  │  │  │  ├──1.png
+│  │  │  │  ├──2-hover.png
+│  │  │  │  ├──2.png
+│  │  │  │  ├──3-hover.png
+│  │  │  │  ├──3.png
+│  │  │  │  ├──4-hover.png
+│  │  │  │  └──4.png
+│  │  │  ├──saler1.png
+│  │  │  ├──saler2.png
+│  │  │  ├──saler3.png
+│  │  │  ├──saler4.png
+│  │  │  ├──saler5.png
+│  │  │  ├──saler6.png
+│  │  │  └──store_ico.png
+│  ├──img/
+│  │  ├──background-levels/
+│  │  │  ├──background-city-0-c.png
+│  │  │  ├──background-city-0.png
+│  │  │  ├──background-city-1.png
+│  │  │  ├──background-city-2.png
+│  │  │  ├──background-city-3.png
+│  │  │  ├──background-desert-0-c.png
+│  │  │  ├──background-desert-0.png
+│  │  │  ├──background-desert-1.png
+│  │  │  ├──background-desert-2.png
+│  │  │  ├──background-desert-3.png
+│  │  │  ├──background-galaxy-0-c.png
+│  │  │  ├──background-galaxy-0.png
+│  │  │  ├──background-galaxy-1.png
+│  │  │  ├──background-galaxy-2.png
+│  │  │  ├──background-galaxy-3.png
+│  │  │  ├──background-painting-0-c.png
+│  │  │  ├──background-painting-0.png
+│  │  │  ├──background-painting-1.png
+│  │  │  ├──background-painting-2.png
+│  │  │  ├──background-painting-3.png
+│  │  │  ├──background-sea-0-c.png
+│  │  │  ├──background-sea-0.png
+│  │  │  ├──background-sea-1.png
+│  │  │  ├──background-sea-2.png
+│  │  │  └──background-sea-3.png
+│  │  ├──background-menus/
+│  │  │  ├──bird/
+│  │  │  │  ├──1-bird.png
+│  │  │  │  ├──2-bird.png
+│  │  │  │  ├──3-bird.png
+│  │  │  │  ├──4-bird.png
+│  │  │  │  ├──5-bird.png
+│  │  │  │  └──6-bird.png
+│  │  │  ├──buttons/
+│  │  │  │  ├──01.png
+│  │  │  │  ├──02.png
+│  │  │  │  ├──03.png
+│  │  │  │  ├──04.png
+│  │  │  │  ├──05.png
+│  │  │  │  ├──06.png
+│  │  │  │  ├──07.png
+│  │  │  │  ├──1.png
+│  │  │  │  ├──2.png
+│  │  │  │  ├──3.png
+│  │  │  │  ├──4.png
+│  │  │  │  ├──5.png
+│  │  │  │  ├──6.png
+│  │  │  │  ├──7.png
+│  │  │  │  ├──base-button-minigame.png
+│  │  │  │  ├──base-button-screen.png
+│  │  │  │  ├──base-button-sound.png
+│  │  │  │  ├──hover-button-minigame.png
+│  │  │  │  ├──hover-button-screen.png
+│  │  │  │  └──hover-button-sound.png
+│  │  │  └──f1/
+│  │  │  │  ├──0-f1.png
+│  │  │  │  ├──1-f1.png
+│  │  │  │  ├──2-f1.png
+│  │  │  │  └──3-f1.png
+│  │  ├──cars/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_red.png
+│  │  │  ├──0_yellow.png
+│  │  │  ├──1_blue.png
+│  │  │  ├──1_green.png
+│  │  │  ├──1_pink.png
+│  │  │  ├──1_red.png
+│  │  │  ├──1_yellow.png
+│  │  │  ├──2_blue.png
+│  │  │  ├──2_green.png
+│  │  │  ├──2_pink.png
+│  │  │  ├──2_red.png
+│  │  │  ├──2_yellow.png
+│  │  │  ├──3_blue.png
+│  │  │  ├──3_green.png
+│  │  │  ├──3_pink.png
+│  │  │  ├──3_red.png
+│  │  │  └──3_yellow.png
+│  │  ├──celebrate/
+│  │  │  ├──bg.jpg
+│  │  │  ├──bg1.jpg
+│  │  │  ├──bgwin.png
+│  │  │  ├──bg_win.png
+│  │  │  ├──crowd0_0.png
+│  │  │  ├──crowd0_1.png
+│  │  │  ├──crowd1_0.png
+│  │  │  ├──crowd1_1.png
+│  │  │  ├──first.png
+│  │  │  ├──second.png
+│  │  │  └──third.png
+│  │  ├──decorations/
+│  │  │  ├──chat.png
+│  │  │  ├──desert-bush.png
+│  │  │  ├──desert-cactus-large.png
+│  │  │  ├──desert-cactus-small.png
+│  │  │  ├──desert-rock-large.png
+│  │  │  ├──desert-rock-medium.png
+│  │  │  ├──desert-rock-small.png
+│  │  │  ├──desert-roll.png
+│  │  │  ├──desert-tree-bush.png
+│  │  │  └──desert-tree-death.png
+│  │  ├──formula ones/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_blue_formulaOne.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_green_formulaOne.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_pink_formulaOne.png
+│  │  │  ├──0_red.png
+│  │  │  ├──0_red_formulaOne.png
+│  │  │  ├──0_yellow.png
+│  │  │  ├──0_yellow_formulaOne.png
+│  │  │  ├──1_blue.png
+│  │  │  ├──1_blue_formulaOne.png
+│  │  │  ├──1_green.png
+│  │  │  ├──1_green_formulaOne.png
+│  │  │  ├──1_pink.png
+│  │  │  ├──1_pink_formulaOne.png
+│  │  │  ├──1_red.png
+│  │  │  ├──1_red_formulaOne.png
+│  │  │  ├──1_yellow.png
+│  │  │  ├──1_yellow_formulaOne.png
+│  │  │  ├──2_blue.png
+│  │  │  ├──2_blue_formulaOne.png
+│  │  │  ├──2_green.png
+│  │  │  ├──2_green_formulaOne.png
+│  │  │  ├──2_pink.png
+│  │  │  ├──2_pink_formulaOne.png
+│  │  │  ├──2_red.png
+│  │  │  ├──2_red_formulaOne.png
+│  │  │  ├──2_yellow.png
+│  │  │  ├──2_yellow_formulaOne.png
+│  │  │  ├──3_blue.png
+│  │  │  ├──3_blue_formulaOne.png
+│  │  │  ├──3_green.png
+│  │  │  ├──3_green_formulaOne.png
+│  │  │  ├──3_pink.png
+│  │  │  ├──3_pink_formulaOne.png
+│  │  │  ├──3_red.png
+│  │  │  ├──3_red_formulaOne.png
+│  │  │  ├──3_yellow.png
+│  │  │  ├──3_yellow_formulaOne.png
+│  │  │  ├──faces.psd
+│  │  │  └──formula ones.ai
+│  │  ├──mics/
+│  │  │  ├──1.png
+│  │  │  ├──2.png
+│  │  │  ├──3.png
+│  │  │  ├──arrow.png
+│  │  │  ├──bonus-block.png
+│  │  │  ├──car.png
+│  │  │  ├──cele_0.png
+│  │  │  ├──cele_1.png
+│  │  │  ├──cele_2.png
+│  │  │  ├──cheetah.png
+│  │  │  ├──coin.png
+│  │  │  ├──countdownbg.png
+│  │  │  ├──crowd1_0.png
+│  │  │  ├──crowd1_1.png
+│  │  │  ├──crowd2_0.png
+│  │  │  ├──crowd2_1.png
+│  │  │  ├──fire_0.png
+│  │  │  ├──fire_1.png
+│  │  │  ├──fire_2.png
+│  │  │  ├──fire_3.png
+│  │  │  ├──flash_0.png
+│  │  │  ├──flash_1.png
+│  │  │  ├──flash_2.png
+│  │  │  ├──flash_3.png
+│  │  │  ├──flash_4.png
+│  │  │  ├──flip_0.png
+│  │  │  ├──flip_1.png
+│  │  │  ├──flip_2.png
+│  │  │  ├──flip_3.png
+│  │  │  ├──flip_4.png
+│  │  │  ├──flip_5.png
+│  │  │  ├──lightning_0.png
+│  │  │  ├──lightning_1.png
+│  │  │  ├──lightning_2.png
+│  │  │  ├──lightning_3.png
+│  │  │  ├──lightning_4.png
+│  │  │  ├──mysterybox_0.png
+│  │  │  ├──mysterybox_1.png
+│  │  │  ├──mysterybox_2.png
+│  │  │  ├──mysterybox_3.png
+│  │  │  ├──nitro_0.png
+│  │  │  ├──nitro_1.png
+│  │  │  ├──nitro_2.png
+│  │  │  ├──nitro_3.png
+│  │  │  ├──nitro_4.png
+│  │  │  ├──nitro_5.png
+│  │  │  ├──nitro_6.png
+│  │  │  ├──nitro_7.png
+│  │  │  ├──portal_0.png
+│  │  │  ├──portal_1.png
+│  │  │  ├──portal_2.png
+│  │  │  ├──portal_3.png
+│  │  │  ├──portal_4.png
+│  │  │  ├──portal_5.png
+│  │  │  ├──portal_6.png
+│  │  │  ├──portal_7.png
+│  │  │  ├──portal_lose_0.png
+│  │  │  ├──portal_lose_1.png
+│  │  │  ├──portal_lose_2.png
+│  │  │  ├──portal_lose_3.png
+│  │  │  ├──portal_lose_4.png
+│  │  │  ├──portal_lose_5.png
+│  │  │  ├──portal_lose_6.png
+│  │  │  ├──portal_lose_7.png
+│  │  │  ├──rect-options.png
+│  │  │  ├──rect-play.png
+│  │  │  ├──smoke_0.png
+│  │  │  ├──smoke_1.png
+│  │  │  ├──smoke_2.png
+│  │  │  ├──smoke_3.png
+│  │  │  ├──smoke_4.png
+│  │  │  ├──smoke_5.png
+│  │  │  ├──smoke_6.png
+│  │  │  ├──smoke_7.png
+│  │  │  ├──smoke_8.png
+│  │  │  ├──smoke_9.png
+│  │  │  ├──stun_0.png
+│  │  │  ├──stun_1.png
+│  │  │  ├──stun_2.png
+│  │  │  ├──stun_3.png
+│  │  │  ├──testbg.png
+│  │  │  └──turtle.png
+│  │  ├──motorcycles/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_red.png
+│  │  │  ├──0_yellow.png
+│  │  │  ├──1_blue.png
+│  │  │  ├──1_green.png
+│  │  │  ├──1_pink.png
+│  │  │  ├──1_red.png
+│  │  │  ├──1_yellow.png
+│  │  │  ├──2_blue.png
+│  │  │  ├──2_green.png
+│  │  │  ├──2_pink.png
+│  │  │  ├──2_red.png
+│  │  │  └──2_yellow.png
+│  │  ├──scooters/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_red.png
+│  │  │  ├──0_yellow.png
+│  │  │  ├──1_blue.png
+│  │  │  ├──1_green.png
+│  │  │  ├──1_pink.png
+│  │  │  ├──1_red.png
+│  │  │  ├──1_yellow.png
+│  │  │  ├──2_blue.png
+│  │  │  ├──2_green.png
+│  │  │  ├──2_pink.png
+│  │  │  ├──2_red.png
+│  │  │  └──2_yellow.png
+│  │  ├──spaceship/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_red.png
+│  │  │  └──0_yellow.png
+│  │  └──trucks/
+│  │  │  ├──0_blue.png
+│  │  │  ├──0_green.png
+│  │  │  ├──0_pink.png
+│  │  │  ├──0_red.png
+│  │  │  ├──0_yellow.png
+│  │  │  ├──1_blue.png
+│  │  │  ├──1_green.png
+│  │  │  ├──1_pink.png
+│  │  │  ├──1_red.png
+│  │  │  ├──1_yellow.png
+│  │  │  ├──2_blue.png
+│  │  │  ├──2_green.png
+│  │  │  ├──2_pink.png
+│  │  │  ├──2_red.png
+│  │  │  ├──2_yellow.png
+│  │  │  ├──3_blue.png
+│  │  │  ├──3_green.png
+│  │  │  ├──3_pink.png
+│  │  │  ├──3_red.png
+│  │  │  └──3_yellow.png
+│  ├──minigame1/
+│  │  ├──font/
+│  │  │  ├──Nunito-Italic-VariableFont_wght.ttf
+│  │  │  ├──Nunito-VariableFont_wght.ttf
+│  │  │  ├──Nunito.zip
+│  │  │  ├──OFL.txt
+│  │  │  ├──Pixel Coleco.otf
+│  │  │  ├──README.txt
+│  │  │  └──static/
+│  │  │  │  ├──Nunito-Black.ttf
+│  │  │  │  ├──Nunito-BlackItalic.ttf
+│  │  │  │  ├──Nunito-Bold.ttf
+│  │  │  │  ├──Nunito-BoldItalic.ttf
+│  │  │  │  ├──Nunito-ExtraBold.ttf
+│  │  │  │  ├──Nunito-ExtraBoldItalic.ttf
+│  │  │  │  ├──Nunito-ExtraLight.ttf
+│  │  │  │  ├──Nunito-ExtraLightItalic.ttf
+│  │  │  │  ├──Nunito-Italic.ttf
+│  │  │  │  ├──Nunito-Light.ttf
+│  │  │  │  ├──Nunito-LightItalic.ttf
+│  │  │  │  ├──Nunito-Medium.ttf
+│  │  │  │  ├──Nunito-MediumItalic.ttf
+│  │  │  │  ├──Nunito-Regular.ttf
+│  │  │  │  ├──Nunito-SemiBold.ttf
+│  │  │  │  └──Nunito-SemiBoldItalic.ttf
+│  │  ├──img/
+│  │  │  ├──asterisk.png
+│  │  │  ├──bg.jpg
+│  │  │  ├──coin_0.png
+│  │  │  ├──coin_1.png
+│  │  │  ├──coin_2.png
+│  │  │  ├──coin_3.png
+│  │  │  ├──coin_4.png
+│  │  │  ├──coin_5.png
+│  │  │  ├──coin_6.png
+│  │  │  ├──coin_7.png
+│  │  │  ├──earth.png
+│  │  │  ├──explode.png
+│  │  │  ├──gameover.png
+│  │  │  ├──logo.png
+│  │  │  └──ufo.png
+│  │  ├──soundEffect/
+│  │  │  ├──background.wav
+│  │  │  ├──explosion.wav
+│  │  │  └──laser.wav
+│  │  ├──tempCodeRunnerFile.py
+│  │  └──__pycache__/
+│  │  │  ├──main.cpython-310.pyc
+│  │  │  └──main.cpython-39.pyc
+│  ├──minigame2/
+│  │  ├──font/
+│  │  │  ├──arial.ttf
+│  │  │  ├──Audiowide-Regular.ttf
+│  │  │  ├──Audiowide.zip
+│  │  │  ├──Gamefont.ttf
+│  │  │  ├──geoaittf.zip
+│  │  │  ├──GEO_AI__.TTF
+│  │  │  ├──LG.otf
+│  │  │  ├──LT.otf
+│  │  │  ├──OFL.txt
+│  │  │  └──Pixel Coleco.otf
+│  │  ├──img/
+│  │  │  ├──bg.png
+│  │  │  ├──deathLee-1.png
+│  │  │  ├──deathLee-10.png
+│  │  │  ├──deathLee-11.png
+│  │  │  ├──deathLee-12.png
+│  │  │  ├──deathLee-2.png
+│  │  │  ├──deathLee-3.png
+│  │  │  ├──deathLee-4.png
+│  │  │  ├──deathLee-5.png
+│  │  │  ├──deathLee-6.png
+│  │  │  ├──deathLee-7.png
+│  │  │  ├──deathLee-8.png
+│  │  │  ├──deathLee-9.png
+│  │  │  ├──fist.png
+│  │  │  ├──heart.png
+│  │  │  ├──lee-1.png
+│  │  │  ├──lee-10.png
+│  │  │  ├──lee-11.png
+│  │  │  ├──lee-12.png
+│  │  │  ├──lee-13.png
+│  │  │  ├──lee-14.png
+│  │  │  ├──lee-15.png
+│  │  │  ├──lee-16.png
+│  │  │  ├──lee-17.png
+│  │  │  ├──lee-18.png
+│  │  │  ├──lee-19.png
+│  │  │  ├──lee-2.png
+│  │  │  ├──lee-20.png
+│  │  │  ├──lee-21.png
+│  │  │  ├──lee-22.png
+│  │  │  ├──lee-23.png
+│  │  │  ├──lee-24.png
+│  │  │  ├──lee-25.png
+│  │  │  ├──lee-26.png
+│  │  │  ├──lee-27.png
+│  │  │  ├──lee-28.png
+│  │  │  ├──lee-29.png
+│  │  │  ├──lee-3.png
+│  │  │  ├──lee-30.png
+│  │  │  ├──lee-31.png
+│  │  │  ├──lee-32.png
+│  │  │  ├──lee-4.png
+│  │  │  ├──lee-5.png
+│  │  │  ├──lee-6.png
+│  │  │  ├──lee-7.png
+│  │  │  ├──lee-8.png
+│  │  │  ├──lee-9.png
+│  │  │  ├──rect1.png
+│  │  │  ├──rect2.png
+│  │  │  ├──shadow.png
+│  │  │  ├──shuriken-0.png
+│  │  │  ├──shuriken-1.png
+│  │  │  ├──shuriken-2.png
+│  │  │  ├──standLee-1.png
+│  │  │  ├──standLee-10.png
+│  │  │  ├──standLee-11.png
+│  │  │  ├──standLee-12.png
+│  │  │  ├──standLee-2.png
+│  │  │  ├──standLee-3.png
+│  │  │  ├──standLee-4.png
+│  │  │  ├──standLee-5.png
+│  │  │  ├──standLee-6.png
+│  │  │  ├──standLee-7.png
+│  │  │  ├──standLee-8.png
+│  │  │  ├──standLee-9.png
+│  │  │  └──wood.png
+│  │  ├──sound/
+│  │  │  ├──1.ogg
+│  │  │  ├──2.ogg
+│  │  │  ├──3.ogg
+│  │  │  ├──4.ogg
+│  │  │  ├──5.ogg
+│  │  │  ├──cool.mp3
+│  │  │  ├──DojoBattle.mp3
+│  │  │  ├──hits.zip
+│  │  │  ├──README.txt
+│  │  │  ├──stabs_0.zip
+│  │  │  ├──swoosh.txt
+│  │  │  ├──swosh-01.flac
+│  │  │  ├──swoshes.7z
+│  │  │  ├──tribe_a.wav
+│  │  │  ├──tribe_b.wav
+│  │  │  ├──tribe_c.wav
+│  │  │  ├──tribe_d.wav
+│  │  │  ├──tribe_e.wav
+│  │  │  ├──tribe_f.wav
+│  │  │  ├──tribe_g.wav
+│  │  │  ├──tribe_h.wav
+│  │  │  └──tribe_i.wav
+│  │  └──__pycache__/
+│  │  │  ├──main.cpython-310.pyc
+│  │  │  └──main.cpython-39.pyc
+│  ├──Music/
+│  │  ├──bgm_choose1.mp3
+│  │  ├──bgm_menu.mp3
+│  │  ├──click.mp3
+│  │  ├──count.wav
+│  │  ├──ding.wav
+│  │  ├──ding1.wav
+│  │  ├──ding2.wav
+│  │  ├──ding4.wav
+│  │  ├──start.wav
+│  │  ├──thunderclap.ogg
+│  │  ├──wind/
+│  │  │  ├──Wind.m4a
+│  │  │  ├──Wind.ogg
+│  │  │  ├──Wind2.m4a
+│  │  │  ├──Wind2.ogg
+│  │  │  ├──Wind3.m4a
+│  │  │  └──Wind3.ogg
+│  │  ├──wind.mp3
+│  │  └──wind.zip
+│  ├──references/
+│  │  ├──credits.txt
+│  │  └──thongtin.txt
+│  ├──soundEffect/
+│  │  ├──background.wav
+│  │  ├──explosion.wav
+│  │  └──laser.wav
+│  ├──sounds/
+│  │  ├──backgroundmusic.wav
+│  │  └──music/
+│  │  │  ├──Biosignature_BGM.flac
+│  │  │  ├──Blackout_BGM.flac
+│  │  │  ├──Cipher_BGM.flac
+│  │  │  ├──Cosmic_Solitude_BGM.flac
+│  │  │  ├──Melancholy_BGM.flac
+│  │  │  ├──Nocturnal_BGM.flac
+│  │  │  ├──Siberian_BGM.flac
+│  │  │  └──Triangular_BGM.flac
+│  └──source.exe

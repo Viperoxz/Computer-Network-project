@@ -27,7 +27,6 @@ public class ServerProcess {
             new Color(27, 124, 68),new Color(5, 121, 56),new Color(25, 93, 65)};
     public void start() {
         try {
-//            socket = new Socket("localhost", 5000);
 
             Timer timer = new Timer();
             Task task = new Task();
@@ -118,6 +117,10 @@ public class ServerProcess {
                         case "exploredirectory":
                             logActivities(from,"Entering " + choice[1]);
                             ExploreDirectory.requestExploreDir( choice[1], from);
+                            break;
+                        case "exploredrive":
+                            logActivities(from, "Entering " + choice[1]);
+                            ExploreDrive.listDirectoriesAndFiles(choice[1], from);
                             break;
                         case "getfile[1]":
                             logActivities(from,"Getting " + choice[1]);
