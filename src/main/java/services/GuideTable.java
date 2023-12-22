@@ -135,7 +135,7 @@ public class GuideTable {
                                                                 <td>11</td>
                                                                 <td>stopapp&&amp;&lt;app_name&gt;</td>
                                                                 <td>Close a specified application</td>
-                                                                <td>stopapp&amp;&amp;mspaint.exe</td>
+                                                                <td>stopapp&amp;&amp;powerpnt.exe</td>
                                                             </tr>
                                                            
                                                             <tr>
