@@ -59,27 +59,6 @@ public class HandleProcess {
                                 """));
     }
 
-            public static void controlStartApp(BufferedReader reader, PrintWriter writer) {
-                try {
-                    String appLocation = reader.readLine();
-                    System.out.println(appLocation);
-                    ProcessBuilder pb = new ProcessBuilder(appLocation);
-                    Process process = pb.start();
-//                    int exitCode = process.waitFor();
-//                    System.out.println("Exit code: " + exitCode);
-                    if (process.isAlive()) {
-                        System.out.println("xong");
-                        writer.println("APP_STARTED");
-                    } else {
-                        writer.println("APP_START_FAILED");
-                    }
-                    writer.flush();
-                } catch (IOException e/*| InterruptedException e*/) {
-                    e.printStackTrace();
-                    writer.println("APP_START_FAILED");
-                    writer.flush();
-                }
-            }
 
     public static void requestStartApp( String appLocation, String from) throws IOException {
         String[] appLoc = appLocation.split("\\\\");

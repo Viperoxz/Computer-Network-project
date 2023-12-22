@@ -67,26 +67,6 @@ public class ExploreDirectory {
         return sb.toString();
     }
 
-    public static void controlExploreDir(BufferedReader reader, PrintWriter writer) {
-        try {
-            String path = reader.readLine();
-            System.out.println(path);
-            File folder = new File(path);
-            if (!folder.exists() || !folder.isDirectory()) {
-                System.out.println("Thư mục không tồn tại hoặc không phải là thư mục hợp lệ.");
-                writer.println("The directory doesn't exist.");
-                writer.flush();
-                writer.close();
-            } else {
-                String directoryTree = ExploreDirectory.printDirectoryTree(folder);
-                writer.println(directoryTree);
-                writer.flush();
-                writer.close();
-            }
-        } catch (IOException e) {
-        }
-    }
-
     public static void requestExploreDir( String path, String from) throws IOException {
         File folder = new File(path);
         String reader="";
