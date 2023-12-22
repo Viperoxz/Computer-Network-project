@@ -59,6 +59,7 @@ public class HandleProcess {
             for (File file: apps){
                 if (file.getName().toLowerCase().contains(appName)){
                     if (Desktop.isDesktopSupported()) {
+                        appName=file.getName();
                         Desktop.getDesktop().open(file);
                         ok=1;
                     }else{
@@ -72,6 +73,8 @@ public class HandleProcess {
                 Process process = pb.start();
                 if (process.isAlive())
                     ok=1;
+                appName = appLoc[appLoc.length-1];
+
             }
 
             if (ok==1) {
