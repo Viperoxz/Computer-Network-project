@@ -34,9 +34,7 @@ public class ChatInterface extends javax.swing.JPanel {
                 String date = df.format(new Date());
                 String message = chatArea.getText().trim();
                 if (!message.isEmpty()){
-//                    System.out.println(message);
                     SendMail client= new SendMail();
-//                    new Thread()
                     SendMail.clientsendEmail(message);
                     ChatArea.addChatBox(new ModelMessage(icon, name, date, message), ServerProcess.color[ServerProcess.users.indexOf(name)], ChatBox.BoxType.RIGHT);
                     chatArea.clearTextAndGrabFocus();

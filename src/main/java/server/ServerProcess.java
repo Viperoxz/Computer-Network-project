@@ -2,6 +2,7 @@ package server;
 
 import java.awt.*;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -39,12 +40,12 @@ public class ServerProcess {
 
     static class Task extends TimerTask {
 
-        LocalTime currentTime = LocalTime.now();
+        SimpleDateFormat df = new SimpleDateFormat("hh:mmaa");
         private void logActivities(String from, String subject){
             Icon icon = new ImageIcon(main.class.getResource("/icon/user.png"));
 
             String name = from;
-            String date = currentTime.format(DateTimeFormatter.ofPattern("HH:mm"));
+            String date = df.format(new Date());
             String mess =  subject ;
             ChatArea.addChatBox(new ModelMessage(icon, name, date, mess), ServerProcess.color[ServerProcess.users.indexOf(name)], ChatBox.BoxType.LEFT);
         }
