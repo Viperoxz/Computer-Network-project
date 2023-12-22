@@ -129,13 +129,13 @@ public class GuideTable {
                                                                 <td>10</td>
                                                                 <td>startapp&&amp;&lt;app_name&gt;</td>
                                                                 <td>Open a specified application</td>
-                                                                <td>startapp&amp;&amp;mspaint.exe</td>
+                                                                <td>startapp&amp;&amp;powerpoint</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>11</td>
                                                                 <td>stopapp&&amp;&lt;app_name&gt;</td>
                                                                 <td>Close a specified application</td>
-                                                                <td>stopapp&amp;&amp;mspaint.exe</td>
+                                                                <td>stopapp&amp;&amp;powerpnt.exe</td>
                                                             </tr>
                                                            
                                                             <tr>
@@ -143,14 +143,14 @@ public class GuideTable {
                                                                 <td rowspan="2">FILE</td>
                                                                 <td>getfile[1]&&amp;&lt;file_name&gt;</td>
                                                                 <td>Get a specified file by filename</td>
-                                                                <td>getfile&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
+                                                                <td>getfile[1]&amp;&amp;mmt.txt</td>
                                                             </tr>
                                                            
                                                             <tr>
                                                                 <td>13</td>
                                                                 <td>getfile[2]&&amp;&lt;file_path&gt;</td>
                                                                 <td>Get a specified file by path to the file</td>
-                                                                <td>getfile&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
+                                                                <td>getfile[2]&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>14</td>
