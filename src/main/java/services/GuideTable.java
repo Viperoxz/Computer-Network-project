@@ -129,7 +129,7 @@ public class GuideTable {
                                                                 <td>10</td>
                                                                 <td>startapp&&amp;&lt;app_name&gt;</td>
                                                                 <td>Open a specified application</td>
-                                                                <td>startapp&amp;&amp;mspaint.exe</td>
+                                                                <td>startapp&amp;&amp;powerpoint</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>11</td>
