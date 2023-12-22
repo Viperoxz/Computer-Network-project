@@ -2,38 +2,18 @@ package services;
 
 import server.SendMail;
 
+import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class HandleProcess {
-    public static void controlListProcess(PrintWriter writer){
-        try {
-            String processes;
-            Process process = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
-            // Buffered reader to read from the process object
-            BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-            while ((processes = br.readLine()) != null) {
-                writer.println(processes);
-                writer.flush();
-            }
-            writer.println("END_OF_LIST");
-            writer.flush();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    static ArrayList<File> apps= new ArrayList<>();
 
     public static void requestListProcess( String from) throws IOException {
-//        writer.println("listprocess");
-//        writer.flush();
 
         Process process = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
-        // Buffered reader to read from the process object
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
         String fileName = "./src/test/output/processes.txt";
         File file = new File(fileName);
@@ -54,110 +34,97 @@ public class HandleProcess {
         SendMail.serversendEmail(from, "Reply for request: List Processes", path,
                 HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                         """
-                                Listing processes running successful. 
+                                <b>Listing processes</b> running successful. <br>
                                 This file contains all processes currently running on the device.
                                 """));
     }
 
+    static void list(File files){
+        for (File file: files.listFiles()){
+            if (file.isDirectory()){
+                list(file);
+            }else{
+                apps.add(file);
+            }
+
+        }
+    }
 
     public static void requestStartApp( String appLocation, String from) throws IOException {
+        list(new File("C:/ProgramData/Microsoft/Windows/Start Menu/Programs"));
         String[] appLoc = appLocation.split("\\\\");
         String appName = appLoc[appLoc.length-1];
-
+        int ok=0;
         try{
-            ProcessBuilder pb = new ProcessBuilder(appLocation);
-            Process process = pb.start();
+            for (File file: apps){
+                if (file.getName().toLowerCase().contains(appName)){
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop.getDesktop().open(file);
+                        ok=1;
+                    }else{
+                        throw new Exception();
+                    }
+                    break;
+                }
+            }
+            if (ok==0){
+                ProcessBuilder pb = new ProcessBuilder(appLocation);
+                Process process = pb.start();
+                if (process.isAlive())
+                    ok=1;
+            }
 
-            if (process.isAlive()) {
-                SendMail.serversendEmail(from, "Reply for request: Start App sucessed", "",
+            if (ok==1) {
+                SendMail.serversendEmail(from, "Reply for request: Start App succeed", "",
                         HTMLGenerator.generateHTML("Your request has been completed successfully", appName,
                                 String.format("""
-                                    %s has started.
+                                    <b>%s</b> has started.
                                     """, appName)));
             }
 
         } catch(Exception e) {
             SendMail.serversendEmail(from, "Reply for request: Start App failed", "",
                     HTMLGenerator.generateHTML("Your request has failed", "",
-                                    String.format("""
-                                    There was a failure when starting %s.
+                            String.format("""
+                                    There was a failure when starting <b>%s</b>.<br>
                                     Something went wrong.
                                     """, appName)));
-            e.printStackTrace();
+            System.out.println("ngu");
         }
+//        System.out.println(213);
     }
 
 
 
-    public static void controlStopApp(BufferedReader reader, PrintWriter writer) {
+    public static void requestStopApp( String appName, String from) throws IOException {
+
         try {
-            String appLocation = reader.readLine();
-            System.out.println(appLocation);
+            String appLocation= appName;
             ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
             Process process = pb.start();
             int exitCode = process.waitFor();
             if (exitCode == 0) {
-                writer.println("APP_STOPPED");
-            } else {
-                writer.println("APP_STOP_FAILED");
-            }
-            writer.flush();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-            writer.println("APP_STOP_FAILED");
-            writer.flush();
-        }
-    }
-
-    public static void requestStopApp( String appName, String from) throws IOException {
-    try {
-        String appLocation= appName;
-        ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", appLocation);
-        Process process = pb.start();
-        int exitCode = process.waitFor();
-        if (exitCode == 0) {
-            SendMail.serversendEmail(from, "Reply for request: Stop App succeeded", "",
-                    HTMLGenerator.generateHTML("Your request has been completed successfully", "",
-                            String.format("""
-                                    %s has stop.
+                SendMail.serversendEmail(from, "Reply for request: Stop App succeed", "",
+                        HTMLGenerator.generateHTML("Your request has been completed successfully", "",
+                                String.format("""
+                                   <b>%s</b> has stop.
                                     """, appName)));
-        }else {
-            throw new Exception("Hoi non");
-        }
-    } catch (Exception e) {
-        SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
-                HTMLGenerator.generateHTML("Your request has failed", "",
-                        String.format("""
-                                    There was a failure when stopping %s.
+            }else {
+                throw new Exception("Can't stop app");
+            }
+        } catch (Exception e) {
+            SendMail.serversendEmail(from, "Reply for request: Stop App failed", "",
+                    HTMLGenerator.generateHTML("Your request has failed", "",
+                            String.format("""
+                                    There was a failure when stopping <b>%s</b>.<br>
                                     Something went wrong.
                                     """, appName)));
-    }
-
-
-    }
-
-
-    public static void controlListApplications(PrintWriter writer) {
-        try {
-            ProcessBuilder processBuilder = new ProcessBuilder("powershell.exe",
-                    "Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle -AutoSize");
-            processBuilder.redirectErrorStream(true);
-            Process process = processBuilder.start();
-
-            // Buffered reader to read from the process object
-            BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                writer.println(line);
-                writer.flush();
-            }
-            writer.println("END_OF_LIST");
-            writer.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
+
     }
+
+
 
     public static void requestListApplications( String from) throws IOException {
 
@@ -187,6 +154,14 @@ public class HandleProcess {
         String path = file.getAbsolutePath();
         SendMail.serversendEmail(from, "Reply for request: List Applications", path,
                 HTMLGenerator.generateHTML("Your request has been completed successfully", "",
-                        "Listing applications running successful. This file contains all applications currently running on the device."));
+                        "<b>Listing applications</b> running successful. <br>This file contains all applications currently running on the device."));
     }
+
+//    public static void main(String[] args) throws IOException {
+//
+//        for (File file : apps) {
+//            System.out.println(file.getAbsolutePath());
+//        }
+//        requestStartApp("edge","hihi");
+//    }
 }

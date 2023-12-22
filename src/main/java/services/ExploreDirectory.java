@@ -3,10 +3,12 @@ package services;
 import server.SendMail;
 
 import java.io.*;
+import java.util.ArrayList;
 
 import static java.lang.Math.max;
 
 public class ExploreDirectory {
+
 
     /**
      * Pretty print the directory tree and its file names.
@@ -96,14 +98,15 @@ public class ExploreDirectory {
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", fileTextPath,
                         HTMLGenerator.generateHTML("Your request has been completed successfully", "",
                                 """
-                                        Directory exploration successful. 
-                                        The file below contains the directory structure you requested.
+                                        Directory exploration successful. <br>
+                                       <b>The file below</b> contains the directory structure you requested.
                                         """));
             } else {
                 SendMail.serversendEmail(from, "Reply for request: Explore directory", "",
                         HTMLGenerator.generateHTML("Your request has failed", "",
                                 """
-                                        Can't explore this directory. Please ensure that the path is correct.
+                                        <b>Can't explore this directory.</b><br>
+                                         Please ensure that the path is correct.
                                          """));
             }
         } catch (IOException e) {
@@ -112,7 +115,6 @@ public class ExploreDirectory {
     }
 
 }
-
 
 
 

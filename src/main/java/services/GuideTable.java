@@ -13,24 +13,25 @@ public class GuideTable {
                                 <style>
                                     body {
                                         font-family: Arial, sans-serif;
-                                        background-color: #ffffff; /* Màu nền trắng */
+                                        background-color: #ffffff; 
                                     }
                                     .container {
                                         width: 50%;
                                         margin: 50px auto;
                                         padding: 20px;
-                                        border: 2px solid #03667a; /* Viền màu tím */
+                                        border: 2px solid #03667a; 
                                         border-radius: 8px;
                                     }
                                     h2 {
                                         text-align: center;
-                                        background-color: #03737a; /* Màu nền xanh cho header */
-                                        color: #ffffff; /* Màu chữ trắng cho header */
-                                        padding: 10px; /* Khoảng cách giữa header và border */
-                                        border-radius: 5px; /* Bo tròn góc cho header */
+                                        background-color: #03737a; 
+                                        color: #ffffff; 
+                                        padding: 10px; 
+                                        border-radius: 5px; 
                                     }
                                     p {
                                         text-align: center;
+                                        color: #000000; 
                                     }
                                     table {
                                         border-collapse: collapse;
@@ -41,23 +42,31 @@ public class GuideTable {
                                         border: 1px solid black;
                                         padding: 8px;
                                         text-align: left;
+                                        corlor: #00000;
                                     }
+                                    .table-title{
+                                        background-color : #03737a;
+                                        color: #ffffff; 
+                                    }
+                                   
                                 </style>
                             </head>
                             <body>
                                 <div class="container">
-                                    <h2>Remote Control PC Application</h2>
-                                    <p>Welcome to group 10 project. This is list of requests that you can use to control other's PC.</p>
+                                    <h2>Remote Control PC by Email</h2>
+                                    <p class="content">Sending greetings from <b>Group 5 - TNT1 2022</b>, University of Science, HCMUS.<br>
+                                    Welcome to our final project for <b>Computer Networking</b> course.<br>
+                                    This is a list of requests that you can use to control others' PC. Hope you enjoy it!</p>
                                 </div>
                                 <table border="1">
-                                    <tr>
+                                    <tr class="table-title">
                                         <th>No</th>
                                         <th>Type</th>
                                         <th>Command</th>
                                         <th>Description</th>
                                         <th>Example</th>
                                     </tr>
-                                    <tr>
+                                                            <tr>
                                                                 <td>1</td>
                                                                 <td>GUIDE</td>
                                                                 <td>help</td>
@@ -128,7 +137,7 @@ public class GuideTable {
                                                                 <td>Close a specified application</td>
                                                                 <td>stopapp&amp;&amp;mspaint.exe</td>
                                                             </tr>
-                                                           \s
+                                                           
                                                             <tr>
                                                                 <td>12</td>
                                                                 <td rowspan="2">FILE</td>
@@ -136,7 +145,7 @@ public class GuideTable {
                                                                 <td>Get a specified file by filename</td>
                                                                 <td>getfile&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
                                                             </tr>
-                                                           \s
+                                                           
                                                             <tr>
                                                                 <td>13</td>
                                                                 <td>getfile[2]&&amp;&lt;file_path&gt;</td>
@@ -145,13 +154,19 @@ public class GuideTable {
                                                             </tr>
                                                             <tr>
                                                                 <td>14</td>
-                                                                <td>DIRECTORY</td>
+                                                                <td rowspan="2">DIRECTORY</td>
                                                                 <td>exploredirectory&&amp;&lt;dir_path&gt;</td>
                                                                 <td>Display entire specified directory as a tree</td>
                                                                 <td>exploredirectory&amp;&amp;D:\\\\IT</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>15</td>
+                                                                <td>exploredrive&&amp;&lt;drive&gt;</td>
+                                                                <td>Display entire contents of specified drive</td>
+                                                                <td>exploredrive&amp;&amp;D</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>16</td>
                                                                 <td>APP</td>
                                                                 <td>listapp</td>
                                                                 <td>Get the list of applications currently running on the user’s devices</td>

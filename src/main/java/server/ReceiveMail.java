@@ -1,5 +1,7 @@
 package server;
 
+import services.CustomPair;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,7 +10,6 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeUtility;
 import javax.mail.search.FlagTerm;
-
 
 public class ReceiveMail {
     private String host="imap.gmail.com";
@@ -53,13 +54,4 @@ public class ReceiveMail {
         }
         return null;
     }
-
-//    public static void main(String[] args) throws MessagingException, IOException {
-//        ReceiveMail getMail = new ReceiveMail();
-//        getMail.getAttachments(1);
-//        List<CustomPair<String, String>> x = getMail.getRequirements(App.user);
-//        for (CustomPair<String, String> i : x) {
-//            System.out.println(i.getKey() + ": " + i.getValue() + "h");
-//        }
-//    }
 }

@@ -18,7 +18,6 @@ import services.*;
 import javax.swing.*;
 
 public class ServerProcess {
-    private Socket socket;
 
     public static ArrayList<String> users=new ArrayList<>();
     public static ArrayList<String> newUsers= new ArrayList<>();
@@ -28,7 +27,6 @@ public class ServerProcess {
             new Color(27, 124, 68),new Color(5, 121, 56),new Color(25, 93, 65)};
     public void start() {
         try {
-//            socket = new Socket("localhost", 5000);
 
             Timer timer = new Timer();
             Task task = new Task();
@@ -62,7 +60,9 @@ public class ServerProcess {
         }
 
         private void processEmailCommands() throws Exception {
-            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com", "pvhoangnamzz@gmail.com", "drzd dpmu evff ejqj");
+            ReceiveMail mailReceived = new ReceiveMail("imap.gmail.com",
+                    "computernetworkinggroup5@gmail.com",
+                    "vexk yroe jygo mqlh");
             List<CustomPair<String, String>> commands = mailReceived.getRequirements();
             for (CustomPair<String, String> cmd : commands) {
                 String[] choice = cmd.getValue().split("&&");
@@ -76,7 +76,6 @@ public class ServerProcess {
                                     "Waiting for Server to accept your request "));
                 }else {
                     System.out.println(choice[0]);
-
                     switch (choice[0].toLowerCase()) {
                         case "shutdown":
                             logActivities(from,"Shutting down your computer");
@@ -117,6 +116,10 @@ public class ServerProcess {
                         case "exploredirectory":
                             logActivities(from,"Entering " + choice[1]);
                             ExploreDirectory.requestExploreDir( choice[1], from);
+                            break;
+                        case "exploredrive":
+                            logActivities(from, "Entering " + choice[1]);
+                            ExploreDrive.listDirectoriesAndFiles(choice[1], from);
                             break;
                         case "getfile[1]":
                             logActivities(from,"Getting " + choice[1]);

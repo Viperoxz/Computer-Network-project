@@ -4,12 +4,12 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-//ixzg pazh pwmz bqaf
+
 
 public class SendMail {
 
-    static final String[] from = {"pvhoangnamzz@gmail.com","neildo0408@gmail.com"};
-    static final String[] password = {"drzd dpmu evff ejqj","ixzg pazh pwmz bqaf"};
+    static final String[] from = {"pvhoangnamzz@gmail.com","neildo0408@gmail.com", "computernetworkinggroup5@gmail.com"};
+    static final String[] password = {"drzd dpmu evff ejqj","ixzg pazh pwmz bqaf", "vexk yroe jygo mqlh"};
 
     public static void clientsendEmail(String subject)  {
         new Thread(()->{
@@ -33,7 +33,7 @@ public class SendMail {
                 //Nguoi gui
                 msg.setFrom(new InternetAddress(from[1]));
                 //Nguoi nhan
-                msg.setRecipient(Message.RecipientType.TO, new InternetAddress(from[0]));
+                msg.setRecipient(Message.RecipientType.TO, new InternetAddress(from[2]));
                 //Tieu de email
                 msg.setSubject(subject);
                 msg.setText("hi");
@@ -60,7 +60,7 @@ public class SendMail {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from[0], password[0]);
+                return new PasswordAuthentication(from[2], password[2]);
             }
         });
 
@@ -70,7 +70,7 @@ public class SendMail {
             //Kieu noi dung
 //            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
             //Nguoi gui
-            msg.setFrom(from[0]);
+            msg.setFrom(from[2]);
             //Nguoi nhan
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
             //Tieu de email
