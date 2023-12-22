@@ -9,19 +9,16 @@ import javaswingdev.GoogleMaterialIcon;
 import javaswingdev.GradientType;
 import net.miginfocom.swing.MigLayout;
 import services.HTMLGenerator;
-import socket.App;
-import socket.Client;
+import server.ServerProcess;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import gui.raven.chat.swing.TextField;
-import socket.SendMail;
+import server.SendMail;
 
 public class InfoInterface extends JPanel implements ActionListener {
     private List<ChatEvent> events = new ArrayList<>();
@@ -57,7 +54,7 @@ public class InfoInterface extends JPanel implements ActionListener {
             del.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Client.users.remove(name);
+                    ServerProcess.users.remove(name);
                     updateTask(scrollPane,body,listPanel,0);
 //                    JOptionPane.showMessageDialog(,"Removed user");
                 }
@@ -66,10 +63,11 @@ public class InfoInterface extends JPanel implements ActionListener {
             del.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Client.newUsers.remove(name);
-                    Client.users.add(name);
+                    ServerProcess.newUsers.remove(name);
+                    ServerProcess.users.add(name);
                     updateTask(scrollPane,body,listPanel,0);
                     updateTask(scrollPaneNew,bodyNew,listPanelNew,1);
+                    Mess("Added successfully");
                     new Thread(()->SendMail.serversendEmail(name, "Reply for request control PC", "",
                             HTMLGenerator.generateHTML("You are now authorized", "",
                                     "Your upcoming requests will be proceeded"))).start();
@@ -235,12 +233,12 @@ public class InfoInterface extends JPanel implements ActionListener {
         bo.removeAll();
         list.clear();
         if (id==0)
-            for(int i=0;i<Client.users.size();i++){
-                bo.add(createUser(Client.users.get(i),0,list));
+            for(int i = 0; i< ServerProcess.users.size(); i++){
+                bo.add(createUser(ServerProcess.users.get(i),0,list));
             }
         else
-            for (int i=0;i<Client.newUsers.size();i++){
-                bo.add(createUser(Client.newUsers.get(i),1,list));
+            for (int i = 0; i< ServerProcess.newUsers.size(); i++){
+                bo.add(createUser(ServerProcess.newUsers.get(i),1,list));
             }
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -261,21 +259,27 @@ public class InfoInterface extends JPanel implements ActionListener {
             if (!nw.isEmpty()) {
                 if (!nw.contains("@gmail.com") ) {
                     JOptionPane.showMessageDialog(this, "Invalid email address");
-                } else if (Client.users.contains(nw)){
+                } else if (ServerProcess.users.contains(nw)){
                     JOptionPane.showMessageDialog(this, "This users is already added");
                 }
                 else {
-                    Client.users.add(nw);
+                    ServerProcess.users.add(nw);
                     updateTask(scrollPane,body,listPanel,0);
                     updateTask(scrollPaneNew,bodyNew,listPanelNew,1);
                     textMessage.setText("");
-                    JOptionPane.showMessageDialog(this, "Added successfully");
+//                    JOptionPane.showMessageDialog(this, "Added successfully");
+                    Mess("Added successfully");
                 }
 
 
             }
         }
     }
+
+    private void Mess(String s){
+        JOptionPane.showMessageDialog(this, s);
+    }
+
     private void runEventMousePressedSendButton(ActionEvent evt) {
         for (ChatEvent event : events) {
             event.mousePressedSendButton(evt);
@@ -303,9 +307,9 @@ public class InfoInterface extends JPanel implements ActionListener {
         JFrame f= new JFrame();
         f.setSize(350,450);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        Client.newUsers.add("a");
-        Client.newUsers.add("b");
-        Client.newUsers.add("c");
+        ServerProcess.newUsers.add("a");
+        ServerProcess.newUsers.add("b");
+        ServerProcess.newUsers.add("c");
 
         f.add(new InfoInterface());
         f.setVisible(true);

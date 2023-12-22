@@ -1,14 +1,12 @@
 package gui;
 
 import javaswingdev.drawer.DrawerItem;
-import socket.App;
-import socket.Client;
+import server.ServerProcess;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 public class Exit extends DrawerItem{
@@ -25,7 +23,7 @@ public class Exit extends DrawerItem{
             @Override
             public void actionPerformed(ActionEvent e) {
                 m.dispose();
-                Client.users.clear();
+                ServerProcess.users.clear();
                 Login.isOn=0;
             }
         });
