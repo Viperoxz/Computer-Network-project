@@ -143,14 +143,14 @@ public class GuideTable {
                                                                 <td rowspan="2">FILE</td>
                                                                 <td>getfile[1]&&amp;&lt;file_name&gt;</td>
                                                                 <td>Get a specified file by filename</td>
-                                                                <td>getfile&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
+                                                                <td>getfile[1]&amp;&amp;mmt.txt</td>
                                                             </tr>
                                                            
                                                             <tr>
                                                                 <td>13</td>
                                                                 <td>getfile[2]&&amp;&lt;file_path&gt;</td>
                                                                 <td>Get a specified file by path to the file</td>
-                                                                <td>getfile&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
+                                                                <td>getfile[2]&amp;&amp;D:\\\\IT\\\\mmt.txt</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>14</td>

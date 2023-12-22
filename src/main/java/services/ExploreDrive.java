@@ -12,7 +12,7 @@ public class ExploreDrive {
         try {
             Stream<Path> entries = Files.list(directory);
 
-            Path outputPath = Paths.get("./src/test/output/exploredrive.txt");
+            Path outputPath = Paths.get("./src/test/output/drive.txt");
 
             Files.createDirectories(outputPath.getParent());
             Files.deleteIfExists(outputPath);
