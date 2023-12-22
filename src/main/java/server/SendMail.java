@@ -49,38 +49,23 @@ public class SendMail {
     }
     public static void serversendEmail(String to, String subject, String attachment_path, String content) {
         System.out.println(subject);
-        //Properties: Khai bao cac thuoc tinh
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP host
         props.put("mail.smtp.port", "587"); //TLS 587, SSL 465
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-
-        //Create Authenticator
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(from[2], password[2]);
             }
         });
-
-        //Gui mail
         try {
             MimeMessage msg = new MimeMessage(session);
-            //Kieu noi dung
-//            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
-            //Nguoi gui
             msg.setFrom(from[2]);
-            //Nguoi nhan
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
-            //Tieu de email
             msg.setSubject(subject);
-//            msg.setContent();
-
-            //Body
             Multipart multipart = new MimeMultipart();
-
-            // Create the attachment part
             if (attachment_path != "") {
                 String filename = attachment_path;
                 DataSource source = new FileDataSource(filename);
@@ -89,15 +74,10 @@ public class SendMail {
                 attachmentBodyPart.setFileName(filename);
                 multipart.addBodyPart(attachmentBodyPart);
             }
-
-            //HTML part
             BodyPart htmlBodyPart = new MimeBodyPart();
             htmlBodyPart.setContent(content, "text/html; charset=utf-8"); //5
             multipart.addBodyPart(htmlBodyPart);
-
             msg.setContent(multipart);
-
-            //Noi dung
             Transport.send(msg);
             System.out.println("Send email success!");
         } catch (Exception e) {

@@ -23,14 +23,12 @@ public class ExploreDirectory {
         printDirectoryTree(folder,folder, indent, sb);
         return sb.toString();
     }
-
     private static void printDirectoryTree(File par,File folder, int indent,
                                            StringBuilder sb) {
         if (!folder.isDirectory()) {
             throw new IllegalArgumentException("folder is not a Directory");
         }
         sb.append(getIndentString(indent));
-        //if here
         if (!folder.equals(par) &&  folder.equals(par.listFiles()[ par.listFiles().length-1] ) )
             sb.append("└──");
         else
@@ -38,7 +36,6 @@ public class ExploreDirectory {
         sb.append(folder.getName());
         sb.append("/");
         sb.append("\n");
-//        System.out.println(folder.listFiles()[par.listFiles().length-1].getName());
         for (File file : folder.listFiles()) {
             if (file.isDirectory()) {
                 printDirectoryTree(folder,file, indent + 1, sb);
@@ -46,7 +43,6 @@ public class ExploreDirectory {
                 printFile(folder,file, indent + 1, sb);
             }
         }
-
     }
 
     private static void printFile(File par, File file, int indent, StringBuilder sb) {
@@ -111,8 +107,4 @@ public class ExploreDirectory {
             System.out.println("Error occurred.");
         }
     }
-
 }
-
-
-
