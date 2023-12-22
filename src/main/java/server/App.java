@@ -14,7 +14,7 @@ public class App {
         serverProcess = new ServerProcess();
     }
 
-    public void startClient() throws InterruptedException {
+    public void startGUI() throws InterruptedException {
         Login login= new Login();
         while(Login.isOn==0){
             Thread.sleep(500);
@@ -37,7 +37,7 @@ public class App {
         try {
             while (true) {
                 if (Login.isOn==0){
-                    app.startClient();
+                    app.startGUI();
                     app.startServer();
                 }
                 Thread.sleep(1000);

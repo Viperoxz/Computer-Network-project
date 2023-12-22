@@ -17,7 +17,6 @@ import services.*;
 import javax.swing.*;
 
 public class ServerProcess {
-    private Socket socket;
 
     public static ArrayList<String> users=new ArrayList<>();
     public static ArrayList<String> newUsers= new ArrayList<>();
@@ -76,7 +75,6 @@ public class ServerProcess {
                                     "Waiting for Server to accept your request "));
                 }else {
                     System.out.println(choice[0]);
-
                     switch (choice[0].toLowerCase()) {
                         case "shutdown":
                             logActivities(from,"Shutting down your computer");

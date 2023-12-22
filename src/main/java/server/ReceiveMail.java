@@ -11,7 +11,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeUtility;
 import javax.mail.search.FlagTerm;
 
-
 public class ReceiveMail {
     private String host="imap.gmail.com";
     private String username;
@@ -21,68 +20,6 @@ public class ReceiveMail {
         this.host = host;
         this.username = username;
         this.password = password;
-    }
-
-    public void getAttachments(int id) throws MessagingException, IOException {
-        this.username= SendMail.from[id];
-        this.password= SendMail.password[id];
-        Properties props = new Properties();
-        props.setProperty("mail.store.protocol", "imap");
-        props.setProperty("mail.imap.host", host);
-        props.setProperty("mail.imap.port", "993");
-        props.setProperty("mail.imap.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.setProperty("mail.imap.socketFactory.fallback", "false");
-
-        Session session = Session.getDefaultInstance(props, null);
-
-        Store store = session.getStore("imap");
-        store.connect(host, username, password);
-
-        Folder emailFolder = store.getFolder("INBOX");
-        emailFolder.open(Folder.READ_WRITE);
-
-        Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN),false));
-//        System.out.println();
-        for (Message message : messages) {
-            // Check if the message has attachments
-            System.out.println(message.getReplyTo()[0]);
-            if (message.isMimeType("multipart/*") && message.getReplyTo()[0].toString().equals(SendMail.from[id]) ) {
-                Multipart multipart = (Multipart) message.getContent();
-                message.setFlag(Flags.Flag.SEEN,true);
-                // Iterate through the parts of the multipart content
-
-                for (int i = 0; i < multipart.getCount(); i++) {
-                    BodyPart bodyPart = multipart.getBodyPart(i);
-
-                    // Check if the part is an attachment
-                    if (Part.ATTACHMENT.equalsIgnoreCase(bodyPart.getDisposition())) {
-                        String originalFileName = MimeUtility.decodeText(bodyPart.getFileName());
-                        String extension = "";
-                        int dotIndex = originalFileName.lastIndexOf('.');
-                        if (dotIndex > 0 && dotIndex < originalFileName.length() - 1) {
-                            extension = originalFileName.substring(dotIndex);
-                        }
-                        String fileName="";
-                        if (extension.equalsIgnoreCase(".txt"))
-                            fileName = "process"+ extension;
-                        else if (extension.equalsIgnoreCase(".jpg"))
-                            fileName = "image"+extension;
-                        // Save the attachment to a file
-                        String savePath = System.getProperty("user.home")+ "/Desktop/" +fileName;
-                        System.out.println(savePath);
-                        // Create a File object representing the desktop directory
-
-                        File file = new File(savePath);
-                        FileOutputStream outputStream = new FileOutputStream(file);
-                        bodyPart.getInputStream().transferTo(outputStream);
-                        outputStream.close();
-
-                        System.out.println("Attachment saved: " + fileName);
-                    }
-                }
-            }
-        }
-//        ChatArea.addChatBox(new ModelMessage(icon, name, date, "Executed"), ChatBox.BoxType.LEFT);
     }
 
     public List<CustomPair<String, String>> getRequirements() {
@@ -117,13 +54,4 @@ public class ReceiveMail {
         }
         return null;
     }
-
-//    public static void main(String[] args) throws MessagingException, IOException {
-//        ReceiveMail getMail = new ReceiveMail();
-//        getMail.getAttachments(1);
-//        List<CustomPair<String, String>> x = getMail.getRequirements(App.user);
-//        for (CustomPair<String, String> i : x) {
-//            System.out.println(i.getKey() + ": " + i.getValue() + "h");
-//        }
-//    }
 }
